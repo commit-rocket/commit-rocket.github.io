@@ -1,4 +1,4 @@
-import { Page } from "@/types/Page";
+import { Page } from "@/types/page";
 import Head from "next/head";
 
 const AboutPage: Page = ({ }) => {

@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Commit Rocket</title>
         <meta name="description" content="Commit Rocket, next-gen git client" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
