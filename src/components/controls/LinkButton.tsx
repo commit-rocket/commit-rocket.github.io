@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import Link, { LinkProps as InternalLinkProps } from "next/link";
-import { cva, VariantProps as GetVariantProps } from "class-variance-authority";
+import { VariantProps as GetVariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
 import { RequiredKeys } from "@/types/utility";

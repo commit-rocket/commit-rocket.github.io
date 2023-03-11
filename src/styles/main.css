@@ -10,5 +10,5 @@ body,
 }
 
 html {
-  @apply bg-fill
+  @apply bg-fill text-fill-contrast
 }
