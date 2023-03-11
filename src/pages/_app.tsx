@@ -47,13 +47,13 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <Head>
         <title>Commit Rocket</title>
       </Head>
-      <div className={"flex flex-col items-center overflow-auto" + openSans.variable}>
+      <div className={"flex flex-col overflow-auto" + openSans.variable}>
         <Header />
 
         <AnimatePresence mode="wait">
-          <motion.main
+          <motion.div
             key={router.pathname}
-            className="flex flex-col flex-1 w-full"
+            className="flex flex-col items-center flex-1 w-full px-8"
             initial="initial"
             animate="animate"
             exit="exit"
@@ -66,7 +66,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
               reduceMotion={reduceMotion}
               {...pageProps}
             />
-          </motion.main>
+          </motion.div>
         </AnimatePresence>
       </div>
     </MotionConfig>
