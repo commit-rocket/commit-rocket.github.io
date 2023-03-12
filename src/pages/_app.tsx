@@ -47,7 +47,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <Head>
         <title>Commit Rocket</title>
       </Head>
-      <div className={"flex flex-col overflow-auto " + openSans.variable}>
+      <div className={"flex flex-col overflow-auto scroll-smooth scroll-p-4 " + openSans.variable}>
         <Header />
 
         <AnimatePresence mode="wait">

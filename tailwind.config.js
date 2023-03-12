@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(circle closest-side, var(--tw-gradient-stops))',
+      },
       colors: {
         primary: {
           DEFAULT: "#FF5C00",
