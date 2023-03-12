@@ -51,17 +51,17 @@ const membersContainerAnim = {
 
 const memberAnim = {
   hidden: {
-    translateY: "-10%",
+    translateY: "-5%",
     transition: {
       duration: 0.15,
-      ease: "linear"
+      ease: "easeOut"
     }
   },
   show: {
     translateY: "0%",
     transition: {
       duration: 0.15,
-      ease: "linear"
+      ease: "easeOut"
     }
   }
 } as const;
