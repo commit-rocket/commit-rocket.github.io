@@ -44,7 +44,6 @@ const membersContainerAnim = {
   hidden: {},
   show: {
     transition: {
-      duration: 0.5,
       staggerChildren: 0.1
     }
   }
@@ -52,10 +51,18 @@ const membersContainerAnim = {
 
 const memberAnim = {
   hidden: {
-    translateY: "-10%"
+    translateY: "-10%",
+    transition: {
+      duration: 0.15,
+      ease: "linear"
+    }
   },
   show: {
-    translateY: "0%"
+    translateY: "0%",
+    transition: {
+      duration: 0.15,
+      ease: "linear"
+    }
   }
 } as const;
 
