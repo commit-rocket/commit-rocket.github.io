@@ -51,7 +51,7 @@ const membersContainerAnim = {
 
 const memberAnim = {
   hidden: {
-    translateY: "-5%",
+    translateY: "5%",
     transition: {
       duration: 0.15,
       ease: "easeOut"
@@ -72,9 +72,9 @@ const AboutPage: Page = ({ initialLoad, reduceMotion }) => {
       <Head>
         <title>About - Commit Rocket</title>
       </Head>
-      <main aria-labelledby="about" className="flex flex-col flex-1 w-full gap-4 pb-8 max-w-7xl">
+      <main aria-labelledby="about" className="flex flex-col flex-1 w-full gap-8 pb-8 max-w-7xl">
         <h1 id="about" className="text-4xl font-bold text-center lg:text-6xl text-secondary">About</h1>
-        <section aria-labelledby="our-goal" className="flex flex-col gap-4">
+        <section aria-labelledby="our-goal" className="flex flex-col gap-8">
           <h2
             id="our-goal"
             className="text-2xl text-center lg:text-3xl text-primary"
@@ -86,7 +86,7 @@ const AboutPage: Page = ({ initialLoad, reduceMotion }) => {
             We want to improve the user experience for developers by creating an open-source and cross-platform tool that is both feature-rich and beginner-friendly.
           </p>
         </section>
-        <section aria-labelledby="why-another-git-client" className="flex flex-col gap-4">
+        <section aria-labelledby="why-another-git-client" className="flex flex-col gap-8">
           <h2
             id="why-another-git-client"
             className="text-2xl text-center lg:text-3xl text-primary"
@@ -99,7 +99,7 @@ const AboutPage: Page = ({ initialLoad, reduceMotion }) => {
             Our commitment to open-source development and cross-platform compatibility sets us apart from other clients in the market.
           </p>
         </section>
-        <section aria-labelledby="why-another-git-client" className="flex flex-col gap-4 my-8">
+        <section aria-labelledby="why-another-git-client" className="flex flex-col gap-8 my-8">
           <h2
             id="why-another-git-client"
             className="text-2xl text-center lg:text-3xl text-primary"
