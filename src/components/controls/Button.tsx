@@ -1,4 +1,4 @@
-import { HTMLAttributes, useMemo } from "react";;
+import { ButtonHTMLAttributes, DetailedHTMLProps, HTMLAttributes, useMemo } from "react";;
 import { cva, VariantProps as GetVariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
@@ -17,7 +17,7 @@ export type VariantProps = GetVariantProps<typeof style>;
 type ButtonProps = {
 
 } & RequiredKeys<VariantProps, "color">
-  & HTMLAttributes<HTMLButtonElement>;
+  & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
 const Button = ({ className, color, ...props }: ButtonProps) => {
 
