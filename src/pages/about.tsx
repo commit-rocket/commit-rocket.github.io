@@ -44,7 +44,6 @@ const membersContainerAnim = {
   hidden: {},
   show: {
     transition: {
-      delay: 0.25,
       duration: 0.5,
       staggerChildren: 0.1
     }
