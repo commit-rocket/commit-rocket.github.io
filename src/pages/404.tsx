@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import ArrowUturnLeftIcon from "@heroicons/react/24/solid/ArrowUturnLeftIcon";
 import HomeModernIcon from "@heroicons/react/24/solid/HomeModernIcon";
@@ -12,6 +13,9 @@ const NotFound: Page = ({ }) => {
 
   return (
     <>
+      <Head>
+        <title>404 - Commit Rocket</title>
+      </Head>
       <main className="flex items-center justify-center flex-1 w-full" aria-labelledby="not-found">
         <div className="flex flex-col gap-2 p-4 text-center rounded-md shadow shadow-black/25 bg-primary/25">
           <h1 id="not-found" className="text-5xl text-secondary">Not Found.</h1>
