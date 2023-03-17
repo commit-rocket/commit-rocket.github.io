@@ -50,9 +50,10 @@ const FrontPage: Page = ({ }) => {
           <div className="relative flex items-center justify-center w-full min-h-[20rem] max-h-[40dvh] max-h-[40vh] lg:min-h-0 lg:h-full lg:max-h-full lg:w-2/5" style={{ aspectRatio: `${LogoPicture.width} / ${LogoPicture.height}` }}>
             <div className="absolute w-full h-full opacity-50 aspect-square bg-gradient-radial from-primary to-transparent" aria-hidden />
             <motion.img
-              className="absolute max-w-full max-h-full object-contain aspect-auto w-full rotate-[10deg]"
+              className="absolute max-w-full max-h-full object-contain aspect-auto w-full rotate-[10deg] text-[0px]"
               loading="eager"
               variants={logoAnim}
+              alt="Commit Rocket"
               src={LogoPicture.src}
               width={LogoPicture.width}
               height={LogoPicture.height}
@@ -76,8 +77,9 @@ const FrontPage: Page = ({ }) => {
                   {title}
                 </h3>
                 <img
-                  className="w-full sm:w-2/3 lg:w-full"
+                  className="w-full sm:w-2/3 lg:w-full text-[0px]"
                   loading="lazy"
+                  alt="mission"
                   src={image.src}
                   width={image.width}
                   height={image.height}

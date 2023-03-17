@@ -5,13 +5,14 @@ import { twMerge } from "tailwind-merge";
 
 import { RequiredKeys } from "@/types/utility";
 
-export const style = cva("transition-colors", {
+export const style = cva("transition-colors gap-2", {
   variants: {
     underline: {
       true: "underline",
       false: ""
     },
     color: {
+      white: "text-white hover:text-neutral-300",
       primary: "text-primary hover:text-primary-light",
       secondary: "text-secondary hover:text-secondary-light"
     }
