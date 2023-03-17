@@ -14,6 +14,7 @@ const Footer = ({ }: FooterProps) => {
           <div className="flex items-center gap-2">
             <img
               className="w-12 h-12"
+              alt="Commit Rocket Logo"
               src={Logo.src}
               width={Logo.width}
               height={Logo.height}
