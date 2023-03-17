@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import InternalLink, { LinkProps as InternalLinkProps } from "next/link";
 import { cva, VariantProps as GetVariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
+import ArrowTopRightOnSquareIcon from "@heroicons/react/24/solid/ArrowTopRightOnSquareIcon";
 
 import { RequiredKeys } from "@/types/utility";
 
@@ -26,12 +27,13 @@ export type VariantProps = GetVariantProps<typeof style>;
 
 type LinkProps = {
   underline?: boolean;
+  external?: boolean;
 } & RequiredKeys<VariantProps, "color">
   & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof InternalLinkProps>
   & InternalLinkProps
   & React.RefAttributes<HTMLAnchorElement>;
 
-const Link = ({ className, color, underline, ...props }: LinkProps) => {
+const Link = ({ className, color, underline, children, external, hrefLang = "en", ...props }: LinkProps) => {
 
   const computedClassName = useMemo(
     () => twMerge(style({ color, underline }), className),
@@ -39,7 +41,12 @@ const Link = ({ className, color, underline, ...props }: LinkProps) => {
   );
 
   return (
-    <InternalLink className={computedClassName} {...props} />
+    <InternalLink className={computedClassName} hrefLang={hrefLang} {...props}>
+      {children}
+      {external && <ArrowTopRightOnSquareIcon
+        className="inline w-4 h-4"
+      />}
+    </InternalLink>
   );
 };
 

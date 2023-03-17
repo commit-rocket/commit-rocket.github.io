@@ -61,9 +61,9 @@ const UnsubscribePage: Page = ({ }) => {
       <Head>
         <title>Commit Rocket</title>
       </Head>
-      <main className="flex items-center justify-center flex-1 w-full" aria-labelledby="not-found">
+      <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="unsubscribe">
         <form className="flex flex-col gap-4 p-4 text-center rounded-md shadow shadow-black/25 bg-primary/25" onSubmit={submit}>
-          <h1 id="not-found" className="text-5xl text-secondary">Unsubscribe</h1>
+          <h1 id="unsubscribe" className="text-5xl text-secondary">Unsubscribe</h1>
           <p className="max-w-md">Once you unsubscribe you won't receive any more emails from us and your email will be immediately deleted from our records.</p>
           <AnimatePresence mode="wait">
             {(!response || response.success === false) && <motion.div
