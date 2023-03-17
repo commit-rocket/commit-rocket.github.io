@@ -10,5 +10,21 @@ body,
 }
 
 html {
-  @apply bg-fill text-fill-contrast
+  @apply bg-fill text-fill-contrast;
+}
+
+div.swal2-popup.swal2-toast {
+  @apply p-3 shadow shadow-black/25 bg-white/50 backdrop-blur-sm;
+}
+
+div.swal2-popup.swal2-toast .swal2-title {
+  @apply m-0 text-black;
+}
+
+div.swal2-popup.swal2-toast .swal2-html-container {
+  @apply m-0 text-black;
+}
+
+div.swal2-popup.swal2-toast .swal2-icon {
+  @apply mr-4;
 }

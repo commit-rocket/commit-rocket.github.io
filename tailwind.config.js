@@ -1,11 +1,12 @@
+const plugin = require("tailwindcss/plugin");
 const { fontFamily } = require('tailwindcss/defaultTheme');
-
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.tsx",
     "./src/components/**/*.tsx",
+    "./src/utils/**/*.{ts,tsx}"
   ],
   theme: {
     extend: {
@@ -14,7 +15,7 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#FF5C00",
+          DEFAULT: "#f2600c",
           light: "#FF792E",
           dark: "#DB5103",
           contrast: "#FFF"
@@ -26,7 +27,7 @@ module.exports = {
           contrast: "#FFF"
         },
         fill: {
-          DEFAULT: "#FFDFC1",
+          DEFAULT: "#FFE4CC",
           contrast: "#282828"
         }
       },
@@ -35,5 +36,10 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("is", ":is(&)");
+      addVariant("where", ":where(&)");
+    })
+  ],
 };

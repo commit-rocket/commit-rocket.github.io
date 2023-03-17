@@ -4,9 +4,10 @@ import { Open_Sans } from 'next/font/google';
 import type { AppProps } from 'next/app';
 import Head from "next/head";
 
-import '@/styles/main.css';
 import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
+
+import '@/styles/main.css';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
