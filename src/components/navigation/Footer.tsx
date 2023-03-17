@@ -2,11 +2,7 @@ import Link from "./Link";
 
 import Logo from "@/assets/images/brand/logo-200x200.webp";
 
-interface FooterProps {
-
-}
-
-const Footer = ({ }: FooterProps) => {
+const Footer = () => {
   return (
     <footer className="flex items-center justify-center text-primary-contrast">
       <div className="flex flex-col w-full gap-4 p-8 max-w-7xl rounded-t-md bg-primary">

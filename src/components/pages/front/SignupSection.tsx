@@ -1,9 +1,11 @@
 import { useMemo, useRef, useState } from "react";
-import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import dynamic from "next/dynamic";
 import { z } from "zod";
+
+const ArrowPathIcon = dynamic(() => import("@heroicons/react/24/solid/ArrowPathIcon"));
 
 import { BackendResponse } from "@/api/models/Response";
 import perks from "@/assets/state/perks";
