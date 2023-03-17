@@ -6,6 +6,7 @@ import Head from "next/head";
 
 import '@/styles/main.css';
 import Header from "@/components/navigation/Header";
+import Footer from "@/components/navigation/Footer";
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -49,7 +50,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
       </Head>
       <div className={"flex flex-col overflow-auto scroll-smooth scroll-p-4 " + openSans.variable}>
         <Header />
-
         <AnimatePresence mode="wait">
           <motion.div
             key={router.pathname}
@@ -68,6 +68,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
             />
           </motion.div>
         </AnimatePresence>
+        <Footer />
       </div>
     </MotionConfig>
   );
