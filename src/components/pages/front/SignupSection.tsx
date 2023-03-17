@@ -119,7 +119,7 @@ const SignupSection = () => {
           </motion.div>}
           {(response && response.success) && <motion.div
             key="success"
-            className="py-4 mb-8 text-xl font-semibold text-green-500"
+            className="p-4 mb-8 text-xl font-semibold text-green-500 rounded-md bg-primary/10"
             variants={fadeAnim}
             initial="in"
             animate="anim"
