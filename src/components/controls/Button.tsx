@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, HTMLAttributes, useMemo } from "react";;
+import { ButtonHTMLAttributes, DetailedHTMLProps, ForwardedRef, forwardRef, HTMLAttributes, useMemo } from "react";;
 import { cva, VariantProps as GetVariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
@@ -19,7 +19,7 @@ type ButtonProps = {
 } & RequiredKeys<VariantProps, "color">
   & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-const Button = ({ className, color, ...props }: ButtonProps) => {
+const Button = forwardRef(({ className, color, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
 
   const computedClassName = useMemo(
     () => twMerge(style({ color }), className),
@@ -27,8 +27,8 @@ const Button = ({ className, color, ...props }: ButtonProps) => {
   );
 
   return (
-    <button className={computedClassName} {...props} />
+    <button ref={ref} className={computedClassName} {...props} />
   );
-};
+});
 
 export default Button;

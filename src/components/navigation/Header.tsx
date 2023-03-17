@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Bars3Icon from "@heroicons/react/24/solid/Bars3Icon";
 
@@ -7,11 +7,19 @@ import Logo from "@/assets/images/brand/logo-200x200.webp";
 import Link from "./Link";
 import Button from "../controls/Button";
 import NavLink from "./NavLink";
+import useOutsideClick from "@/hooks/useOutsideClick";
 
 const Header = () => {
   const router = useRouter();
 
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const itemsContainerRef = useRef<HTMLDivElement>(null);
+
   const [open, setOpen] = useState(false);
+
+  useOutsideClick([buttonRef, itemsContainerRef], (e) => {
+    setOpen(false);
+  });
 
   return (
     <header className="relative flex items-center w-full gap-4 p-4 transition-all md:px-8 md:gap-12">
@@ -25,10 +33,22 @@ const Header = () => {
         />
         <span>Commit Rocket</span>
       </Link>
-      <Button color="secondary" className="p-2 ml-auto rounded-full md:hidden" aria-expanded={open} aria-controls="header-items" onClick={() => setOpen(!open)}>
+      <Button
+        ref={buttonRef}
+        className="p-2 ml-auto rounded-full md:hidden"
+        color="secondary"
+        aria-expanded={open}
+        aria-controls="header-items"
+        onClick={() => setOpen(!open)}
+      >
         <Bars3Icon className="w-6 h-6" />
       </Button>
-      <div id="header-items" className="absolute flex flex-col bg-fill gap-0 p-4 top-full inset-x-4 rounded-md shadow shadow-primary z-10 aria-[expanded='false']:hidden md:aria-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:shadow-none md:static md:bg-transparent md:gap-12">
+      <div
+        ref={itemsContainerRef}
+        className="absolute flex flex-col bg-fill gap-0 p-4 top-full inset-x-4 rounded-md shadow shadow-primary z-10 data-[expanded='false']:hidden md:data-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:shadow-none md:static md:bg-transparent md:gap-12"
+        id="header-items"
+        data-expanded={open}
+      >
         <NavLink href="/" currentHref={router.pathname}>
           Home
         </NavLink>
