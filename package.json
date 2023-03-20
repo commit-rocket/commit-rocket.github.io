@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "analyze": "cross-env ANALYZE=true npm run build",
-    "start": "next start"
+    "analyze": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
