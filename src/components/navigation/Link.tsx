@@ -33,7 +33,7 @@ type LinkProps = {
   & InternalLinkProps
   & React.RefAttributes<HTMLAnchorElement>;
 
-const Link = ({ className, color, underline, children, external, hrefLang = "en", ...props }: LinkProps) => {
+const Link = ({ className, color, underline, children, external, hrefLang = "en", rel, ...props }: LinkProps) => {
 
   const computedClassName = useMemo(
     () => twMerge(style({ color, underline }), className),
@@ -41,7 +41,13 @@ const Link = ({ className, color, underline, children, external, hrefLang = "en"
   );
 
   return (
-    <InternalLink className={computedClassName} hrefLang={hrefLang} {...props}>
+    <InternalLink
+      className={computedClassName}
+      hrefLang={hrefLang}
+      rel={`${external ? "external" : ""} ${rel}`}
+      target={external ? "_blank" : undefined}
+      {...props}
+    >
       {children}
       {external && <ArrowTopRightOnSquareIcon
         className="inline w-4 h-4"
