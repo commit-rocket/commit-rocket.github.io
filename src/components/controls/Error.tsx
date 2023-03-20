@@ -1,6 +1,4 @@
-import { ErrorMessage } from "@hookform/error-message";
-import { FieldValuesFromFieldErrors } from "@hookform/error-message/dist/types";
-import React from "react";
+import { ErrorMessage, FieldValuesFromFieldErrors } from "@hookform/error-message";
 import { FieldErrors, FieldName, UseFormReturn } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 

@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -97,7 +97,6 @@ const UnsubscribePage: Page = ({ }) => {
               {response.message} 👍
             </motion.div>}
           </AnimatePresence>
-
         </form>
       </main>
     </>
