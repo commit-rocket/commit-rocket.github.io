@@ -31,7 +31,7 @@ const FrontPage: Page = ({ }) => {
         <title>Commit Rocket</title>
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-4 pb-8">
-        <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 max-w-[105rem] lg:flex-row lg:min-h-[30rem] lg:h-[75dvh] lg:h-[75vh] mx-auto">
+        <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 max-w-7xl lg:flex-row lg:min-h-[30rem] lg:h-[75dvh] lg:h-[75vh] mx-auto">
           <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center lg:w-3/5">
             <div className="absolute w-full h-full opacity-20 aspect-square bg-gradient-radial from-primary to-transparent -z-10" aria-hidden />
             <h1
@@ -62,7 +62,7 @@ const FrontPage: Page = ({ }) => {
         </section>
         <section
           aria-labelledby="mission"
-          className="flex flex-col gap-12 mx-auto text-center max-w-[105rem] py-16"
+          className="flex flex-col gap-12 py-16 mx-auto text-center max-w-7xl"
         >
           <h2
             id="mission"
@@ -73,7 +73,7 @@ const FrontPage: Page = ({ }) => {
           <div className="flex flex-col flex-wrap justify-between w-full gap-12 lg:flex-row">
             {missions.map(({ title, image, text }, i) => (
               <div key={i} className="flex flex-col items-center flex-1 gap-4">
-                <h3 className="text-2xl text-primary md:text-3xl lg:h-[5ex] 2xl:h-auto motion-safe:transition-all">
+                <h3 className="text-2xl text-primary md:text-3xl lg:h-[5ex] motion-safe:transition-all">
                   {title}
                 </h3>
                 <img
