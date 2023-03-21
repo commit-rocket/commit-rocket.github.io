@@ -6,6 +6,7 @@ import Head from "next/head";
 
 import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 import '@/styles/main.css';
 
@@ -49,6 +50,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <Head>
         <title>Commit Rocket</title>
       </Head>
+      <GoogleAnalytics />
       <div className={"flex flex-col overflow-auto scroll-smooth scroll-p-4 " + openSans.variable}>
         <Header />
         <AnimatePresence mode="wait">
