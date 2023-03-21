@@ -10,13 +10,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(circle closest-side, var(--tw-gradient-stops))',
+        "gradient-radial": 'radial-gradient(circle closest-side, var(--tw-gradient-stops))'
       },
       colors: {
         primary: {
           DEFAULT: "#f2600c",
-          light: "#FF792E",
-          dark: "#DB5103",
+          light: "#FF8D4C",
+          dark: "#bf4701",
           contrast: "#FFF"
         },
         secondary: {
@@ -33,9 +33,17 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(({ addVariant }) => {
+    plugin(({ addVariant, addComponents }) => {
       addVariant("is", ":is(&)");
       addVariant("where", ":where(&)");
+      addComponents({
+        ".image-dots": {
+          "background-image": "radial-gradient(var(--tw-gradient-from), transparent 1.5px, transparent 1.5px)",
+          "background-size": "1.1rem 1.1rem",
+          "background-position": "50% 50%"
+        }
+      });
+
     })
   ],
 };
