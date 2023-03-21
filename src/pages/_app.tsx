@@ -45,7 +45,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <title>Commit Rocket</title>
       </Head>
       <GoogleAnalytics />
-      <div className="flex flex-col overflow-auto font-sans scroll-smooth scroll-p-4">
+      <div className="flex flex-col font-sans">
         <Header />
         <AnimatePresence mode="wait">
           <motion.div
