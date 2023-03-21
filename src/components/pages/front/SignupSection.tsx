@@ -107,6 +107,8 @@ const SignupSection = () => {
           >
             <div className="w-full">
               <Input
+                color="primary"
+                variant="outlined"
                 className="w-full p-4 text-lg md:text-xl"
                 placeholder="your@email.com"
                 {...register("email")}

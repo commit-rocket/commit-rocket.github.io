@@ -82,8 +82,9 @@ const FeedbackSection = () => {
         <AnimatePresence mode="wait">
           {(!response || response.success === false) && <motion.div className="flex flex-col items-center w-full gap-4">
             <TextArea
-            
-              className="w-full p-4 text-lg rounded-lg md:text-xl h-fit"
+              color="primary"
+              variant="outlined"
+              className="w-full p-4 text-lg rounded-lg md:text-xl h-fit min-h-[3.25em] max-h-[50ex]"
               placeholder="I would like this feature!"
               rows={5}
               {...register("text")}
