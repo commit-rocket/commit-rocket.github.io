@@ -12,6 +12,7 @@ import Button from "@/components/controls/Button";
 import Error from "@/components/controls/Error";
 import Link from "@/components/navigation/Link";
 import { backend } from "@/utils/wretch";
+import TextArea from "@/components/controls/TextArea";
 
 const feedbackSchema = z.object({
   text: z.string()
@@ -80,11 +81,12 @@ const FeedbackSection = () => {
       <form aria-label="feedback-inbox" className="flex flex-col items-center gap-4" onSubmit={submit}>
         <AnimatePresence mode="wait">
           {(!response || response.success === false) && <motion.div className="flex flex-col items-center w-full gap-4">
-            <textarea
-              className="w-full p-4 text-lg bg-white border-2 rounded-md md:text-xl border-primary h-fit"
+            <TextArea
+            
+              className="w-full p-4 text-lg rounded-lg md:text-xl h-fit"
               placeholder="I would like this feature!"
-              {...register("text")}
               rows={5}
+              {...register("text")}
             />
             <Error className="w-full px-2 text-start" state={formState} name="text" />
             <Button type="submit" color="secondary" className="px-5 py-3 text-lg md:text-xl w-fit">

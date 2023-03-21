@@ -1,18 +1,8 @@
 import Head from "next/head";
-import { motion } from "framer-motion";
 
 import members from "@/assets/state/team";
 import Member from "@/components/pages/about/Member";
 import { Page } from "@/types/page";
-
-const membersContainerAnim = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-} as const;
 
 const AboutPage: Page = ({ initialLoad, reduceMotion }) => {
   return (
@@ -54,17 +44,14 @@ const AboutPage: Page = ({ initialLoad, reduceMotion }) => {
           >
             Team
           </h2>
-          <motion.div
+          <ul
             className="flex flex-wrap justify-center gap-4"
             aria-label="Members"
-            initial="hidden"
-            animate="show"
-            variants={membersContainerAnim}
           >
             {members.map((member, i) => (
               <Member key={i} animate={!(reduceMotion || initialLoad)}{...member} />
             ))}
-          </motion.div>
+          </ul>
         </section>
       </main>
     </>
