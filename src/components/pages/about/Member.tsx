@@ -3,26 +3,8 @@ import { motion } from "framer-motion";
 import { IMember } from "@/assets/state/team";
 import LinkButton from "@/components/controls/LinkButton";
 
-const memberAnim = {
-  hidden: {
-    translateY: "5%",
-    transition: {
-      duration: 0.15,
-      ease: "easeOut"
-    }
-  },
-  show: {
-    translateY: "0%",
-    transition: {
-      duration: 0.15,
-      ease: "easeOut"
-    }
-  }
-} as const;
-
 const Member = ({ image, name, title, text, links, animate }: IMember & { animate: boolean; }) => (
-  <motion.div
-    variants={animate ? memberAnim : {}}
+  <li
     className="flex flex-col items-center w-full max-w-full gap-2 p-4 rounded-md shadow motion-safe:transition-all sm:p-6 md:w-fit shadow-primary"
     aria-label="Member"
   >
@@ -52,7 +34,7 @@ const Member = ({ image, name, title, text, links, animate }: IMember & { animat
         </LinkButton>
       ))}
     </div>
-  </motion.div>
+  </li>
 );
 
 export default Member;
