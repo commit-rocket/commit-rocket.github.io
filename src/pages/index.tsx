@@ -31,9 +31,9 @@ const FrontPage: Page = ({ }) => {
         <title>Commit Rocket</title>
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-4 pb-8">
-        <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 max-w-7xl lg:flex-row lg:min-h-[30rem] lg:h-[75dvh] lg:h-[75vh] mx-auto">
-          <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center lg:w-3/5">
-            <div className="absolute w-full h-full opacity-20 aspect-square bg-gradient-radial from-primary to-transparent -z-10" aria-hidden />
+        <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 max-w-7xl xl:flex-row xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh] mx-auto">
+          <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center xl:w-3/5">
+            {/* <div className="absolute w-full h-full opacity-20 aspect-square bg-gradient-radial from-primary to-transparent -z-10" aria-hidden /> */}
             <h1
               id="hero-title"
               className="text-3xl font-bold lg:text-6xl text-primary"
@@ -47,8 +47,8 @@ const FrontPage: Page = ({ }) => {
               Try it Yourself
             </LinkButton>
           </div>
-          <div className="relative flex items-center justify-center w-full min-h-[20rem] max-h-[40dvh] max-h-[40vh] lg:min-h-0 lg:h-full lg:max-h-full lg:w-2/5" style={{ aspectRatio: `${LogoPicture.width} / ${LogoPicture.height}` }}>
-            <div className="absolute w-full h-full opacity-50 aspect-square bg-gradient-radial from-primary to-transparent" aria-hidden />
+          <div className="relative overflow-hidden flex items-center justify-center w-full min-h-[20rem] max-h-[40dvh] max-h-[40vh] xl:min-h-0 xl:h-full xl:max-h-full xl:w-2/5" style={{ aspectRatio: `${LogoPicture.width} / ${LogoPicture.height}` }}>
+            {/* <div className="absolute w-full h-full opacity-20 aspect-square bg-gradient-radial from-primary to-transparent" aria-hidden /> */}
             <motion.img
               className="absolute max-w-full max-h-full object-contain aspect-auto w-full rotate-[10deg] text-[0px]"
               loading="eager"
