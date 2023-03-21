@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, MotionConfig, AnimatePresence } from "framer-motion";
-import { Open_Sans } from 'next/font/google';
 import type { AppProps } from 'next/app';
 import Head from "next/head";
 
@@ -9,11 +8,6 @@ import Footer from "@/components/navigation/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 import '@/styles/main.css';
-
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  variable: "--font-open-sans"
-});
 
 const pageTransition = {
   duration: .35,
@@ -51,7 +45,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <title>Commit Rocket</title>
       </Head>
       <GoogleAnalytics />
-      <div className={"flex flex-col overflow-auto scroll-smooth scroll-p-4 " + openSans.variable}>
+      <div className="flex flex-col overflow-auto font-sans scroll-smooth scroll-p-4">
         <Header />
         <AnimatePresence mode="wait">
           <motion.div

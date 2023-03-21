@@ -1,5 +1,4 @@
 const plugin = require("tailwindcss/plugin");
-const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -30,9 +29,6 @@ module.exports = {
           DEFAULT: "#FFE4CC",
           contrast: "#282828"
         }
-      },
-      fontFamily: {
-        openSans: ["var(--font-open-sans)", ...fontFamily.sans]
       }
     },
   },
