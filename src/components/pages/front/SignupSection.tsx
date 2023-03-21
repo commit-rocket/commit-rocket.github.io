@@ -13,6 +13,7 @@ import Button from "@/components/controls/Button";
 import Error from "@/components/controls/Error";
 import Link from "@/components/navigation/Link";
 import { backend } from "@/utils/wretch";
+import Input from "@/components/controls/Input";
 
 
 const signupSchema = z.object({
@@ -105,8 +106,8 @@ const SignupSection = () => {
             exit="exit"
           >
             <div className="w-full">
-              <input
-                className="w-full p-4 text-lg bg-white border-2 rounded-md md:text-xl border-primary"
+              <Input
+                className="w-full p-4 text-lg md:text-xl"
                 placeholder="your@email.com"
                 {...register("email")}
               />
