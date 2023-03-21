@@ -7,7 +7,7 @@ import { RequiredKeys } from "@/types/utility";
 export const style = cva("flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-full", {
   variants: {
     color: {
-      secondary: "bg-secondary hover:bg-secondary-light text-secondary-contrast"
+      secondary: "bg-secondary hover:bg-secondary-light border-2 border-secondary-dark text-secondary-contrast"
     }
   }
 });
