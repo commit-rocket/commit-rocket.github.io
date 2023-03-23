@@ -4,7 +4,7 @@ import Logo from "@/assets/images/brand/logo-200x200.webp";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-center text-primary-contrast">
+    <footer className="flex items-center justify-center w-full mt-auto text-primary-contrast">
       <div className="flex flex-col w-full gap-4 p-8 border-2 max-w-7xl rounded-t-md bg-primary image-dots from-primary-light border-primary-light">
         <div className="flex flex-col items-center gap-2 p-2 rounded-md bg-white/20 sm:flex-row">
           <div className="flex items-center gap-2">
@@ -36,6 +36,30 @@ const Footer = () => {
               underline
             >
               Blog
+            </Link>
+            <Link
+              color="white"
+              href="/contribute"
+              title="Contribute to Commit Rocket"
+              underline
+            >
+              Contribute
+            </Link>
+            <Link
+              color="white"
+              href="/blog/2/planned-features"
+              title="Planned Features"
+              underline
+            >
+              Planned Features
+            </Link>
+            <Link
+              color="white"
+              href="/blog/3/designs"
+              title="Commit Rocket Designs"
+              underline
+            >
+              Designs
             </Link>
             <Link
               color="white"
@@ -77,6 +101,14 @@ const Footer = () => {
               underline
             >
               About Us
+            </Link>
+            <Link
+              color="white"
+              href="/contact"
+              title="Contact us!"
+              underline
+            >
+              Contact
             </Link>
           </div>
         </div>

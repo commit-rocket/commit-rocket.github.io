@@ -63,9 +63,9 @@ export default function App({ Component, pageProps, router }: AppProps) {
               reduceMotion={reduceMotion}
               {...pageProps}
             />
+            <Footer />
           </motion.div>
         </AnimatePresence>
-        <Footer />
       </div>
     </MotionConfig>
   );

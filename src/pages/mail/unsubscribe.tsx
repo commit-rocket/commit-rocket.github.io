@@ -10,6 +10,8 @@ import Button from "@/components/controls/Button";
 import { Page } from "@/types/page";
 import { backend } from "@/utils/wretch";
 import { BackendResponse } from "@/api/models/Response";
+import Input from "@/components/controls/Input";
+import Form from "@/components/controls/Form";
 
 const unsubscribeSchema = z.object({
   email: z.string().email().min(3)
@@ -62,42 +64,30 @@ const UnsubscribePage: Page = ({ }) => {
         <title>Commit Rocket</title>
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="unsubscribe">
-        <form className="flex flex-col gap-4 p-4 text-center rounded-md shadow shadow-black/25 bg-primary/25" onSubmit={submit}>
+        <Form
+          className="flex flex-col gap-4 p-8 text-center border-2 rounded-md border-primary"
+          onSubmit={submit}
+          success={response?.success}
+          successChildren={`${response?.message} 👍`}
+          oneTime
+        >
           <h1 id="unsubscribe" className="text-5xl text-secondary">Unsubscribe</h1>
-          <p className="max-w-md">Once you unsubscribe you won't receive any more emails from us and your email will be immediately deleted from our records.</p>
-          <AnimatePresence mode="wait">
-            {(!response || response.success === false) && <motion.div
-              key="form"
-              className="flex flex-col gap-4"
-              variants={fadeAnim}
-              initial="in"
-              animate="anim"
-              exit="exit"
-            >
-              <input
-                className="p-2 border-2 rounded-md border-primary"
-                placeholder="your@email.com"
-                {...register("email")}
-              />
-              <Button type="submit" color="secondary">
-                {!loading
-                  ? "Unsubscribe"
-                  : <ArrowPathIcon className="w-6 h-6 animate-spin" />
-                }
-              </Button>
-            </motion.div>}
-            {(response && response.success) && <motion.div
-              key="success"
-              className="py-4 text-xl font-semibold text-green-500 rounded-md bg-fill"
-              variants={fadeAnim}
-              initial="in"
-              animate="anim"
-              exit="exit"
-            >
-              {response.message} 👍
-            </motion.div>}
-          </AnimatePresence>
-        </form>
+          <p className="max-w-md">
+            Once you unsubscribe you won't receive any more emails from us and your email will be immediately deleted from our records.
+          </p>
+          <Input
+            color="secondary"
+            variant="outlined"
+            placeholder="your@email.com"
+            {...register("email")}
+          />
+          <Button type="submit" color="secondary">
+            {!loading
+              ? "Unsubscribe"
+              : <ArrowPathIcon className="w-6 h-6 animate-spin" />
+            }
+          </Button>
+        </Form>
       </main>
     </>
   );

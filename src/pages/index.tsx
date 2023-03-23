@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 
 import LogoPicture from "@/assets/images/brand/commit-rocket-logo.webp";
 
-import { Page } from "@/types/page";
 import LinkButton from "@/components/controls/LinkButton";
 
 import missions from "@/assets/state/missions";
 import SignupSection from "@/components/pages/front/SignupSection";
-import FeedbackSection from "@/components/pages/front/FeedbackSection";
+import SectionCard from "@/components/pages/front/SectionCard";
+
+import { Page } from "@/types/page";
 
 const logoAnim = {
   initial: {
@@ -42,8 +43,8 @@ const FrontPage: Page = ({ }) => {
             <p className="text-lg lg:text-xl lg:max-w-xl">
               Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
             </p>
-            <LinkButton href="#try-it-yourself" color="secondary" className="px-5 py-3 text-xl" scroll={false}>
-              Try it Yourself
+            <LinkButton href="#sign-up" color="secondary" className="px-5 py-3 text-xl" scroll={false}>
+              Sign Up!
             </LinkButton>
           </div>
           <div className="relative overflow-hidden flex items-center justify-center w-full min-h-[20rem] max-h-[40dvh] max-h-[40vh] xl:min-h-0 xl:h-full xl:max-h-full xl:w-2/5" style={{ aspectRatio: `${LogoPicture.width} / ${LogoPicture.height}` }}>
@@ -59,24 +60,18 @@ const FrontPage: Page = ({ }) => {
           </div>
         </section>
         <div className="flex flex-row gap-12 py-16 mx-auto text-center">
-          <section
-            aria-labelledby="our-goal"
-            className="flex flex-col flex-1 gap-4 p-4 bg-center border-2 rounded-lg image-dots bg-primary text-primary-contrast border-primary-light from-primary-light"
+          <SectionCard
+            headerId="our-goal"
+            headerChildren="Our Goal"
           >
-            <h2 id="our-goal" className="text-2xl font-semibold">
-              Our Goal
-            </h2>
             Our main goal with Commit Rocket is to drive innovation and provide a modern and fast alternative to existing Git clients. We want to improve the user experience for developers by creating an open-source and cross-platform tool that is both feature-rich and beginner-friendly.
-          </section>
-          <section
-            aria-labelledby="why-another-git-client"
-            className="flex flex-col flex-1 gap-4 p-4 bg-center border-2 rounded-lg image-dots bg-primary text-primary-contrast border-primary-light from-primary-light"
+          </SectionCard>
+          <SectionCard
+            headerId="why-another-git-client"
+            headerChildren="Why another Git client?"
           >
-            <h2 id="why-another-git-client" className="text-2xl font-semibold">
-              Why another Git client?
-            </h2>
             At Commit Rocket, we believe that the current generation of Git clients is outdated and slow. We want to change that by providing a sleek and fast client that meets the needs of today's developers. Our commitment to open-source development and cross-platform compatibility sets us apart from other clients in the market.
-          </section>
+          </SectionCard>
         </div>
         <section
           aria-labelledby="mission"
@@ -89,7 +84,7 @@ const FrontPage: Page = ({ }) => {
             Mission
           </h2>
           <div className="flex flex-col flex-wrap justify-between w-full gap-12 lg:flex-row">
-            {missions.map(({ title, image, text }, i) => (
+            {missions.map(({ title, image, imageAlt, text }, i) => (
               <div key={i} className="flex flex-col items-center flex-1 gap-4">
                 <h3 className="text-2xl text-primary md:text-3xl lg:h-[5ex] motion-safe:transition-all">
                   {title}
@@ -97,18 +92,19 @@ const FrontPage: Page = ({ }) => {
                 <img
                   className="w-full sm:w-2/3 lg:w-full text-[0px]"
                   loading="lazy"
-                  alt="mission"
+                  alt={imageAlt}
                   src={image.src}
                   width={image.width}
                   height={image.height}
                 />
-                <p className="text-lg">{text}</p>
+                <div aria-label="Mission description" className="text-lg">
+                  {text}
+                </div>
               </div>
             ))}
           </div>
         </section>
         <SignupSection />
-        <FeedbackSection />
       </main>
     </>
   );

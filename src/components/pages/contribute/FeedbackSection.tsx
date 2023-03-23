@@ -13,6 +13,7 @@ import Error from "@/components/controls/Error";
 import Link from "@/components/navigation/Link";
 import { backend } from "@/utils/wretch";
 import TextArea from "@/components/controls/TextArea";
+import Form from "@/components/controls/Form";
 
 const feedbackSchema = z.object({
   text: z.string()
@@ -78,38 +79,31 @@ const FeedbackSection = () => {
           Want to help us out without signing up? You can send us feedback directly by filling in your feedback below!
         </p>
       </section>
-      <form aria-label="feedback-inbox" className="flex flex-col items-center gap-4" onSubmit={submit}>
-        <AnimatePresence mode="wait">
-          {(!response || response.success === false) && <motion.div className="flex flex-col items-center w-full gap-4">
-            <TextArea
-              color="primary"
-              variant="outlined"
-              className="w-full p-4 text-lg rounded-lg md:text-xl h-fit min-h-[3.25em] max-h-[50ex]"
-              placeholder="I would like this feature!"
-              rows={5}
-              {...register("text")}
-            />
-            <Error className="w-full px-2 text-start" state={formState} name="text" />
-            <Button type="submit" color="secondary" className="px-5 py-3 text-lg md:text-xl w-fit">
-              {!loading
-                ? "Submit Feedback"
-                : <ArrowPathIcon className="w-6 h-6 animate-spin" />
-              }
-            </Button>
-          </motion.div>}
-          {(response && response.success) && <motion.div
-            key="success"
-            className="p-4 my-8 text-xl font-semibold text-green-500 rounded-md bg-primary/10"
-            variants={fadeAnim}
-            initial="in"
-            animate="anim"
-            exit="exit"
-          >
-            🎉 {response.message} 🎉
-          </motion.div>}
-        </AnimatePresence>
+      <Form
+        aria-label="feedback-inbox"
+        className="flex flex-col items-center gap-4"
+        onSubmit={submit}
+        success={response?.success}
+        successChildren={`🎉 ${response?.message} 🎉`}
+        oneTime
+      >
+        <TextArea
+          color="primary"
+          variant="outlined"
+          className="w-full p-4 text-lg rounded-lg md:text-xl h-fit min-h-[3.25em] max-h-[50ex]"
+          placeholder="I would like this feature!"
+          rows={5}
+          {...register("text")}
+        />
+        <Error className="w-full px-2 text-start" state={formState} name="text" />
+        <Button type="submit" color="secondary" className="px-5 py-3 text-lg md:text-xl w-fit">
+          {!loading
+            ? "Submit Feedback"
+            : <ArrowPathIcon className="w-6 h-6 animate-spin" />
+          }
+        </Button>
         <p role="note">Alternatively you can send an email to <Link color="primary" href="mailto:feedback@commitrocket.com" underline>feedback@commitrocket.com</Link></p>
-      </form>
+      </Form>
     </section>
   );
 };

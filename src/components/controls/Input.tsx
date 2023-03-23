@@ -10,13 +10,19 @@ export const style = cva("rounded-full py-2 px-3", {
       outlined: "border-2"
     },
     color: {
-      primary: ""
+      primary: "",
+      secondary: ""
     },
   },
   compoundVariants: [
     {
       className: "border-primary bg-white",
       color: "primary",
+      variant: "outlined"
+    },
+    {
+      className: "border-secondary bg-white",
+      color: "secondary",
       variant: "outlined"
     }
   ],

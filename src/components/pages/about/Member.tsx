@@ -5,20 +5,21 @@ import LinkButton from "@/components/controls/LinkButton";
 
 const Member = ({ image, name, title, text, links, animate }: IMember & { animate: boolean; }) => (
   <li
-    className="flex flex-col items-center w-full max-w-full gap-2 p-4 rounded-md shadow motion-safe:transition-all sm:p-6 md:w-fit shadow-primary"
+    className="flex flex-col items-center w-full max-w-full gap-2 p-4 border-2 rounded-md border-primary-light motion-safe:transition-all sm:p-6 md:w-fit"
     aria-label="Member"
   >
     <div className="flex flex-col items-center max-w-full gap-2 sm:flex-row md:flex-col">
       <img
         className="object-cover w-40 h-40 rounded-full shadow-md aspect-auto md:w-60 md:h-60"
-        aria-label="Link"
+        aria-label=""
+        alt=""
         src={image.src}
         width={image.width}
         height={image.height}
       />
-      <div className="flex flex-col max-w-full gap-2 py-4 text-center w-72 md:py-0">
+      <div className="flex flex-col max-w-full gap-2 py-4 text-center w-72">
         <p className="text-2xl font-semibold text-secondary" aria-label="Name">{name}</p>
-        <p className="font-semibold text-primary" aria-label="Title / Role">{title}</p>
+        <p className="font-semibold text-secondary" aria-label="Title / Role">{title}</p>
         <p className="text-fill-contrast " aria-label="Text">{text}</p>
       </div>
     </div>
