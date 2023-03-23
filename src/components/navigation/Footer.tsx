@@ -5,7 +5,7 @@ import Logo from "@/assets/images/brand/logo-200x200.webp";
 const Footer = () => {
   return (
     <footer className="flex items-center justify-center text-primary-contrast">
-      <div className="flex flex-col w-full gap-4 p-8 border-2 max-w-7xl rounded-t-md bg-primary bg-dots from-primary-light border-primary-light">
+      <div className="flex flex-col w-full gap-4 p-8 border-2 max-w-7xl rounded-t-md bg-primary image-dots from-primary-light border-primary-light">
         <div className="flex flex-col items-center gap-2 p-2 rounded-md bg-white/20 sm:flex-row">
           <div className="flex items-center gap-2">
             <img
