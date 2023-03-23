@@ -90,11 +90,8 @@ const SignupSection = () => {
           />
           <Error className="w-full px-2 text-start" state={formState} name="email" />
         </div>
-        <Button type="submit" disabled={loading} color="secondary" className="px-5 py-3 text-lg md:text-xl w-fit">
-          {!loading
-            ? "Keep me up-to-date!"
-            : <ArrowPathIcon className="w-6 h-6 animate-spin" />
-          }
+        <Button type="submit" loading={loading} color="secondary" className="relative px-5 py-3 text-lg md:text-xl w-fit">
+          Keep me up-to-date!
         </Button>
         <p role="note">
           Tired of our updates? You can always <Link color="primary" href="/mail/unsubscribe" underline>unsubscribe</Link>!

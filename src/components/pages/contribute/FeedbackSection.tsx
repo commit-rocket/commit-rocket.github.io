@@ -96,11 +96,8 @@ const FeedbackSection = () => {
           {...register("text")}
         />
         <Error className="w-full px-2 text-start" state={formState} name="text" />
-        <Button type="submit" color="secondary" className="px-5 py-3 text-lg md:text-xl w-fit">
-          {!loading
-            ? "Submit Feedback"
-            : <ArrowPathIcon className="w-6 h-6 animate-spin" />
-          }
+        <Button type="submit" color="secondary" loading={loading} className="px-5 py-3 text-lg md:text-xl w-fit">
+          Submit Feedback
         </Button>
         <p role="note">Alternatively you can send an email to <Link color="primary" href="mailto:feedback@commitrocket.com" underline>feedback@commitrocket.com</Link></p>
       </Form>
