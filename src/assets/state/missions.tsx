@@ -6,7 +6,7 @@ import FastAndFeaturePackedPicture from "@/assets/images/content/missions/fast-a
 import CrossPlatformPicture from "@/assets/images/content/missions/cross-platform.webp";
 import Link from "@/components/navigation/Link";
 
-interface IMission {
+export interface IMission {
   title: string;
   image: StaticImageData;
   imageAlt: string;

@@ -1,16 +1,18 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
 
+import missions from "@/assets/state/missions";
 import LogoPicture from "@/assets/images/brand/commit-rocket-logo.webp";
 import LogoSmall from "@/assets/images/brand/logo-200x200.webp";
 
 import LinkButton from "@/components/controls/LinkButton";
 
-import missions from "@/assets/state/missions";
 import SignupSection from "@/components/pages/front/SignupSection";
-import SectionCard from "@/components/pages/front/SectionCard";
+import Mission from "@/components/pages/front/Mission";
 
 import { Page } from "@/types/page";
+import roadmap from "@/assets/state/roadmap";
+import RoadmapItem from "@/components/pages/front/RoadmapItem";
 
 const logoAnim = {
   initial: {
@@ -82,8 +84,10 @@ const FrontPage: Page = ({ }) => {
               Our main focus is on creating a modern design and speed without sacrificing any of the features you love.
             </p>
             <p>
-              "Why another Git client?" - Our aim is to improve the stale nature of current git clients that often look old, are inefficient and haven't changed in years!
-              With Commit Rocket, we want to bring innovation to the table, with an open-source and cross-platform client.
+              "Why another Git client?" - Our goal with Commit Rocket is to provide a fresh and innovative approach to Git clients,
+              addressing the outdated and inefficient nature of many current options.
+              As an open-source and cross-platform client,
+              we aim to provide a real alternative to popular choices like GitKraken, Github Desktop, and SourceTree.
             </p>
             <p>
               This means that everyone will have access to our code and anyone can contribute to make it the best it can be.
@@ -95,37 +99,38 @@ const FrontPage: Page = ({ }) => {
           </div>
         </section>
         <section
-          aria-labelledby="mission"
+          aria-labelledby="missions"
           className="flex flex-col gap-12 mx-auto text-center"
         >
           <h2
-            id="mission"
+            id="missions"
             className="text-4xl font-bold md:text-5xl text-secondary"
           >
             Mission
           </h2>
-          <p>
+          <p className="text-lg font-semibold">
             Our main goal with Commit Rocket is to drive innovation and provide a modern and fast alternative to existing Git clients.
             We want to improve the user experience for developers by creating an open-source and cross-platform tool that is both feature-rich and beginner-friendly.
           </p>
           <ul className="flex flex-col flex-wrap justify-between w-full gap-12 lg:flex-row">
-            {missions.map(({ title, image, imageAlt, text }, i) => (
-              <li key={i} className="flex flex-col items-center flex-1 gap-4 p-8 border-2 rounded-lg border-secondary">
-                <h3 className="text-2xl text-primary md:text-3xl lg:h-[5ex] motion-safe:transition-all">
-                  {title}
-                </h3>
-                <img
-                  className="w-full sm:w-2/3 lg:w-full text-[0px]"
-                  loading="lazy"
-                  alt={imageAlt}
-                  src={image.src}
-                  width={image.width}
-                  height={image.height}
-                />
-                <div aria-label="Mission description" className="text-lg">
-                  {text}
-                </div>
-              </li>
+            {missions.map((mission, i) => (
+              <Mission key={i} {...mission} />
+            ))}
+          </ul>
+        </section>
+        <section
+          aria-labelledby="roadmap"
+          className="flex flex-col gap-4"
+        >
+          <h2
+            id="roadmap"
+            className="text-4xl font-bold text-center md:text-5xl text-secondary"
+          >
+            Roadmap
+          </h2>
+          <ul>
+            {roadmap.map((roadmapItem, i) => (
+              <RoadmapItem key={i} {...roadmapItem} />
             ))}
           </ul>
         </section>

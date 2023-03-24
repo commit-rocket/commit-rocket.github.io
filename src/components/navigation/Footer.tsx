@@ -47,21 +47,29 @@ const Footer = () => {
             </Link>
             <Link
               color="white"
+              href="/#roadmap"
+              title="Commit Rocket Roadmap"
+              underline
+            >
+              Roadmap
+            </Link>
+            <Link
+              color="white"
               href="/blog/2/planned-features"
               title="Planned Features"
               underline
             >
               Planned Features
             </Link>
-            <Link
+            {/* <Link
               color="white"
               href="/blog/3/designs"
               title="Commit Rocket Designs"
               underline
             >
               Designs
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               color="white"
               href="https://github.com/commit-rocket/commit-rocket"
               title="Commit Rocket Source-Code"
@@ -69,7 +77,7 @@ const Footer = () => {
               external
             >
               Github
-            </Link>
+            </Link> */}
           </div>
           <div className="flex flex-col">
             <p className="mb-2 text-lg font-semibold">Website</p>
