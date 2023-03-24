@@ -49,7 +49,7 @@ const SignupSection = () => {
   return (
     <section
       aria-labelledby="try-it-yourself"
-      className="flex flex-col gap-12 py-16 mx-auto text-center max-w-7xl"
+      className="flex flex-col gap-12 mx-auto text-center max-w-7xl"
     >
       <h2
         id="sign-up"

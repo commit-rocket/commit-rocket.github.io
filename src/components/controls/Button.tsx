@@ -9,6 +9,7 @@ import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
 export const style = cva("relative flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-full", {
   variants: {
     color: {
+      white: "bg-neutral-200 hover:bg-neutral-50 border-2 border-neutral-400 text-neutral-900",
       secondary: "bg-secondary hover:bg-secondary-light border-2 border-secondary-dark text-secondary-contrast"
     }
   }
@@ -51,7 +52,7 @@ const Button = forwardRef(({ className, color, loading, children, disabled, ...p
     () => twMerge(style({ color }), className),
     [className, color]
   );
-  
+
   return (
     <button ref={ref} className={computedClassName} disabled={loading || disabled} {...props}>
       {!loading && children}
