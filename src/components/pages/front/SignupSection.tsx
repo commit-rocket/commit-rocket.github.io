@@ -1,11 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AnimatePresence, motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import dynamic from "next/dynamic";
 import { z } from "zod";
-
-const ArrowPathIcon = dynamic(() => import("@heroicons/react/24/solid/ArrowPathIcon"));
 
 import { BackendResponse } from "@/api/models/Response";
 import perks from "@/assets/state/perks";
@@ -23,7 +19,6 @@ const signupSchema = z.object({
 const signupSchemaResolver = zodResolver(signupSchema);
 
 type SignupSchema = z.infer<typeof signupSchema>;
-
 
 const SignupSection = () => {
   const { handleSubmit, register, formState } = useForm<SignupSchema>({
@@ -48,7 +43,7 @@ const SignupSection = () => {
 
   return (
     <section
-      aria-labelledby="try-it-yourself"
+      aria-labelledby="sign-up"
       className="flex flex-col gap-12 mx-auto text-center max-w-7xl"
     >
       <h2

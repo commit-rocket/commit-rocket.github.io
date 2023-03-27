@@ -65,7 +65,7 @@ const FeedbackSection = () => {
   return (
     <section
       aria-labelledby="feedback"
-      className="flex flex-col w-full gap-4 py-16 mx-auto text-center max-w-7xl"
+      className="flex flex-col w-full gap-4 mx-auto text-center max-w-7xl"
     >
       <h2
         id="feedback"
@@ -73,12 +73,11 @@ const FeedbackSection = () => {
       >
         Feedback
       </h2>
-      <section aria-labelledby="anon-feedback" className="flex flex-col gap-4">
-        <h3 id="anon-feedback" className="text-2xl text-primary md:text-3xl">Anonymous feedback</h3>
-        <p className="text-xl">
-          Want to help us out without signing up? You can send us feedback directly by filling in your feedback below!
-        </p>
-      </section>
+      <p>
+        We welcome your input and ideas!
+        Feel free to share your feedback and suggestions with us through our anonymous feedback form. <br />
+        You can also reach out to us via email at <Link color="primary" href="mailto:feedback@commitrocket.com" underline>feedback@commitrocket.com</Link>.
+      </p>
       <Form
         aria-label="feedback-inbox"
         className="flex flex-col items-center gap-4"
@@ -99,7 +98,6 @@ const FeedbackSection = () => {
         <Button type="submit" color="secondary" loading={loading} className="px-5 py-3 text-lg md:text-xl w-fit">
           Submit Feedback
         </Button>
-        <p role="note">Alternatively you can send an email to <Link color="primary" href="mailto:feedback@commitrocket.com" underline>feedback@commitrocket.com</Link></p>
       </Form>
     </section>
   );

@@ -52,14 +52,17 @@ const Header = () => {
         <NavLink href="/" currentHref={router.pathname}>
           Home
         </NavLink>
-        <NavLink href="/about" currentHref={router.pathname}>
-          About
-        </NavLink>
         <NavLink href="/contribute" currentHref={router.pathname}>
           Contribute
         </NavLink>
         <NavLink href="/blog" currentHref={router.pathname}>
           Blog
+        </NavLink>
+        <NavLink href="/about" currentHref={router.pathname}>
+          About
+        </NavLink>
+        <NavLink href="/contact" currentHref={router.pathname}>
+          Contact
         </NavLink>
       </div>
     </header>

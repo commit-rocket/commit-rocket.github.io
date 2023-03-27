@@ -4,7 +4,6 @@ import RikPicture from "@/assets/images/people/rik.webp";
 export interface IMember {
   name: string;
   title: string;
-  text: string;
   image: StaticImageData;
   links: {
     name: string;
@@ -17,7 +16,6 @@ const members: IMember[] = [
     image: RikPicture,
     name: "Rik",
     title: "Lead Developer & Founder",
-    text: "As the creator of the project, I am passionate about delivering a top-quality Git client that meets the needs of developers everywhere.",
     links: [
       {
         href: "https://github.com/Rikthepixel",

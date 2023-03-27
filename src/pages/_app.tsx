@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import '@/styles/main.css';
+
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, MotionConfig, AnimatePresence } from "framer-motion";
 import type { AppProps } from 'next/app';
 import Head from "next/head";
@@ -7,7 +9,6 @@ import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
-import '@/styles/main.css';
 
 const pageTransition = {
   duration: .35,
@@ -39,6 +40,23 @@ export default function App({ Component, pageProps, router }: AppProps) {
     previousPathname.current = router.pathname;
   }, [router.pathname]);
 
+  const onAnimFinished = useCallback(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    // Ensure that target has time to render
+    setTimeout(() => {
+      const targetElement = document.querySelector(hash);
+      if (!targetElement) return;
+
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: 'start',
+        inline: 'nearest'
+      });
+    }, 1);
+  }, []);
+
   return (
     <MotionConfig reducedMotion="user">
       <Head>
@@ -47,7 +65,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
       <GoogleAnalytics />
       <div className="flex flex-col font-sans">
         <Header />
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" onExitComplete={onAnimFinished}>
           <motion.div
             key={router.pathname}
             className="flex flex-col items-center flex-1 w-full px-8"

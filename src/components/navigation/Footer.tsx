@@ -53,14 +53,14 @@ const Footer = () => {
             >
               Roadmap
             </Link>
-            <Link
+            {/* <Link
               color="white"
               href="/blog/2/planned-features"
               title="Planned Features"
               underline
             >
               Planned Features
-            </Link>
+            </Link> */}
             {/* <Link
               color="white"
               href="/blog/3/designs"
@@ -108,7 +108,7 @@ const Footer = () => {
               title="About the creators of Commit Rocket"
               underline
             >
-              About Us
+              About
             </Link>
             <Link
               color="white"
