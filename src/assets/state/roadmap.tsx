@@ -9,7 +9,7 @@ export interface IRoadmapItem {
 // NOTE: This list is assumed to be in order
 export default [
   {
-    title: "April",
+    title: "Q2 2023",
     text: <>
       <h4 id="roadmap-designs" className="font-semibold">Designs</h4>
       <p aria-labelledby="roadmap-designs">
@@ -24,14 +24,16 @@ export default [
         This will involve testing various libraries and designs to ensure that we create the best possible product.
         We will also decide on licensing and monetization strategies during this month.
       </p>
-    </>
-  },
-  {
-    title: "May",
-    text: <>
       <h4 id="roadmap-discord-server" className="font-semibold">Opening Discord Server</h4>
       <p aria-labelledby="roadmap-discord-server">
         To encourage an active community, we plan to launch a public Discord server where users can freely exchange ideas and communicate directly with the development team.
+      </p>
+      <h4 id="roadmap-active-development" className="font-semibold">Active Development</h4>
+      <p aria-labelledby="roadmap-active-development">
+        During the months of June, July, and August, we will be fully focused on active development of Commit Rocket,
+        with the goal of releasing an early version of the Git client.
+        Our team will be working tirelessly during this period to ensure that the client meets our high standards.
+        We will also continue to provide regular development updates during these months to keep our community informed and engaged.
       </p>
       <h4 id="roadmap-insight-videos-on-development" className="font-semibold">Insight Videos on Development</h4>
       <p aria-labelledby="roadmap-insight-videos-on-development">
@@ -40,26 +42,15 @@ export default [
     </>
   },
   {
-    title: "June, July & August",
+    title: "Q3 & Q4 2023",
     text: <>
-      <h4 id="roadmap-active-development" className="font-semibold">Active Development</h4>
-      <p aria-labelledby="roadmap-active-development">
-        During the months of June, July, and August, we will be fully focused on active development of Commit Rocket,
-        with the goal of releasing an early version of the Git client.
-        Our team will be working tirelessly during this period to ensure that the client meets our high standards.
-        We will also continue to provide regular development updates during these months to keep our community informed and engaged.
-      </p>
+
       <h4 id="roadmap-early-access-release" className="font-semibold">Ealy Access Releases</h4>
       <p aria-labelledby="roadmap-early-access-release">
         Early access versions of Commit Rocket will be made available exclusively to our mailing list subscribers and Discord members.
         To ensure a smooth user experience, we encourage users to share their feedback and feature requests with us via our Discord server and <Link color="primary" href="mailto:feedback@commitrocket.com" underline>our email</Link>.
         As the product is still subject to changes, we appreciate our users' contributions in helping us shape the final product.
       </p>
-    </>
-  },
-  {
-    title: "September",
-    text: <>
       <h4 id="roadmap-alpha-version" className="font-semibold">Alpha Version</h4>
       <p aria-labelledby="roadmap-alpha-version">
         If everything goes according to plan, our goal is to release a public alpha version of Commit Rocket by September.
@@ -69,7 +60,7 @@ export default [
     </>
   },
   {
-    title: "October, November, December",
+    title: "2024",
     text: <>
       <p>
         After the alpha release, we will continue to enhance Commit Rocket by taking feedback from our users and working on the client.
