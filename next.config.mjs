@@ -10,7 +10,8 @@ const bundleAnalyzer = withBundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  compress: true
+  compress: true,
+  output: "export"
 };
 
 export default withPlugins([bundleAnalyzer], nextConfig);

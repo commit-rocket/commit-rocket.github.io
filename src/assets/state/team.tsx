@@ -11,8 +11,8 @@ export interface IMember {
   }[];
 }
 
-const members: IMember[] = [
-  {
+export const people = {
+  "rik": {
     image: RikPicture,
     name: "Rik",
     title: "Lead Developer & Founder",
@@ -35,6 +35,8 @@ const members: IMember[] = [
       }
     ]
   }
-];
+} satisfies Record<string, IMember>;
+
+const members = Object.values<IMember>(people);
 
 export default members;
