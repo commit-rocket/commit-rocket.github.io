@@ -1,3 +1,4 @@
+import { cva } from "class-variance-authority";
 import { ReactNode } from "react";
 import Link from "./Link";
 
@@ -7,11 +8,19 @@ export interface NavLinkProps {
   children: ReactNode;
 }
 
+export const style = cva(`
+  text-lg font-bold py-2
+  aria-[current='page']:text-primary-light 
+  group-data-[in-group='true']/dropdown:text-base group-data-[in-group='true']/dropdown:py-0
+`);
+
+const CLASSNAME = style();
+
 const NavLink = ({ href, currentHref, children }: NavLinkProps) => {
   const active = currentHref === href;
   return (
     <Link
-      className="text-lg font-bold py-2 border-y border-primary hover:border-primary-dark aria-[current='page']:text-primary-light aria-[current='page']:border-primary first-of-type:border-t-2 last-of-type:border-b-2 md:border-0 md:first-of-type:border-t-0 md:last-of-type:border-b-0"
+      className={CLASSNAME}
       aria-current={active ? "page" : undefined}
       color="primary"
       href={href}
@@ -22,4 +31,4 @@ const NavLink = ({ href, currentHref, children }: NavLinkProps) => {
 };
 
 
-export default NavLink
+export default NavLink;

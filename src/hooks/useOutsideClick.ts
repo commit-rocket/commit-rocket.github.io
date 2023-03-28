@@ -10,6 +10,7 @@ const useOutsideClick = (refs: (RefObject<Element> | MutableRefObject<Element>)[
         if (!event.target || !ref.current) return true;
         return ref.current.contains(event.target as Element);
       });
+
       if (isContained) return;
 
       handlerRef.current(event);

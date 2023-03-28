@@ -8,6 +8,7 @@ import Link from "./Link";
 import Button from "../controls/Button";
 import NavLink from "./NavLink";
 import useOutsideClick from "@/hooks/useOutsideClick";
+import NavDropdown from "./NavDropdown";
 
 const Header = () => {
   const router = useRouter();
@@ -37,6 +38,7 @@ const Header = () => {
         ref={buttonRef}
         className="p-2 ml-auto rounded-full md:hidden"
         color="secondary"
+        aria-label="Expands the header"
         aria-expanded={open}
         aria-controls="header-items"
         onClick={() => setOpen(!open)}
@@ -45,7 +47,7 @@ const Header = () => {
       </Button>
       <div
         ref={itemsContainerRef}
-        className="absolute flex flex-col bg-fill gap-0 p-4 top-full inset-x-4 rounded-md shadow shadow-primary z-10 data-[expanded='false']:hidden md:data-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:shadow-none md:static md:bg-transparent md:gap-12"
+        className="absolute flex flex-col bg-fill gap-0 p-4 top-full inset-x-4 rounded-md border-2 border-primary z-10 data-[expanded='false']:hidden md:data-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:border-none md:static md:bg-transparent md:gap-12"
         id="header-items"
         data-expanded={open}
       >
@@ -58,12 +60,14 @@ const Header = () => {
         <NavLink href="/blog" currentHref={router.pathname}>
           Blog
         </NavLink>
-        <NavLink href="/about" currentHref={router.pathname}>
-          About
-        </NavLink>
-        <NavLink href="/contact" currentHref={router.pathname}>
-          Contact
-        </NavLink>
+        <NavDropdown summary="More">
+          <NavLink href="/about" currentHref={router.pathname}>
+            About
+          </NavLink>
+          <NavLink href="/contact" currentHref={router.pathname}>
+            Contact
+          </NavLink>
+        </NavDropdown>
       </div>
     </header>
   );

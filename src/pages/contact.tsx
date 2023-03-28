@@ -23,11 +23,12 @@ const ContactPage: Page = ({ }) => {
                   className={`flex flex-col items-center ${method.href ? "" : style({ color: "primary", underline: true })}`}
                   //@ts-ignore
                   href={method.href}
-                  scroll={true}
-                  underline={Boolean(method.href)}
+                  scroll={method.href ? true : undefined}
+                  underline={method.href ? true : undefined}
                 >
                   <method.icon
                     className="w-16 h-16 md:w-24 md:h-24"
+                    aria-label={method.iconAlt}
                   />
                   <p className="font-bold text-center md:text-lg">
                     {method.title}

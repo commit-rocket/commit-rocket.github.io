@@ -11,23 +11,27 @@ interface IContactMethod {
   title: ReactNode;
   href?: string;
   icon: React.ForwardRefExoticComponent<any>;
+  iconAlt: string;
 }
 
 const contactMethods: IContactMethod[] = [
   {
     title: "Newsletter Signup",
     href: "/#sign-up",
-    icon: NewsIcon
+    icon: NewsIcon,
+    iconAlt: "Newspaper icon",
   },
   {
     title: "feedback@commitrocket.com",
     href: "mailto:feedback@commitrocket.com",
-    icon: EnvelopeIcon
+    icon: EnvelopeIcon,
+    iconAlt: "Envelope icon"
   },
   {
     title: "Feedback Form",
     href: "/contribute#feedback",
-    icon: PencilSquareIcon
+    icon: PencilSquareIcon,
+    iconAlt: "Form icon"
   },
   {
     title: <>
@@ -36,7 +40,8 @@ const contactMethods: IContactMethod[] = [
         (Coming Soon™)
       </span>
     </>,
-    icon: DiscordIcon
+    icon: DiscordIcon,
+    iconAlt: "Discord icon"
   }
 ];
 
