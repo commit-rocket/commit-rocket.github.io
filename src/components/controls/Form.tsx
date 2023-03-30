@@ -1,23 +1,6 @@
 import { ReactNode } from "react";
 import { AnimatePresence, HTMLMotionProps, motion } from "framer-motion";
-
-const fadeAnim = {
-  in: {
-    opacity: 0
-  },
-  anim: {
-    opacity: 1,
-    transition: {
-      duration: 0.35
-    }
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.35
-    }
-  }
-} as const;
+import fadeAnim from "@/animations/fade";
 
 export interface FormProps extends HTMLMotionProps<"form"> {
   children: ReactNode;

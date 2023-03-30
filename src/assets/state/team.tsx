@@ -14,7 +14,7 @@ export interface IMember {
 export const people = {
   "rik": {
     image: RikPicture,
-    name: "Rik",
+    name: "Rik den Breejen",
     title: "Lead Developer & Founder",
     links: [
       {

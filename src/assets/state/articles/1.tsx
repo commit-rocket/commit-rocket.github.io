@@ -6,7 +6,7 @@ import thumbnail from "@/assets/images/content/blog/1/thumbnail.webp";
 
 export default {
   title: "1",
-  
+
   thumbnail,
   thumbnailAlt: "A placeholder thumbnail",
 
@@ -18,7 +18,7 @@ export default {
 
   author: people.rik,
 
-  teaser: "1",
+  teaser: "Lorem ipsum dolor sit amet consectetur Voluptates facere quasi repellat doloremque quae saepe?",
   content: <>
     1
   </>,

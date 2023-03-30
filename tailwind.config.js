@@ -28,12 +28,17 @@ module.exports = {
         },
         fill: {
           DEFAULT: "#FFE4CC",
-          contrast: "#282828"
+          contrast: {
+            light: "#474747",
+            DEFAULT: "#282828",
+            dark: "#191919"
+          }
         }
       }
     },
   },
   plugins: [
+    require('@headlessui/tailwindcss'),
     plugin(({ addVariant, addComponents }) => {
       addVariant("is", ":is(&)");
       addVariant("where", ":where(&)");

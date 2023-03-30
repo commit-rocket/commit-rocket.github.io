@@ -19,23 +19,6 @@ const unsubscribeSchema = z.object({
 const unsubscribeSchemaResolver = zodResolver(unsubscribeSchema);
 type UnsubscribeSchema = z.infer<typeof unsubscribeSchema>;
 
-const fadeAnim = {
-  in: {
-    opacity: 0
-  },
-  anim: {
-    opacity: 1,
-    transition: {
-      duration: 0.35
-    }
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.35
-    }
-  }
-} as const;
 
 const UnsubscribePage: Page = ({ }) => {
   const { handleSubmit, register, formState } = useForm<UnsubscribeSchema>({

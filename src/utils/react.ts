@@ -1,4 +1,4 @@
-import { isValidElement, ReactFragment, Fragment, ReactNode } from "react";
+import { isValidElement, ReactFragment, Fragment, ReactNode, LegacyRef, MutableRefObject, RefCallback } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 export const isFragment = (node: ReactNode): node is ReactFragment => {
@@ -20,4 +20,15 @@ export const reactNodeToString = (node: ReactNode): string => {
   };
 
   return String(node ?? "");
+};
+
+export const mergeRefs = <T = any>(...refs: Array<MutableRefObject<T> | LegacyRef<T> | undefined>): RefCallback<T> => (value) => {
+  refs.forEach((ref) => {
+    if (!ref) return;
+    if (typeof ref === "function") {
+      ref(value);
+    } else if (ref != null) {
+      (ref as React.MutableRefObject<T | null>).current = value;
+    }
+  });
 };

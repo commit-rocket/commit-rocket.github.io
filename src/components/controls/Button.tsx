@@ -5,12 +5,14 @@ import { twMerge } from "tailwind-merge";
 
 import { RequiredKeys } from "@/types/utility";
 import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
+import fadeAnim from "@/animations/fade";
 
-export const style = cva("relative flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-full", {
+export const style = cva("relative flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-full border-2", {
   variants: {
     color: {
-      white: "bg-neutral-200 hover:bg-neutral-50 border-2 border-neutral-400 text-neutral-900",
-      secondary: "bg-secondary hover:bg-secondary-light border-2 border-secondary-dark text-secondary-contrast"
+      white: "bg-neutral-200 hover:bg-neutral-50 border-neutral-400 text-neutral-900",
+      primary: "bg-primary hover:bg-primary-light border-primary-dark text-primary-contrast",
+      secondary: "bg-secondary hover:bg-secondary-light border-secondary-dark text-secondary-contrast"
     }
   }
 });
@@ -26,25 +28,6 @@ type ButtonProps = {
 } & BaseProps
   & RequiredKeys<VariantProps, "color">
   & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
-
-
-const fadeAnim = {
-  in: {
-    opacity: 0
-  },
-  anim: {
-    opacity: 1,
-    transition: {
-      duration: 0.35
-    }
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.35
-    }
-  }
-} as const;
 
 const Button = forwardRef(({ className, color, loading, children, disabled, ...props }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
 

@@ -4,6 +4,7 @@ import ArticleBrief, { IArticleBrief } from "@/components/pages/blog/ArticleBrie
 import { calculateReadtime } from "@/utils/readtime";
 import IArticle from "@/assets/state/articles/article";
 import { reactNodeToString } from "@/utils/react";
+import Head from "next/head";
 
 type ComputedArticle = {
   content: string;
@@ -19,6 +20,9 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article }) => {
 
   return (
     <>
+      <Head>
+        <title>{article.title} - Commit Rocket</title>
+      </Head>
       <h1 className="text-4xl font-semibold">{article.title}</h1>
       <div dangerouslySetInnerHTML={{
         __html: article.content

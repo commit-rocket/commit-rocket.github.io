@@ -6,11 +6,11 @@ html,
 body,
 #__next,
 #__next>div {
-  height: 100%
+  @apply flex flex-col flex-1;
 }
 
 html {
-  @apply bg-fill text-fill-contrast;
+  @apply min-h-full bg-fill text-fill-contrast;
 }
 
 details>summary {

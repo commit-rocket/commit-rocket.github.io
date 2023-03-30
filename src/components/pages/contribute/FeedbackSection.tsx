@@ -23,24 +23,6 @@ const feedbackSchemaResolver = zodResolver(feedbackSchema);
 
 type FeedbackSchema = z.infer<typeof feedbackSchema>;
 
-const fadeAnim = {
-  in: {
-    opacity: 0
-  },
-  anim: {
-    opacity: 1,
-    transition: {
-      duration: 0.35
-    }
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.35
-    }
-  }
-} as const;
-
 const FeedbackSection = () => {
   const { handleSubmit, register, formState } = useForm<FeedbackSchema>({
     resolver: feedbackSchemaResolver,

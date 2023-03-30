@@ -54,7 +54,7 @@ const NavDropdown = ({ summary, children }: NavDropdownProps) => {
           data-open={open}
         />
       </summary>
-      <div ref={containerRef} className="absolute inset-x-0 flex flex-col gap-2 px-4 py-2 border-2 rounded-md group/dropdown border-primary bg-fill md:w-fit" data-in-group>
+      <div ref={containerRef} className="absolute inset-x-0 flex flex-col gap-2 px-4 py-2 bg-white border-2 rounded-lg group/dropdown border-primary md:w-fit" data-in-group>
         {children}
       </div>
     </details>
