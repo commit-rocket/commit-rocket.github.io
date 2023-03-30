@@ -17,6 +17,7 @@ import Select, { ControlledSelect } from "@/components/controls/Select";
 
 import { calculateReadtime } from "@/utils/readtime";
 import fadeAnim from "@/animations/fade";
+import Heading from "@/components/layout/heading";
 
 interface BlogPageProps {
   articles: IArticleBrief[];
@@ -89,9 +90,9 @@ const BlogPage: Page<BlogPageProps> = ({ articles }) => {
         <title>Blog - Commit Rocket</title>
       </Head>
       <main aria-labelledby="blog" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
-        <h1 id="blog" className="text-4xl font-bold text-center lg:text-6xl text-secondary">
+        <Heading.H1 id="blog" className="text-centertext-secondary">
           Blog
-        </h1>
+        </Heading.H1>
         <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2">
           <Input
             type="text"

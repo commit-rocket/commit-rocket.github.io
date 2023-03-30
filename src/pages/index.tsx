@@ -13,6 +13,7 @@ import Mission from "@/components/pages/front/Mission";
 import { Page } from "@/types/page";
 import roadmap from "@/assets/state/roadmap";
 import RoadmapItem from "@/components/pages/front/RoadmapItem";
+import Heading from "@/components/layout/heading";
 
 const logoAnim = {
   initial: {
@@ -37,12 +38,12 @@ const FrontPage: Page = ({ }) => {
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">
         <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 xl:flex-row xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh] mx-auto">
           <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center xl:w-3/5">
-            <h1
+            <Heading.H1
               id="hero-title"
-              className="text-3xl font-bold lg:text-6xl text-primary"
+              className="text-primary"
             >
               <span className="text-secondary">Launch</span> your <span className="text-secondary">Commits</span> in a <span className="text-secondary">Modern</span> way
-            </h1>
+            </Heading.H1>
             <p className="text-lg lg:text-xl lg:max-w-xl">
               Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
             </p>
@@ -63,7 +64,7 @@ const FrontPage: Page = ({ }) => {
           </div>
         </section>
         <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg text-center border-2 rounded-lg xl:flex-row text-primary-contrast image-dots from-primary-light border-primary-light bg-primary">
-          <h2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-lg text-fill-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
+          <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-lg text-fill-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
             <span className="text-2xl">
               Introducing...
             </span>
@@ -77,7 +78,7 @@ const FrontPage: Page = ({ }) => {
               />
               Commit Rocket
             </span>
-          </h2>
+          </Heading.H2>
           <div className="flex flex-col w-full gap-4 text-lg font-semibold break-words xl:w-1/2">
             <p>
               A new and modern Git client that is currently in development.
@@ -102,12 +103,12 @@ const FrontPage: Page = ({ }) => {
           aria-labelledby="missions"
           className="flex flex-col gap-12 mx-auto text-center"
         >
-          <h2
+          <Heading.H2
             id="missions"
-            className="text-4xl font-bold md:text-5xl text-secondary"
+            className="text-secondary"
           >
             Mission
-          </h2>
+          </Heading.H2>
           <p className="text-lg font-semibold">
             Our main goal with Commit Rocket is to drive innovation and provide a modern and fast alternative to existing Git clients.
             We want to improve the user experience for developers by creating an open-source and cross-platform tool that is both feature-rich and beginner-friendly.
@@ -122,12 +123,12 @@ const FrontPage: Page = ({ }) => {
           aria-labelledby="roadmap"
           className="flex flex-col gap-4"
         >
-          <h2
+          <Heading.H2
             id="roadmap"
-            className="text-4xl font-bold text-center md:text-5xl text-secondary"
+            className="text-center text-secondary"
           >
             Roadmap
-          </h2>
+          </Heading.H2>
           <ul>
             {roadmap.map((roadmapItem, i) => (
               <RoadmapItem key={i} {...roadmapItem} />

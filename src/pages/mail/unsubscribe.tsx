@@ -12,6 +12,7 @@ import { backend } from "@/utils/wretch";
 import { BackendResponse } from "@/api/models/Response";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
+import Heading from "@/components/layout/heading";
 
 const unsubscribeSchema = z.object({
   email: z.string().email().min(3)
@@ -54,7 +55,9 @@ const UnsubscribePage: Page = ({ }) => {
           successChildren={`${response?.message} 👍`}
           oneTime
         >
-          <h1 id="unsubscribe" className="text-5xl text-secondary">Unsubscribe</h1>
+          <Heading.H1 id="unsubscribe" className="text-secondary">
+            Unsubscribe
+          </Heading.H1>
           <p className="max-w-md">
             Once you unsubscribe you won't receive any more emails from us and your email will be immediately deleted from our records.
           </p>

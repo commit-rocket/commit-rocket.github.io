@@ -1,4 +1,5 @@
 import { IMission } from "@/assets/state/missions";
+import Heading from "@/components/layout/heading";
 
 export interface MissionProps extends IMission {
 
@@ -7,9 +8,9 @@ export interface MissionProps extends IMission {
 const Mission = ({ title, image, imageAlt, text }: MissionProps) => {
   return (
     <li className="flex flex-col items-center flex-1 gap-4 p-8 border-2 rounded-lg border-secondary">
-      <h3 className="text-2xl text-primary md:text-3xl lg:h-[5ex] motion-safe:transition-all">
+      <Heading.H3 className="text-primary lg:h-[5ex] motion-safe:transition-all">
         {title}
-      </h3>
+      </Heading.H3>
       <img
         className="w-full sm:w-2/3 lg:w-full text-[0px]"
         loading="lazy"

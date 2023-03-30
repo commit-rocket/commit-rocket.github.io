@@ -11,6 +11,7 @@ import Link from "@/components/navigation/Link";
 import { backend } from "@/utils/wretch";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
+import Heading from "@/components/layout/heading";
 
 
 const signupSchema = z.object({
@@ -46,13 +47,13 @@ const SignupSection = () => {
       aria-labelledby="sign-up"
       className="flex flex-col gap-12 mx-auto text-center max-w-7xl"
     >
-      <h2
+      <Heading.H2
         id="sign-up"
-        className="text-4xl font-bold md:text-5xl text-secondary"
+        className="text-secondary"
       >
         Keep Up to Date <br />
         Join Our Mailing List
-      </h2>
+      </Heading.H2>
       <p className="text-xl">
         Do you want to join in on this adventure and help develop Commit Rocket?
         We value your input and look forward to involving you in the process of making Commit Rocket as optimal as possible.

@@ -1,11 +1,7 @@
-import dynamic from "next/dynamic";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-const ArrowPathIcon = dynamic(() => import("@heroicons/react/24/solid/ArrowPathIcon"));
 
 import { BackendResponse } from "@/api/models/Response";
 import Button from "@/components/controls/Button";
@@ -14,6 +10,7 @@ import Link from "@/components/navigation/Link";
 import { backend } from "@/utils/wretch";
 import TextArea from "@/components/controls/TextArea";
 import Form from "@/components/controls/Form";
+import Heading from "@/components/layout/heading";
 
 const feedbackSchema = z.object({
   text: z.string()
@@ -49,12 +46,12 @@ const FeedbackSection = () => {
       aria-labelledby="feedback"
       className="flex flex-col w-full gap-4 mx-auto text-center max-w-7xl"
     >
-      <h2
+      <Heading.H2
         id="feedback"
         className="text-4xl font-bold md:text-5xl text-secondary"
       >
         Feedback
-      </h2>
+      </Heading.H2>
       <p>
         We welcome your input and ideas!
         Feel free to share your feedback and suggestions with us through our anonymous feedback form. <br />

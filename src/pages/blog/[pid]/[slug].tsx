@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Page } from "@/types/page";
-import ArticleBrief, { IArticleBrief } from "@/components/pages/blog/ArticleBrief";
 import { calculateReadtime } from "@/utils/readtime";
 import IArticle from "@/assets/state/articles/article";
 import { reactNodeToString } from "@/utils/react";
 import Head from "next/head";
+import Heading from "@/components/layout/heading";
 
 type ComputedArticle = {
   content: string;
@@ -23,7 +23,9 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article }) => {
       <Head>
         <title>{article.title} - Commit Rocket</title>
       </Head>
-      <h1 className="text-4xl font-semibold">{article.title}</h1>
+      <Heading.H1 className="text-4xl font-semibold">
+        {article.title}
+      </Heading.H1>
       <div dangerouslySetInnerHTML={{
         __html: article.content
       }} />

@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 import { IMember } from "@/assets/state/team";
 import LinkButton from "@/components/controls/LinkButton";
 
