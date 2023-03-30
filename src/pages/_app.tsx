@@ -56,12 +56,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
       });
     }, 1);
   }, []);
+  console.log(router);
 
   return (
     <MotionConfig reducedMotion="user">
-      <Head>
-        <title>Commit Rocket</title>
-      </Head>
       <GoogleAnalytics />
       <div className="flex flex-col font-sans">
         <Header />
@@ -76,7 +74,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
             variants={reduceMotion ? {} : pageAnimation}
           >
             <Component
-              className=""
+              pathname={new URL(router.asPath, "http://example.com").pathname}
               initialLoad={initialLoad}
               reduceMotion={reduceMotion}
               {...pageProps}

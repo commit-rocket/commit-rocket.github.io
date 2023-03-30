@@ -13,11 +13,12 @@ import { Page } from "@/types/page";
 import ArticleBrief, { IArticleBrief } from "@/components/pages/blog/ArticleBrief";
 import LinkButton from "@/components/controls/LinkButton";
 import Input from "@/components/controls/Input";
-import Select, { ControlledSelect } from "@/components/controls/Select";
+import { ControlledSelect } from "@/components/controls/Select";
 
 import { calculateReadtime } from "@/utils/readtime";
 import fadeAnim from "@/animations/fade";
 import Heading from "@/components/layout/heading";
+import OgMeta from "@/components/head/OgMeta";
 
 interface BlogPageProps {
   articles: IArticleBrief[];
@@ -53,7 +54,7 @@ const filterSchemaResolver = zodResolver(filterSchema);
 
 type FilterSchema = z.infer<typeof filterSchema>;
 
-const BlogPage: Page<BlogPageProps> = ({ articles }) => {
+const BlogPage: Page<BlogPageProps> = ({ articles, ...props }) => {
   const { query } = useRouter();
 
   const { register, control } = useForm<FilterSchema>({
@@ -87,7 +88,10 @@ const BlogPage: Page<BlogPageProps> = ({ articles }) => {
   return (
     <>
       <Head>
-        <title>Blog - Commit Rocket</title>
+        <OgMeta
+          title="Blog - Commit Rocket"
+          path={props.pathname}
+        />
       </Head>
       <main aria-labelledby="blog" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
         <Heading.H1 id="blog" className="text-centertext-secondary">

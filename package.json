@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "analyze:build": "cross-env ANALYZE=true npm run build",
     "analyze:dev": "cross-env ANALYZE=true npm run dev",
     "script:gen-articles-index": "node ./scripts/generateArticlesIndex.js"

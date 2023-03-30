@@ -10,6 +10,8 @@ export default {
   thumbnail,
   thumbnailAlt: "A placeholder thumbnail",
 
+  vertical: "technology",
+
   slug: "1",
   tags: [
     tags.news,

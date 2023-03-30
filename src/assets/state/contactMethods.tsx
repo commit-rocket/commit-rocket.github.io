@@ -1,3 +1,5 @@
+import { ReactNode, RefAttributes, SVGProps } from "react";
+
 import NewsIcon from "@heroicons/react/24/solid/NewspaperIcon";
 import EnvelopeIcon from "@heroicons/react/24/solid/EnvelopeIcon";
 import PencilSquareIcon from "@heroicons/react/24/solid/PencilSquareIcon";
@@ -5,12 +7,11 @@ import PencilSquareIcon from "@heroicons/react/24/solid/PencilSquareIcon";
 import DiscordIcon from "@/assets/images/icons/discord";
 
 
-import { ReactNode } from "react";
 
 interface IContactMethod {
   title: ReactNode;
   href?: string;
-  icon: React.ForwardRefExoticComponent<any>;
+  icon: React.ForwardRefExoticComponent<any> | React.FC<SVGProps<SVGSVGElement> & RefAttributes<SVGSVGElement>>;
   iconAlt: string;
 }
 

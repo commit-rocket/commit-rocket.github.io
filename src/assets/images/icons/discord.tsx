@@ -1,4 +1,4 @@
-import React, { SVGProps, forwardRef, ForwardedRef } from "react";
+import { SVGProps, forwardRef, ForwardedRef } from "react";
 
 const DiscordIcon = forwardRef((props: SVGProps<SVGSVGElement>, ref: ForwardedRef<SVGSVGElement>) => (
   <svg

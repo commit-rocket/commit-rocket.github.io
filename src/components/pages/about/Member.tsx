@@ -1,7 +1,7 @@
 import { IMember } from "@/assets/state/team";
 import LinkButton from "@/components/controls/LinkButton";
 
-const Member = ({ image, name, title, links }: IMember) => (
+const Member = ({ image, fullName, title, links }: IMember) => (
   <li
     className="flex flex-col items-center w-full max-w-full gap-2 p-4 border-2 rounded-md border-primary-light motion-safe:transition-all sm:p-6 md:w-fit"
     aria-label="Member"
@@ -16,7 +16,7 @@ const Member = ({ image, name, title, links }: IMember) => (
         height={image.height}
       />
       <div className="flex flex-col max-w-full gap-2 py-4 text-center w-72">
-        <p className="text-2xl font-semibold text-secondary" aria-label="Name">{name}</p>
+        <p className="text-2xl font-semibold text-secondary" aria-label="Name">{fullName}</p>
         <p className="font-semibold text-secondary" aria-label="Title / Role">{title}</p>
       </div>
     </div>

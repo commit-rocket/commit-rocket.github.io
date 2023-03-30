@@ -1,5 +1,4 @@
-import { ReactNode, isValidElement, ReactFragment } from "react";
-import { renderToStaticMarkup, } from "react-dom/server";
+import { ReactNode } from "react";
 import { reactNodeToString } from "./react";
 import { isSSR } from "./ssr";
 
@@ -14,7 +13,7 @@ const stripHtml = async (text: string) => {
   return element.textContent ?? element.innerText ?? "";
 };
 
-/*
+/**
 * Calculates the reading time of a ReactNode in minutes
 */
 export const calculateReadtime = async (node: ReactNode, wpm: number = 200): Promise<number> => {
@@ -22,3 +21,9 @@ export const calculateReadtime = async (node: ReactNode, wpm: number = 200): Pro
   const words = content.split(/[\s]+/);
   return Math.round(words.length / wpm);
 };
+
+/** Formats internationalized formatting for the readtime */
+export const readtimeFormatter = Intl.NumberFormat(undefined, {
+  style: "unit",
+  unit: "minute"
+});

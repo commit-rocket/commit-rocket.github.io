@@ -11,6 +11,8 @@ export default {
   thumbnail,
   thumbnailAlt: "A placeholder thumbnail",
 
+  vertical: "technology",
+
   slug: "2",
   tags: [
     tags.git

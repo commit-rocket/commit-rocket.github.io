@@ -9,6 +9,8 @@ import Link from "@/components/navigation/Link";
 import useSSGSafe from "@/hooks/useSSGSafe";
 
 import IArticle from "@/assets/state/articles/article";
+import makeTagUrl from "./utils/makeTagUrl";
+import { readtimeFormatter } from "@/utils/readtime";
 
 const listAnim = {
   in: {
@@ -40,17 +42,6 @@ export type IArticleBrief = {
 export interface ArticleBriefProps extends IArticleBrief {
 
 }
-
-const readtimeFormatter = Intl.NumberFormat(undefined, {
-  style: "unit",
-  unit: "minute"
-});
-
-const makeTagUrl = (tag: string) => {
-  const url = new URL("/blog", "https://example.com");
-  url.searchParams.set("tag", tag);
-  return url.href.replace(url.origin, "");
-};
 
 const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author, date, url, tags }: ArticleBriefProps) => {
   const safeToRender = useSSGSafe();
@@ -113,7 +104,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
               />
             </div>
             <div className="flex flex-col">
-              <div>{author.name}</div>
+              <div>{author.fullName}</div>
               <div className="text-sm">{author.title}</div>
             </div>
           </AuthorTag>

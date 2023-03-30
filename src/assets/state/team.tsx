@@ -2,7 +2,10 @@ import { StaticImageData } from "next/image";
 import RikPicture from "@/assets/images/people/rik.webp";
 
 export interface IMember {
-  name: string;
+  fullName: string;
+  firstName?: string;
+  lastName?: string;
+  gender?: string; // Open Graph only accepts "male" & "female", but put in here whatever you want
   title: string;
   image: StaticImageData;
   links: {
@@ -14,7 +17,7 @@ export interface IMember {
 export const people = {
   "rik": {
     image: RikPicture,
-    name: "Rik den Breejen",
+    fullName: "Rik den Breejen",
     title: "Lead Developer & Founder",
     links: [
       {
