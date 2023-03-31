@@ -11,9 +11,10 @@
     "script:gen-articles-index": "node ./scripts/generateArticlesIndex.js",
     "script:gen-sitemap": "node ./scripts/generateSitemap.js",
     "script:gen-robots": "node ./scripts/generateRobots.js",
+    "script:gen-cname": "node ./scripts/generateCName.js",
     
     "build": "next build && next export",
-    "postbuild": "npm run script:gen-sitemap && npm run script:gen-robots"
+    "postbuild": "npm run script:gen-sitemap && npm run script:gen-robots && npm run script:gen-cname"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
