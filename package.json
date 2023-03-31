@@ -4,10 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    
     "analyze:build": "cross-env ANALYZE=true npm run build",
     "analyze:dev": "cross-env ANALYZE=true npm run dev",
-    "script:gen-articles-index": "node ./scripts/generateArticlesIndex.js"
+    
+    "script:gen-articles-index": "node ./scripts/generateArticlesIndex.js",
+    "script:gen-sitemap": "node ./scripts/generateSitemap.js",
+    "script:gen-robots": "node ./scripts/generateRobots.js",
+    
+    "build": "next build && next export",
+    "postbuild": "npm run script:gen-sitemap && npm run script:gen-robots"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -38,6 +44,8 @@
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.15",
+    "dotenv": "^16.0.3",
+    "glob": "^9.3.2",
     "next-bundle-analyzer": "^0.6.7",
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.4.21",

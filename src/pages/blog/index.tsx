@@ -18,7 +18,7 @@ import { ControlledSelect } from "@/components/controls/Select";
 import { calculateReadtime } from "@/utils/readtime";
 import fadeAnim from "@/animations/fade";
 import Heading from "@/components/layout/Heading";
-import { makeOgMeta } from "@/utils/opengraph";
+import { makeOgMeta } from "@/utils/meta/opengraph";
 
 interface BlogPageProps {
   articles: IArticleBrief[];
@@ -91,7 +91,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
         {makeOgMeta({ title: "Blog", pathname })}
       </Head>
       <main aria-labelledby="blog" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
-        <Heading.H1 id="blog" className="text-centertext-secondary">
+        <Heading.H1 id="blog" className="text-center text-secondary">
           Blog
         </Heading.H1>
         <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2">
@@ -152,7 +152,8 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async () => {
           readtime: await calculateReadtime(content)
         };
       }))
-    }
+    },
+    revalidate: false
   };
 };
 

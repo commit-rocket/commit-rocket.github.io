@@ -19,7 +19,7 @@ export default [
         In April, we will begin creating initial designs for the Git client.
         Subscribers will receive surveys with each iteration to provide feedback.
         Be sure to <Link color="primary" href="/#sign-up" underline>sign up</Link> to have your voice heard!
-        The designs will also be shared in our blog.
+        The designs will also be shared in our <Link color="primary" href="/blog" underline>blog</Link>.
       </p>
       <Heading.H4 id="roadmap-prototyping">
         Prototyping
@@ -39,7 +39,7 @@ export default [
         Active Development
       </Heading.H4>
       <p aria-labelledby="roadmap-active-development">
-        During the months of June, July, and August, we will be fully focused on active development of Commit Rocket,
+        During the Q2 2023, we will be fully focused on active development of Commit Rocket,
         with the goal of releasing an early version of the Git client.
         Our team will be working tirelessly during this period to ensure that the client meets our high standards.
         We will also continue to provide regular development updates during these months to keep our community informed and engaged.
@@ -48,7 +48,7 @@ export default [
         Insight Videos on Development
       </Heading.H4>
       <p aria-labelledby="roadmap-insight-videos-on-development">
-        Beginning May, we aim to provide regular updates on the development progress through video updates and blog posts to maintain transparency and gather feedback from our community.
+        At the beginning of Q2 2023, we aim to provide regular updates on the development progress through video updates and blog posts to maintain transparency and gather feedback from our community.
       </p>
     </>
   },

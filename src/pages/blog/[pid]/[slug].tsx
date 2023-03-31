@@ -9,11 +9,12 @@ import { calculateReadtime } from "@/utils/readtime";
 
 import Heading from "@/components/layout/Heading";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
-import { makeArticleOgMeta, makeOgMeta } from "@/utils/opengraph";
+import { makeArticleOgMeta, makeOgMeta } from "@/utils/meta/opengraph";
 import LinkButton from "@/components/controls/LinkButton";
 import makeTagUrl from "@/components/pages/blog/utils/makeTagUrl";
 import ArticleMeta from "@/components/pages/blog/post/ArticleMeta";
 import { makeStaticContent } from "@/components/pages/blog/utils/makeStaticContent";
+import { makeSitemapMeta } from "@/utils/meta/sitemap";
 
 type ComputedArticle = {
   path: string;
@@ -52,6 +53,9 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
           modifiedTime: article.updated ? new Date(article.updated) : undefined,
           section: vertical,
           tag: tags,
+        })}
+        {makeSitemapMeta({
+          lastMod: new Date(article.updated ? article.updated : article.created),
         })}
         <KeywordsMeta tags={tags} />
       </Head>
@@ -126,7 +130,8 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps, { pid: string, sl
         created: created.toUTCString(),
         updated: updated ? updated.toUTCString() : null
       }
-    }
+    },
+    revalidate: false
   };
 };
 

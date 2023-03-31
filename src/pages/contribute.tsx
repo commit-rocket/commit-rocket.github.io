@@ -4,7 +4,7 @@ import Heading from "@/components/layout/Heading";
 import FeedbackSection from "@/components/pages/contribute/FeedbackSection";
 
 import { Page } from "@/types/page";
-import { makeOgMeta } from "@/utils/opengraph";
+import { makeOgMeta } from "@/utils/meta/opengraph";
 
 const ContributePage: Page = ({ pathname }) => {
   return (

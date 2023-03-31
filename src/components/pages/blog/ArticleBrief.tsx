@@ -57,7 +57,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
       exit="exit"
       layout
     >
-      <NextLink href={url} className="group/link aspect-[16/7] rounded-lg overflow-hidden">
+      <NextLink href={url} className="group/link aspect-[16/7] rounded-lg overflow-hidden" >
         <img
           className="aspect-[16/7] object-contain rounded-lg transition-transform group-hover/link:scale-105"
           src={thumbnail.src}
@@ -74,6 +74,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
               href={makeTagUrl(tag)}
               color="secondary"
               className="px-2 py-1 text-xs font-semibold border"
+              prefetch={false}
             >
               {tag}
             </LinkButton>

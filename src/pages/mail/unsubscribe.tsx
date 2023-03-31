@@ -13,7 +13,8 @@ import { BackendResponse } from "@/api/models/Response";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
-import { makeOgMeta } from "@/utils/opengraph";
+import { makeOgMeta } from "@/utils/meta/opengraph";
+import { makeSitemapMeta } from "@/utils/meta/sitemap";
 
 const unsubscribeSchema = z.object({
   email: z.string().email().min(3)
@@ -47,6 +48,7 @@ const UnsubscribePage: Page = ({ pathname }) => {
     <>
       <Head>
         {makeOgMeta({ title: "Unsubscribe", pathname })}
+        {makeSitemapMeta({ priority: 0.2 })}
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="unsubscribe">
         <Form

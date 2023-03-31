@@ -90,7 +90,7 @@ const SignupSection = () => {
           Keep me up-to-date!
         </Button>
         <p role="note">
-          Tired of our updates? You can always <Link color="primary" href="/mail/unsubscribe" underline>unsubscribe</Link>!
+          Tired of our updates? You can always <Link color="primary" href="/mail/unsubscribe" underline prefetch={false}>unsubscribe</Link>!
         </p>
       </Form>
     </section>

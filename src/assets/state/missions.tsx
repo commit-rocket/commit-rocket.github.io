@@ -24,7 +24,7 @@ const missions: IMission[] = [
         Many Git clients have a similar look and feel, and the interface can be intimidating for new users.
       </p>
       <p>
-        With Commit Rocket we plan to <Link href="/blog/3/designs" color="primary" underline>innovate and modernize the design of Git clients</Link> to
+         With Commit Rocket we plan to {/*<Link href="/blog/3/designs" color="primary" underline>innovate and modernize the design of Git clients</Link>*/} innovate and modernize the design of Git clients to 
         create an attractive and user-friendly interface that will appeal to both beginners and experienced users alike.
       </p>
     </>
