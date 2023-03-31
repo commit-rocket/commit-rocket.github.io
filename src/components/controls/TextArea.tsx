@@ -3,25 +3,26 @@ import { twMerge } from "tailwind-merge";
 
 import { RequiredKeys } from "@/types/utility";
 
-import { style, VariantProps as InputVariantProps } from "./Input";
+import { style as inputStyle, VariantProps as InputVariantProps } from "./Input";
+
+export const style: typeof inputStyle = (props) => twMerge(inputStyle(props), "rounded-lg");
 
 export type TagProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
 export type VariantProps = InputVariantProps;
-export type TextAreaProps = TagProps & RequiredKeys<VariantProps, "color" | "variant">;
+export type TextAreaProps = TagProps & RequiredKeys<VariantProps, "color">;
 
 const TextArea = forwardRef((
   {
     className,
     color,
-    variant,
     ...props
   }: TextAreaProps,
   ref: ForwardedRef<HTMLTextAreaElement>
 ) => {
 
   const computedClassName = useMemo(
-    () => twMerge(style({ color, variant }), className),
-    [className, color, variant]
+    () => twMerge(style({ color }), className),
+    [className, color]
   );
 
   return (

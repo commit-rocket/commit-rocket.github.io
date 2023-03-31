@@ -11,6 +11,7 @@ import { backend } from "@/utils/wretch";
 import TextArea from "@/components/controls/TextArea";
 import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
+import Label from "@/components/controls/Label";
 
 const feedbackSchema = z.object({
   text: z.string()
@@ -65,14 +66,19 @@ const FeedbackSection = () => {
         successChildren={`🎉 ${response?.message} 🎉`}
         oneTime
       >
-        <TextArea
-          color="primary"
-          variant="outlined"
-          className="w-full p-4 text-lg rounded-lg md:text-xl h-fit min-h-[3.25em] max-h-[50ex]"
-          placeholder="I would like this feature!"
-          rows={5}
-          {...register("text")}
-        />
+        <div className="w-full">
+          <Label htmlFor="message-input" className="text-start text-secondary">
+            Your Message:
+          </Label>
+          <TextArea
+            id="message-input"
+            color="primary"
+            className="w-full p-4 text-lg md:text-xl h-fit min-h-[3.25em] max-h-[50ex]"
+            placeholder="I would like this feature!"
+            rows={5}
+            {...register("text")}
+          />
+        </div>
         <Error className="w-full px-2 text-start" state={formState} name="text" />
         <Button type="submit" color="secondary" loading={loading} className="px-5 py-3 text-lg md:text-xl w-fit">
           Submit Feedback

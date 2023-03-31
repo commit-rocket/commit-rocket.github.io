@@ -104,7 +104,6 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
               id="search-input"
               type="text"
               color="secondary"
-              variant="outlined"
               placeholder="Search..."
               {...register("search")}
             />

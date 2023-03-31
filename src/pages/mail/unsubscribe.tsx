@@ -15,6 +15,7 @@ import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/meta/opengraph";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import Label from "@/components/controls/Label";
 
 const unsubscribeSchema = z.object({
   email: z.string().email().min(3)
@@ -65,9 +66,11 @@ const UnsubscribePage: Page = ({ pathname }) => {
             Once you unsubscribe you won't receive any more emails from us and your email will be immediately deleted from our records.
           </p>
           <Input
+            id="email-input"
             color="secondary"
-            variant="outlined"
             placeholder="your@email.com"
+            label="Email:"
+            labelClassName="text-secondary"
             {...register("email")}
           />
           <Button type="submit" color="secondary">

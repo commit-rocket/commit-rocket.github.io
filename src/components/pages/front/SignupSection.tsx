@@ -8,11 +8,11 @@ import perks from "@/assets/state/perks";
 import Button from "@/components/controls/Button";
 import Error from "@/components/controls/Error";
 import Link from "@/components/navigation/Link";
-import { backend } from "@/utils/wretch";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 
+import { backend } from "@/utils/wretch";
 
 const signupSchema = z.object({
   email: z.string().email().min(3)
@@ -78,10 +78,14 @@ const SignupSection = () => {
       >
         <div className="w-full">
           <Input
+            id="signup-email-input"
             color="primary"
-            variant="outlined"
-            className="w-full p-4 text-lg md:text-xl"
+            className="w-full text-lg md:text-xl"
+            inputClassName="p-4"
             placeholder="your@email.com"
+            label="Email:"
+            labelInset="2rem"
+            labelClassName="text-primary"
             {...register("email")}
           />
           <Error className="w-full px-2 text-start" state={formState} name="email" />

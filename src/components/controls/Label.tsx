@@ -1,3 +1,4 @@
+import { cva } from "class-variance-authority";
 import React, { DetailedHTMLProps, ForwardedRef, LabelHTMLAttributes, forwardRef, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -5,10 +6,12 @@ export interface LabelProps extends DetailedHTMLProps<LabelHTMLAttributes<HTMLLa
   htmlFor: string;
 }
 
+export const style = cva("text-sm font-bold block");
+
 const Label = forwardRef(({ className, ...props }: LabelProps, ref: ForwardedRef<HTMLLabelElement>) => {
 
   const computedClassName = useMemo(
-    () => twMerge("text-sm font-bold block", className),
+    () => twMerge(style(), className),
     [className]
   );
 
