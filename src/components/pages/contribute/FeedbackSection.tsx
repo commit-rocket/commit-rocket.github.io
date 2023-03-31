@@ -10,7 +10,7 @@ import Link from "@/components/navigation/Link";
 import { backend } from "@/utils/wretch";
 import TextArea from "@/components/controls/TextArea";
 import Form from "@/components/controls/Form";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 
 const feedbackSchema = z.object({
   text: z.string()

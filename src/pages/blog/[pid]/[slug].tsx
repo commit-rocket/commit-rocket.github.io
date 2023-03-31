@@ -1,23 +1,23 @@
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
-import BookIcon from "@heroicons/react/24/outline/BookOpenIcon";
-import CalendarIcon from "@heroicons/react/24/solid/CalendarIcon";
+
 
 import { Page } from "@/types/page";
-import useSSGSafe from "@/hooks/useSSGSafe";
 import IArticle from "@/assets/state/articles/article";
 
-import { reactNodeToString } from "@/utils/react";
-import { calculateReadtime, readtimeFormatter } from "@/utils/readtime";
+import { calculateReadtime } from "@/utils/readtime";
 
-import Heading from "@/components/layout/heading";
-import Link from "@/components/navigation/Link";
+import Heading from "@/components/layout/Heading";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
-import { makeArticleOgMeta, makeImageOgMeta, makeOgMeta } from "@/utils/opengraph";
-
+import { makeArticleOgMeta, makeOgMeta } from "@/utils/opengraph";
+import LinkButton from "@/components/controls/LinkButton";
+import makeTagUrl from "@/components/pages/blog/utils/makeTagUrl";
+import ArticleMeta from "@/components/pages/blog/post/ArticleMeta";
+import { makeStaticContent } from "@/components/pages/blog/utils/makeStaticContent";
 
 type ComputedArticle = {
   path: string;
+  filename: string;
   content: string;
   readtime: number;
   updated: string | null;
@@ -28,12 +28,7 @@ interface BlogPostPageProps {
   article: ComputedArticle;
 }
 
-const DotSeparator = <div className="hidden w-1 h-1 rounded-full bg-neutral-600 md:block" />;
-
 const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbnail, thumbnailAlt, vertical, ...article }, pathname }) => {
-  const safeToRender = useSSGSafe();
-
-  const AuthorTag = author.links.length > 0 ? Link : "div";
 
   return (
     <>
@@ -60,60 +55,44 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
         })}
         <KeywordsMeta tags={tags} />
       </Head>
-      <article aria-describedby="article-title">
-        <Heading.H1 id="article-title" className="text-4xl font-semibold">
-          {article.title}
-        </Heading.H1>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <AuthorTag
-            className="flex items-center gap-2 group/author"
-            //@ts-ignore
-            href={author.links.length > 0 ? author.links[0].href : undefined}
-            //@ts-ignore
-            color={author.links.length > 0 ? "fill-contrast" : undefined}
-            data-is-link={author.links.length > 0}
-          >
-            <div className="overflow-hidden rounded-full">
-              <img
-                className="object-contain w-8 h-8 rounded-full aspect-square group-hover/author:scale-110 motion-safe:transition-all"
-                src={author.image.src}
-                width={author.image.width}
-                height={author.image.height}
-                alt="A picture of the author"
-              />
-            </div>
-            <div className="flex flex-col">
-              <div>{author.fullName}</div>
-              <div className="text-sm">{author.title}</div>
-            </div>
-          </AuthorTag>
-          {DotSeparator}
-          <div className="flex items-center gap-4 text-sm">
-            {safeToRender && <div className="flex items-center gap-2">
-              <BookIcon className="w-4 h-4" />
-              <time
-                aria-label="reading time"
-                dateTime={`${article.readtime} minutes`}
-              >
-                {readtimeFormatter.format(article.readtime)}
-              </time>
-            </div>}
-            {DotSeparator}
-            {safeToRender && <div className="flex items-center gap-2">
-              <CalendarIcon className="w-4 h-4" />
-              <time aria-label="Date created" dateTime={article.created} className={`${article.updated ? "hidden" : ""}`}>
-                {(new Date(article.created)).toLocaleDateString()}
-              </time>
-              {article.updated && <time aria-label="Date updated" dateTime={article.updated}>
-                {(new Date(article.updated)).toLocaleDateString()}
-              </time>}
-            </div>}
-          </div>
-        </div>
-        <div dangerouslySetInnerHTML={{
-          __html: article.content
-        }} />
-      </article>
+      <main>
+        <article aria-describedby="article-title" className="flex flex-col gap-4 max-w-4xl w-full items-center">
+          <section aria-label="Main article content" className="flex flex-col gap-4 w-full items-center">
+            <img
+              aria-label="Article Thumbnail"
+              className="rounded-lg"
+              src={thumbnail.src}
+              width={thumbnail.width}
+              height={thumbnail.height}
+              alt={thumbnailAlt}
+            />
+            <Heading.H1 id="article-title" className="text-4xl font-semibold text-center">
+              {article.title}
+            </Heading.H1>
+            <ArticleMeta
+              author={author}
+              readtime={article.readtime}
+              created={article.created}
+              updated={article.updated}
+            />
+            <div
+              id="article-content"
+              className="flex flex-col text-lg text-start w-full gap-6"
+              dangerouslySetInnerHTML={{ __html: article.content }}
+            />
+          </section>
+          <section aria-labelledby="article-tags" className="w-full pt-4 px-4 border-t border-primary">
+            <p id="article-tags" className="text-xs font-bold mb-2">Tags:</p>
+            <ul aria-labelledby="article-tags" className="flex flex-wrap gap-1">
+              {tags.map((tag, i) => (
+                <LinkButton key={i} color="secondary" href={makeTagUrl(tag)} className="w-fit text-sm  px-2 py-1">
+                  #{tag}
+                </LinkButton>
+              ))}
+            </ul>
+          </section>
+        </article>
+      </main>
     </>
   );
 };
@@ -126,10 +105,13 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps, { pid: string, sl
   };
 
   const postId = Number(params.pid);
-  const foundArticle = articles.find((_, i) => i + 1 === postId);
-  if (!foundArticle) return {
+  const articleInfo = articles.find((_, i) => i + 1 === postId);
+
+  if (!articleInfo) return {
     notFound: true
   };
+
+  const { article: foundArticle, filename: articleFilename } = articleInfo;
 
   const { content, updated, created, ...article } = foundArticle;
 
@@ -137,8 +119,9 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps, { pid: string, sl
     props: {
       article: {
         ...article,
+        filename: articleFilename,
         path: `/blog/${postId}/${article.slug}`,
-        content: reactNodeToString(content),
+        content: await makeStaticContent(foundArticle, postId),
         readtime: await calculateReadtime(content),
         created: created.toUTCString(),
         updated: updated ? updated.toUTCString() : null
@@ -151,7 +134,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const { default: articles } = await import("@/assets/state/articles");
 
   return {
-    paths: articles.map((article, i) => {
+    paths: articles.map(({ article }, i) => {
       return {
         params: {
           pid: String(i + 1),

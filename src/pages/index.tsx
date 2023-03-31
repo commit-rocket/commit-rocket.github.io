@@ -13,7 +13,7 @@ import Mission from "@/components/pages/front/Mission";
 import { Page } from "@/types/page";
 import roadmap from "@/assets/state/roadmap";
 import RoadmapItem from "@/components/pages/front/RoadmapItem";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 
 const logoAnim = {
   initial: {

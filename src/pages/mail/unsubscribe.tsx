@@ -12,7 +12,7 @@ import { backend } from "@/utils/wretch";
 import { BackendResponse } from "@/api/models/Response";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/opengraph";
 
 const unsubscribeSchema = z.object({

@@ -11,7 +11,7 @@ import Link from "@/components/navigation/Link";
 import { backend } from "@/utils/wretch";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 
 
 const signupSchema = z.object({

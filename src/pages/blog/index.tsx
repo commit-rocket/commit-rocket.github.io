@@ -17,7 +17,7 @@ import { ControlledSelect } from "@/components/controls/Select";
 
 import { calculateReadtime } from "@/utils/readtime";
 import fadeAnim from "@/animations/fade";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/opengraph";
 
 interface BlogPageProps {
@@ -142,7 +142,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async () => {
 
   return {
     props: {
-      articles: await Promise.all(articles.map<Promise<IArticleBrief>>(async (article, i) => {
+      articles: await Promise.all(articles.map<Promise<IArticleBrief>>(async ({ article }, i) => {
         const { content, created, updated, slug, ...brief } = { ...article };
 
         return {

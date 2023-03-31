@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Page } from "@/types/page";
 import contactMethods from "@/assets/state/contactMethods";
 import Link, { style } from "@/components/navigation/Link";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/opengraph";
 
 const ContactPage: Page = ({ pathname }) => {

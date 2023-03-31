@@ -4,6 +4,12 @@ import article1 from "./1";
 import article2 from "./2";
 
 export default [
-	article1,
-	article2
-] as IArticle[];
+	{ 
+		filename: "1", 
+		article: article1 
+	},
+	{ 
+		filename: "2", 
+		article: article2 
+	}
+] as { filename: string; article: IArticle }[];

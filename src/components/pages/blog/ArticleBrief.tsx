@@ -50,7 +50,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
 
   return (
     <motion.li
-      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-lg motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 bg-primary/20"
+      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-lg motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 bg-primary-300"
       variants={listAnim}
       initial="in"
       animate="anim"
@@ -72,17 +72,17 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
             <LinkButton
               key={i}
               href={makeTagUrl(tag)}
+              color="secondary"
               className="px-2 py-1 text-xs font-semibold border"
-              color="primary"
             >
               {tag}
             </LinkButton>
           ))}
         </div>}
-        <Link href={url} color="fill-contrast" className="block text-lg font-bold">
+        <Link href={url} color="fill-contrast" className="block text-2xl font-bold">
           {title}
         </Link>
-        <Link href={url} color="fill-contrast" className="flex-1">
+        <Link href={url} color="fill-contrast" className="flex-1 ">
           {teaser}
         </Link>
         <div className="flex flex-col flex-wrap gap-4 pt-4 mt-auto">

@@ -1,5 +1,5 @@
 import { IMission } from "@/assets/state/missions";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 
 export interface MissionProps extends IMission {
 

@@ -20,10 +20,10 @@ const run = async () => {
     .forEach((articleFilename, i, arr) => {
       const importName = `article${i + 1}`;
       fileImports += `import ${importName} from "./${articleFilename}";\n`;
-      exportArrayContent += `\t${importName}${arr.length - 1 === i ? "" : ","}\n`;
+      exportArrayContent += `\t{ \n\t\tfilename: "${articleFilename}", \n\t\tarticle: ${importName} \n\t}${arr.length - 1 === i ? "" : ","}\n`;
     });
 
-  exportArrayContent += "] as IArticle[];";
+  exportArrayContent += "] as { filename: string; article: IArticle }[];";
 
   const indexContent = `${fileImports}\n${exportArrayContent}`;
   await fs.writeFile(indexPath, indexContent);

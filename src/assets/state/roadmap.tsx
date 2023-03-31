@@ -1,4 +1,4 @@
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 import Link from "@/components/navigation/Link";
 import { ReactNode } from "react";
 
@@ -83,4 +83,4 @@ export default [
       </p>
     </>
   }
-]satisfies IRoadmapItem[];
+] satisfies IRoadmapItem[];

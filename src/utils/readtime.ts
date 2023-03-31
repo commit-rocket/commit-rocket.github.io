@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
-import { reactNodeToString } from "./react";
-import { isSSR } from "./ssr";
+import { isBrowser, isSSR } from "./ssr";
 
 const stripHtml = async (text: string) => {
   if (isSSR) {
@@ -14,10 +13,15 @@ const stripHtml = async (text: string) => {
 };
 
 /**
-* Calculates the reading time of a ReactNode in minutes
-*/
+ * **ONLY USE ON THE SERVER**
+ * 
+ * Calculates the reading time of a ReactNode in minutes
+ */
 export const calculateReadtime = async (node: ReactNode, wpm: number = 200): Promise<number> => {
-  const content = await stripHtml(reactNodeToString(node));
+  if (isBrowser) throw Error("calculateReadtime can only be used on the server")
+  const { reactNodeToString } = await import("./react");
+
+  const content = await stripHtml(await reactNodeToString(node));
   const words = content.split(/[\s]+/);
   return Math.round(words.length / wpm);
 };

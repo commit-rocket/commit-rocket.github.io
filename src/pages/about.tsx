@@ -5,7 +5,7 @@ import Member from "@/components/pages/about/Member";
 import { Page } from "@/types/page";
 import projects from "@/assets/state/projects";
 
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 import Project from "@/components/pages/about/Project";
 import { makeOgMeta } from "@/utils/opengraph";
 

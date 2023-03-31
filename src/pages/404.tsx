@@ -6,7 +6,7 @@ import HomeModernIcon from "@heroicons/react/24/solid/HomeModernIcon";
 import { Page } from "@/types/page";
 import LinkButton from "@/components/controls/LinkButton";
 import Button from "@/components/controls/Button";
-import Heading from "@/components/layout/heading";
+import Heading from "@/components/layout/Heading";
 
 import { makeOgMeta } from "@/utils/opengraph";
 
