@@ -4,12 +4,13 @@ import Heading from "@/components/layout/heading";
 import FeedbackSection from "@/components/pages/contribute/FeedbackSection";
 
 import { Page } from "@/types/page";
+import { makeOgMeta } from "@/utils/opengraph";
 
-const ContributePage: Page = ({ }) => {
+const ContributePage: Page = ({ pathname }) => {
   return (
     <>
       <Head>
-        <title>Contribute - Commit Rocket</title>
+        {makeOgMeta({ title: "Contribute", pathname })}
       </Head>
       <main aria-labelledby="contribute" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
         <Heading.H1 id="contribute" className="text-center text-secondary">

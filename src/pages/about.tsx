@@ -7,12 +7,13 @@ import projects from "@/assets/state/projects";
 
 import Heading from "@/components/layout/heading";
 import Project from "@/components/pages/about/Project";
+import { makeOgMeta } from "@/utils/opengraph";
 
-const AboutPage: Page = () => {
+const AboutPage: Page = ({ pathname }) => {
   return (
     <>
       <Head>
-        <title>About - Commit Rocket</title>
+        {makeOgMeta({ title: "About", pathname })}
       </Head>
       <main aria-labelledby="about" className="flex flex-col flex-1 w-full gap-8 pb-8 max-w-7xl">
         <Heading.H1 id="about" className="text-center text-secondary">

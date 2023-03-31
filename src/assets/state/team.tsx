@@ -18,6 +18,9 @@ export const people = {
   "rik": {
     image: RikPicture,
     fullName: "Rik den Breejen",
+    firstName: "Rik",
+    lastName: "den Breejen",
+    gender: "Male",
     title: "Lead Developer & Founder",
     links: [
       {

@@ -18,7 +18,7 @@ import { ControlledSelect } from "@/components/controls/Select";
 import { calculateReadtime } from "@/utils/readtime";
 import fadeAnim from "@/animations/fade";
 import Heading from "@/components/layout/heading";
-import OgMeta from "@/components/head/OgMeta";
+import { makeOgMeta } from "@/utils/opengraph";
 
 interface BlogPageProps {
   articles: IArticleBrief[];
@@ -54,7 +54,7 @@ const filterSchemaResolver = zodResolver(filterSchema);
 
 type FilterSchema = z.infer<typeof filterSchema>;
 
-const BlogPage: Page<BlogPageProps> = ({ articles, ...props }) => {
+const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
   const { query } = useRouter();
 
   const { register, control } = useForm<FilterSchema>({
@@ -88,10 +88,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, ...props }) => {
   return (
     <>
       <Head>
-        <OgMeta
-          title="Blog - Commit Rocket"
-          path={props.pathname}
-        />
+        {makeOgMeta({ title: "Blog", pathname })}
       </Head>
       <main aria-labelledby="blog" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
         <Heading.H1 id="blog" className="text-centertext-secondary">

@@ -3,11 +3,15 @@ import '@/styles/main.css';
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, MotionConfig, AnimatePresence } from "framer-motion";
 import type { AppProps } from 'next/app';
-import Head from "next/head";
 
 import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import Head from "next/head";
+
+import BannerImage from "@/assets/images/brand/commit-rocket-logo.webp"
+
+import { makeOgMeta } from "@/utils/opengraph";
 
 
 const pageTransition = {
@@ -56,10 +60,17 @@ export default function App({ Component, pageProps, router }: AppProps) {
       });
     }, 1);
   }, []);
-  console.log(router);
 
   return (
     <MotionConfig reducedMotion="user">
+      <Head>
+        {makeOgMeta({
+          title: "Commit Rocket",
+          description: "Commit Rocket, the next-gen git client",
+          image: BannerImage,
+          imageAlt: "Commit Rocket Logo"
+        })}
+      </Head>
       <GoogleAnalytics />
       <div className="flex flex-col font-sans">
         <Header />

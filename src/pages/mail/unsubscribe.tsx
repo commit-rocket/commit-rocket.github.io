@@ -13,6 +13,7 @@ import { BackendResponse } from "@/api/models/Response";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/heading";
+import { makeOgMeta } from "@/utils/opengraph";
 
 const unsubscribeSchema = z.object({
   email: z.string().email().min(3)
@@ -21,8 +22,8 @@ const unsubscribeSchemaResolver = zodResolver(unsubscribeSchema);
 type UnsubscribeSchema = z.infer<typeof unsubscribeSchema>;
 
 
-const UnsubscribePage: Page = ({ }) => {
-  const { handleSubmit, register, formState } = useForm<UnsubscribeSchema>({
+const UnsubscribePage: Page = ({ pathname }) => {
+  const { handleSubmit, register } = useForm<UnsubscribeSchema>({
     resolver: unsubscribeSchemaResolver,
     mode: "onChange"
   });
@@ -45,7 +46,7 @@ const UnsubscribePage: Page = ({ }) => {
   return (
     <>
       <Head>
-        <title>Commit Rocket</title>
+        {makeOgMeta({ title: "Unsubscribe", pathname })}
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="unsubscribe">
         <Form

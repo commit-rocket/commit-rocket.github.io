@@ -4,12 +4,13 @@ import { Page } from "@/types/page";
 import contactMethods from "@/assets/state/contactMethods";
 import Link, { style } from "@/components/navigation/Link";
 import Heading from "@/components/layout/heading";
+import { makeOgMeta } from "@/utils/opengraph";
 
-const ContactPage: Page = ({ }) => {
+const ContactPage: Page = ({ pathname }) => {
   return (
     <>
       <Head>
-        <title>Contact - Commit Rocket</title>
+        {makeOgMeta({ title: "Contact", pathname })}
       </Head>
       <main aria-labelledby="contact" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
         <Heading.H1 id="contact" className="text-center text-secondary">

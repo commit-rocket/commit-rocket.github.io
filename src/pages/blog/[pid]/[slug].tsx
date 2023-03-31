@@ -13,9 +13,7 @@ import { calculateReadtime, readtimeFormatter } from "@/utils/readtime";
 import Heading from "@/components/layout/heading";
 import Link from "@/components/navigation/Link";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
-import OgMeta from "@/components/head/OgMeta";
-import OgArticleMeta from "@/components/head/OgArticleMeta";
-import OgImageMeta from "@/components/head/OgImageMeta";
+import { makeArticleOgMeta, makeImageOgMeta, makeOgMeta } from "@/utils/opengraph";
 
 
 type ComputedArticle = {
@@ -40,33 +38,26 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
   return (
     <>
       <Head>
-        <OgMeta
-          title={`${article.title} - Commit Rocket`}
-          type="article"
-          path={pathname}
-          description={article.teaser}
-          image={thumbnail.src}
-          locale="en_US"
-        />
-        <OgImageMeta
-          path={thumbnail.src}
-          type={`image/${thumbnail.src.split(".").at(-1)!}`}
-          width={thumbnail.width}
-          height={thumbnail.height}
-          alt={thumbnailAlt}
-        />
-        <OgArticleMeta
-          author={{
+        {makeOgMeta({
+          title: article.title,
+          type: "article",
+          pathname,
+          description: article.teaser,
+          image: thumbnail,
+          imageAlt: thumbnailAlt
+        })}
+        {makeArticleOgMeta({
+          author: {
             userName: author.fullName,
             firstName: author.firstName,
             lastName: author.lastName,
             gender: author.gender
-          }}
-          publishedTime={new Date(article.created)}
-          modifiedTime={article.updated ? new Date(article.updated) : undefined}
-          section={vertical}
-          tag={tags}
-        />
+          },
+          publishedTime: new Date(article.created),
+          modifiedTime: article.updated ? new Date(article.updated) : undefined,
+          section: vertical,
+          tag: tags,
+        })}
         <KeywordsMeta tags={tags} />
       </Head>
       <article aria-describedby="article-title">
