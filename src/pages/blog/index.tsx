@@ -95,56 +95,61 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
         <Heading.H1 id="blog" className="text-center text-secondary">
           Blog
         </Heading.H1>
-        <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2 items-end">
-          <div>
-            <Label htmlFor="search-input" className="text-secondary">
-              Search:
-            </Label>
-            <Input
-              id="search-input"
-              type="text"
-              color="secondary"
-              placeholder="Search..."
-              {...register("search")}
-            />
-          </div>
-          <div>
-            <Label htmlFor="sort-input" className="text-secondary">
-              Sort:
-            </Label>
-            <ControlledSelect
-              id="sort-input"
-              name="sort"
-              color="secondary"
-              control={control}
-              options={SORT_OPTIONS}
-              getDisplayName={(opt) => opt.name}
-            />
-          </div>
-
-          <AnimatePresence>
-            {tags.length > 0 && <motion.div
-              variants={fadeAnim}
-              initial="in"
-              animate="anim"
-              exit="exit"
-            >
-              <LinkButton
-                href="/blog"
+        {computedArticles.length > 0 && <>
+          <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2 items-end">
+            <div>
+              <Label htmlFor="search-input" className="text-secondary">
+                Search:
+              </Label>
+              <Input
+                id="search-input"
+                type="text"
                 color="secondary"
-                className="w-fit"
+                placeholder="Search..."
+                {...register("search")}
+              />
+            </div>
+            <div>
+              <Label htmlFor="sort-input" className="text-secondary">
+                Sort:
+              </Label>
+              <ControlledSelect
+                id="sort-input"
+                name="sort"
+                color="secondary"
+                control={control}
+                options={SORT_OPTIONS}
+                getDisplayName={(opt) => opt.name}
+              />
+            </div>
+
+            <AnimatePresence>
+              {tags.length > 0 && <motion.div
+                variants={fadeAnim}
+                initial="in"
+                animate="anim"
+                exit="exit"
               >
-                Clear Tags
-                <TagIcon className="w-4 h-4" />
-              </LinkButton>
-            </motion.div>}
-          </AnimatePresence>
-        </div>
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" aria-label="blog articles">
-          <AnimatePresence>
-            {computedArticles.map((brief) => <ArticleBrief key={brief.url} {...brief} />)}
-          </AnimatePresence>
-        </ul>
+                <LinkButton
+                  href="/blog"
+                  color="secondary"
+                  className="w-fit"
+                >
+                  Clear Tags
+                  <TagIcon className="w-4 h-4" />
+                </LinkButton>
+              </motion.div>}
+            </AnimatePresence>
+          </div>
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" aria-label="blog articles">
+            <AnimatePresence>
+              {computedArticles.map((brief) => <ArticleBrief key={brief.url} {...brief} />)}
+            </AnimatePresence>
+          </ul>
+        </>}
+        {computedArticles.length < 1 && <p role="note" className="text-3xl font-semibold text-center">
+          There are no blog posts yet! Stay tuned!
+        </p>}
       </main>
     </>
   );
