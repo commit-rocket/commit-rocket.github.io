@@ -9,8 +9,8 @@ const Member = ({ image, fullName, title, links }: IMember) => (
     <div className="flex flex-col items-center max-w-full gap-2 sm:flex-row md:flex-col">
       <img
         className="object-cover w-40 h-40 rounded-full shadow-md aspect-auto md:w-60 md:h-60"
-        aria-label=""
-        alt=""
+        aria-label={`A picture of ${fullName}`}
+        alt={`A picture of ${fullName}`}
         src={image.src}
         width={image.width}
         height={image.height}

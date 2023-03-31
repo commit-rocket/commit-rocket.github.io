@@ -19,6 +19,7 @@ import { calculateReadtime } from "@/utils/readtime";
 import fadeAnim from "@/animations/fade";
 import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/meta/opengraph";
+import Label from "@/components/controls/Label";
 
 interface BlogPageProps {
   articles: IArticleBrief[];
@@ -94,21 +95,34 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
         <Heading.H1 id="blog" className="text-center text-secondary">
           Blog
         </Heading.H1>
-        <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2">
-          <Input
-            type="text"
-            color="secondary"
-            variant="outlined"
-            placeholder="Search..."
-            {...register("search")}
-          />
-          <ControlledSelect
-            name="sort"
-            color="secondary"
-            control={control}
-            options={SORT_OPTIONS}
-            getDisplayName={(opt) => opt.name}
-          />
+        <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2 items-end">
+          <div>
+            <Label htmlFor="search-input" className="text-secondary">
+              Search:
+            </Label>
+            <Input
+              id="search-input"
+              type="text"
+              color="secondary"
+              variant="outlined"
+              placeholder="Search..."
+              {...register("search")}
+            />
+          </div>
+          <div>
+            <Label htmlFor="sort-input" className="text-secondary">
+              Sort:
+            </Label>
+            <ControlledSelect
+              id="sort-input"
+              name="sort"
+              color="secondary"
+              control={control}
+              options={SORT_OPTIONS}
+              getDisplayName={(opt) => opt.name}
+            />
+          </div>
+
           <AnimatePresence>
             {tags.length > 0 && <motion.div
               variants={fadeAnim}

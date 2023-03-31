@@ -30,6 +30,7 @@ export const itemStyle = cva("px-4 py-2", {
 });
 
 export type BaseProps<TOption extends any, TOptions extends readonly TOption[] = readonly TOption[]> = {
+  id?: string;
   name?: string;
   className?: string;
   containerClassName?: string;
@@ -66,6 +67,7 @@ const optionsAnim = {
 
 const Select = forwardRef(<TOption extends any>(
   {
+    id,
     name,
     className,
     containerClassName,
@@ -100,6 +102,7 @@ const Select = forwardRef(<TOption extends any>(
 
     <Listbox name={name} value={value} onChange={onChange}>
       <Listbox.Button
+        id={id}
         ref={ref}
         onBlur={onBlur}
         className={computedClassName}

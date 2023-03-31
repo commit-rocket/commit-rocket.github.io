@@ -68,7 +68,7 @@ export default [
         Alpha Version
       </Heading.H4>
       <p aria-labelledby="roadmap-alpha-version">
-        If everything goes according to plan, our goal is to release a public alpha version of Commit Rocket by September.
+        If everything goes according to plan, our goal is to release a public alpha version of Commit Rocket by the end of 2023.
         While it will be a challenging task, we are not afraid to take it on!
         Upon release of the first alpha version, we will also be open-sourcing the Git client!
       </p>
