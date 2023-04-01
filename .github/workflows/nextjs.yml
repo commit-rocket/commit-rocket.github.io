@@ -53,7 +53,11 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Make .env file
-        run: ${{ steps.detect-package-manager.outputs.manager }} run --silent env > .env && ls
+        uses: skiddph/actions-env@v1.0.2
+        env:
+          ENV_NEXT_PUBLIC_BACKEND_URL: ${{ secrets.BACKEND_URL }}
+          ENV_NEXT_PUBLIC_FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
+          ENV_NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID: ${{ secrets.GOOGLE_ANALYTICS_TAG_ID }}
       - name: Build and statically render nextjs with Next.js
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - run: echo '' > ./out/_next/.nojekyll
