@@ -53,17 +53,12 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Make .env fil
-        run: |
-          touch .env
-          echo NEXT_PUBLIC_BACKEND_URL=$BACKEND_URL >> .env
-          echo NEXT_PUBLIC_FRONTEND_URL=$FRONTEND_URL >> .env
-          echo NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID=$GOOGLE_ANALYTICS_TAG_ID >> .env
-          ls
-          cat .env
-        env:
-          BACKEND_URL: ${{ vars.BACKEND_URL }}
-          FRONTEND_URL: ${{ vars.FRONTEND_URL }}
-          GOOGLE_ANALYTICS_TAG_ID: ${{ vars.GOOGLE_ANALYTICS_TAG_ID }}
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_NEXT_PUBLIC_BACKEND_URL: ${{ vars.BACKEND_URL }}
+          envkey_NEXT_PUBLIC_FRONTEND_URL: ${{ vars.FRONTEND_URL }}
+          envkey_NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID: ${{ vars.GOOGLE_ANALYTICS_TAG_ID }}
+          fail_on_empty: true
       - name: Build and statically render nextjs with Next.js
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - run: echo '' > ./out/_next/.nojekyll
