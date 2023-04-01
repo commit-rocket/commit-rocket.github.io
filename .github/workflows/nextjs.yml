@@ -55,11 +55,15 @@ jobs:
       - name: Make .env fil
         run: |
           touch .env
-          echo NEXT_PUBLIC_BACKEND_URL=${{ vars.BACKEND_URL }} >> .env
-          echo NEXT_PUBLIC_FRONTEND_URL=${{ vars.FRONTEND_URL }} >> .env
-          echo NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID=${{ vars.GOOGLE_ANALYTICS_TAG_ID }} >> .env
+          echo NEXT_PUBLIC_BACKEND_URL=$BACKEND_URL >> .env
+          echo NEXT_PUBLIC_FRONTEND_URL=$FRONTEND_URL >> .env
+          echo NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID=$GOOGLE_ANALYTICS_TAG_ID >> .env
           ls
           cat .env
+        env:
+          BACKEND_URL: ${{ vars.BACKEND_URL }}
+          FRONTEND_URL: ${{ vars.FRONTEND_URL }}
+          GOOGLE_ANALYTICS_TAG_ID: ${{ vars.GOOGLE_ANALYTICS_TAG_ID }}
       - name: Build and statically render nextjs with Next.js
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - run: echo '' > ./out/_next/.nojekyll
