@@ -52,12 +52,12 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Make .env file
-        uses: skiddph/actions-env@v1.0.2
-        env:
-          ENV_NEXT_PUBLIC_BACKEND_URL: ${{ vars.BACKEND_URL }}
-          ENV_NEXT_PUBLIC_FRONTEND_URL: ${{ vars.FRONTEND_URL }}
-          ENV_NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID: ${{ vars.GOOGLE_ANALYTICS_TAG_ID }}
+      - name: Make .env fil
+        run: |
+          touch .env
+          echo NEXT_PUBLIC_BACKEND_URL=${{ vars.BACKEND_URL }} >> .env
+          echo NEXT_PUBLIC_FRONTEND_URL=${{ vars.FRONTEND_URL }} >> .env
+          echo NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID=${{ vars.GOOGLE_ANALYTICS_TAG_ID }} >> .env
       - name: Build and statically render nextjs with Next.js
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - run: echo '' > ./out/_next/.nojekyll
