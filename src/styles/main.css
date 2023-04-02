@@ -13,14 +13,6 @@ html {
   @apply min-h-full bg-fill text-fill-contrast;
 }
 
-details>summary {
-  list-style: none;
-}
-
-details>summary::-webkit-details-marker {
-  display: none;
-}
-
 div.swal2-popup.swal2-toast {
   @apply p-3 shadow shadow-black/25 bg-white/50 backdrop-blur-sm;
 }
