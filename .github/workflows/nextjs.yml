@@ -52,10 +52,13 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-      - name: Static HTML export with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+      - name: Make .env file
+        run: |
+          echo NEXT_PUBLIC_BACKEND_URL=${{ vars.NEXT_PUBLIC_BACKEND_URL }} >> .env
+          echo NEXT_PUBLIC_FRONTEND_URL=${{ vars.NEXT_PUBLIC_FRONTEND_URL }} >> .env
+          echo NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID=${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_TAG_ID }} >> .env
+      - name: Build and statically render nextjs with Next.js
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - run: echo '' > ./out/_next/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
