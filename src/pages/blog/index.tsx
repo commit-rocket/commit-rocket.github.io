@@ -136,7 +136,11 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
                   className="w-fit"
                 >
                   Clear Tags
-                  <TagIcon className="w-4 h-4" />
+                  <TagIcon
+                    className="w-4 h-4"
+                    width="1em"
+                    height="1em"
+                  />
                 </LinkButton>
               </motion.div>}
             </AnimatePresence>

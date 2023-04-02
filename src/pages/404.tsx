@@ -29,7 +29,7 @@ const NotFound: Page = ({ pathname }) => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             <LinkButton href="/" color="secondary">
               <HomeModernIcon
-                className="w-4"
+                className="w-4 h-4"
                 width="1em"
                 height="1em"
               />
@@ -37,7 +37,7 @@ const NotFound: Page = ({ pathname }) => {
             </LinkButton>
             <Button onClick={() => router.back()} color="secondary">
               <ArrowUturnLeftIcon
-                className="w-4"
+                className="w-4 h-4"
                 width="1em"
                 height="1em"
               />
