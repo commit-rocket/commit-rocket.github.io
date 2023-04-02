@@ -1,6 +1,6 @@
 import { IProject } from "@/assets/state/projects";
 import LinkButton from "@/components/controls/LinkButton";
-import { modal } from "@/utils/swal";
+
 import { useCallback } from "react";
 
 export interface ProjectProps extends IProject {
@@ -9,7 +9,9 @@ export interface ProjectProps extends IProject {
 
 const Project = ({ title, description, thumbnail, thumbnailAlt, href, linkText, linkRel }: ProjectProps) => {
 
-  const onImageClick = useCallback(() => {
+  const onImageClick = useCallback(async () => {
+    const { modal } = await import("@/utils/swal");
+
     modal.fire({
       title: thumbnailAlt,
       html: <>
