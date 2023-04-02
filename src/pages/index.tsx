@@ -14,6 +14,7 @@ import { Page } from "@/types/page";
 import roadmap from "@/assets/state/roadmap";
 import RoadmapItem from "@/components/pages/front/RoadmapItem";
 import Heading from "@/components/layout/Heading";
+import { makeSitemapMeta } from "@/utils/meta/sitemap";
 
 const logoAnim = {
   initial: {
@@ -34,6 +35,7 @@ const FrontPage: Page = ({ }) => {
     <>
       <Head>
         <title>Commit Rocket</title>
+        {makeSitemapMeta({ priority: 0.9 })}
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">
         <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 xl:flex-row xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh] mx-auto">
