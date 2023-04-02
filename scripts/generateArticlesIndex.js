@@ -5,7 +5,7 @@ const exclude = ["article.d.ts", "index.ts", "tags.ts"];
 const articlesDir = path.resolve(__dirname, "../src/assets/state/articles");
 const indexPath = path.join(articlesDir, "/index.ts");
 
-const run = async () => {
+const runScript = async () => {
   const files = await fs.readdir(articlesDir);
   let fileImports = `import IArticle from "./article";\n\n`;
   let exportArrayContent = "export default [\n";
@@ -29,4 +29,4 @@ const run = async () => {
   await fs.writeFile(indexPath, indexContent);
 };
 
-run();
+runScript();

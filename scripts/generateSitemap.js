@@ -8,7 +8,7 @@ const { glob } = require("glob");
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 dotenv.config({ path: path.resolve(__dirname, "../.env.local"), override: true });
 
-const run = async () => {
+const runScript = async () => {
   const outDir = path.resolve(__dirname, "../out");
   const pages = await glob("**/*.html", {
     cwd: outDir
@@ -17,9 +17,7 @@ const run = async () => {
   let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
   const sitemapUrls = await Promise.all(pages.map(async (pagePath) => {
     let canonicalUrl = `${process.env.NEXT_PUBLIC_FRONTEND_URL}/${pagePath.replace(/\\/g, "/")}`
-      .replace(/((index)*(\.html))$/g, "");
-
-    if (!canonicalUrl.endsWith("/")) canonicalUrl += "/";
+      .replace(/(\/?(index)?(\.html))$/g, "");
 
     const fileContent = await fs.readFile(path.resolve(outDir, pagePath));
 
@@ -48,4 +46,4 @@ const run = async () => {
   fs.writeFile(path.join(outDir, "sitemap.xml"), sitemapContent);
 };
 
-run();
+runScript();
