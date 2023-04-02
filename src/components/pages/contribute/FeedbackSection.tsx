@@ -14,7 +14,7 @@ import Heading from "@/components/layout/Heading";
 import Label from "@/components/controls/Label";
 
 const feedbackSchema = z.object({
-  text: z.string()
+  text: z.string().min(1)
 });
 
 const feedbackSchemaResolver = zodResolver(feedbackSchema);
