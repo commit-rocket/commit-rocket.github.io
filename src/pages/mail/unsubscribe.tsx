@@ -1,19 +1,23 @@
-import { useMemo, useRef, useState } from "react";
 import Head from "next/head";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
 
-import Button from "@/components/controls/Button";
 import { Page } from "@/types/page";
 import { backend } from "@/utils/wretch";
+import { makeOgMeta } from "@/utils/meta/opengraph";
+import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import useFormMutation from "@/hooks/useMutation";
+
 import { BackendResponse } from "@/api/models/Response";
+import { sendUnsubscribeEvent } from "@/api/analytics";
+
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
-import { makeOgMeta } from "@/utils/meta/opengraph";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import Button from "@/components/controls/Button";
+
 
 const unsubscribeSchema = z.object({
   email: z.string().email().min(3)
@@ -28,20 +32,14 @@ const UnsubscribePage: Page = ({ pathname }) => {
     mode: "onChange"
   });
 
-  const [response, setResponse] = useState<null | BackendResponse>(null);
-  const [loading, setLoading] = useState(false);
-
-  const loadingRef = useRef(loading);
-  loadingRef.current = loading;
-
-  const submit = useMemo(() => handleSubmit(({ email }) => {
-    if (loadingRef.current) return;
-    setLoading(true);
-
+  const [submit, response, loading] = useFormMutation<BackendResponse, UnsubscribeSchema>(handleSubmit, (setResponse, { email }) => {
     backend.url("/email/unsubscribe")
       .post({ email })
-      .json((res: BackendResponse) => setResponse(res));
-  }), [handleSubmit]);
+      .json((res: BackendResponse) => {
+        if (res.success) sendUnsubscribeEvent()
+        setResponse(res)
+      });
+  });
 
   return (
     <>

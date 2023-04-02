@@ -13,6 +13,8 @@ import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 import Label from "@/components/controls/Label";
 import useFormMutation from "@/hooks/useMutation";
+import { event } from "nextjs-google-analytics";
+import { sendFeedbackEvent } from "@/api/analytics";
 
 const feedbackSchema = z.object({
   text: z.string().min(1, "Your feedback message must at least contain 1 character")
@@ -31,9 +33,13 @@ const FeedbackSection = () => {
   const [submit, response, loading] = useFormMutation<BackendResponse, FeedbackSchema>(handleSubmit, (setResponse, { text }) => {
     backend.url("/feedback")
       .post({ text })
-      .json((res: BackendResponse) => setResponse(res));
+      .json((res: BackendResponse) => {
+        if (res.success) sendFeedbackEvent();
+        setResponse(res);
+      });
+
   });
-  
+
   return (
     <section
       aria-labelledby="feedback"

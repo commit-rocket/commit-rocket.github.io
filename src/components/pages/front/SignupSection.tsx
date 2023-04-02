@@ -14,6 +14,7 @@ import Heading from "@/components/layout/Heading";
 
 import { backend } from "@/utils/wretch";
 import useFormMutation from "@/hooks/useMutation";
+import { sendSubscribeEvent } from "@/api/analytics";
 
 const signupSchema = z.object({
   email: z.string().email().min(5, "Your email must at least contain 5 characters")
@@ -31,7 +32,10 @@ const SignupSection = () => {
   const [submit, response, loading] = useFormMutation<BackendResponse, SignupSchema>(handleSubmit, (setResponse, { email }) => {
     backend.url("/email/subscribe")
       .post({ email })
-      .json((res: BackendResponse) => setResponse(res));
+      .json((res: BackendResponse) => {
+        if (res.success) sendSubscribeEvent();
+        setResponse(res);
+      });
   });
 
   return (

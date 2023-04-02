@@ -16,6 +16,8 @@ import RoadmapItem from "@/components/pages/front/RoadmapItem";
 import Heading from "@/components/layout/Heading";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
 
+import { sendContributeEvent, sendLearnMoreEvent } from "@/api/analytics";
+
 const logoAnim = {
   initial: {
     translateX: "-2.5%",
@@ -49,7 +51,13 @@ const FrontPage: Page = ({ }) => {
             <p className="text-lg lg:text-xl lg:max-w-xl">
               Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
             </p>
-            <LinkButton href="#introduction" color="secondary" className="px-5 py-3 text-xl" scroll={false}>
+            <LinkButton
+              className="px-5 py-3 text-xl"
+              onClick={sendLearnMoreEvent}
+              href="#introduction"
+              color="secondary"
+              scroll={false}
+            >
               Learn More!
             </LinkButton>
           </div>
@@ -96,7 +104,7 @@ const FrontPage: Page = ({ }) => {
               This means that everyone will have access to our code and anyone can contribute to make it the best it can be.
               Join us in bringing new life to Git!
             </p>
-            <LinkButton href="/contribute" color="white">
+            <LinkButton href="/contribute" color="white" onClick={sendContributeEvent}>
               Contribute
             </LinkButton>
           </div>
