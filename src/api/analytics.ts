@@ -2,6 +2,7 @@ import { event as gtEvent } from "nextjs-google-analytics";
 
 const sendEvent: typeof gtEvent = (...args) => {
   try {
+    console.log(...args);
     gtEvent(...args);
   } catch (error) {
     console.warn(error);
