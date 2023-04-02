@@ -18,7 +18,7 @@ export const style = cva("w-full rounded-full py-2 px-3 border-2", {
   }
 });
 
-const borderStyle = cva("absolute inset-0 border-2 top-[-9px] rounded-[inherit] pl-[var(--label-inset)]", {
+const borderStyle = cva("absolute inset-0 border-2 top-[-9px] rounded-[inherit] pl-[var(--label-inset)] pointer-events-none", {
   variants: {
     color: {
       primary: "border-primary",
