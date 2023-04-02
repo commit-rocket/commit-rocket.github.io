@@ -52,6 +52,8 @@ const NavDropdown = ({ summary, children }: NavDropdownProps) => {
         <ChevronDownIcon
           className="w-5 h-5 data-[open='true']:rotate-180 transition-all"
           data-open={open}
+          width="1em"
+          height="1em"
         />
       </summary>
       <div ref={containerRef} className="absolute inset-x-0 flex flex-col gap-2 px-4 py-2 bg-white border-2 rounded-lg group/dropdown border-primary md:w-fit" data-in-group>

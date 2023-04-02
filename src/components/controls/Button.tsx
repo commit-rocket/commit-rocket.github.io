@@ -59,7 +59,11 @@ const Button = forwardRef(({ className, color, loading, children, disabled, ...p
           animate="anim"
           exit="exit"
         >
-          <ArrowPathIcon className="w-[1em] h-[1em] animate-spin" />
+          <ArrowPathIcon
+            className="w-[1em] h-[1em] animate-spin"
+            width="1em"
+            height="1em"
+          />
         </motion.span>}
       </AnimatePresence>
     </button>

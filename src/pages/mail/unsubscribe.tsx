@@ -76,7 +76,11 @@ const UnsubscribePage: Page = ({ pathname }) => {
           <Button type="submit" color="secondary">
             {!loading
               ? "Unsubscribe"
-              : <ArrowPathIcon className="w-6 h-6 animate-spin" />
+              : <ArrowPathIcon
+                className="w-6 h-6 animate-spin"
+                width="1em"
+                height="1em"
+              />
             }
           </Button>
         </Form>

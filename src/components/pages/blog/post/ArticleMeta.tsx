@@ -49,7 +49,11 @@ const ArticleMeta = ({ author, readtime, created, updated }: ArticleMetaProps) =
       {DotSeparator}
       <div className="flex items-center gap-4 text-sm">
         {safeToRender && <div className="flex items-center gap-2">
-          <BookIcon className="w-4 h-4" />
+          <BookIcon
+            className="w-4 h-4"
+            width="1em"
+            height="1em"
+          />
           <time
             aria-label="reading time"
             dateTime={`${readtime} minutes`}
@@ -59,7 +63,11 @@ const ArticleMeta = ({ author, readtime, created, updated }: ArticleMetaProps) =
         </div>}
         {DotSeparator}
         {safeToRender && <div className="flex items-center gap-2">
-          <CalendarIcon className="w-4 h-4" />
+          <CalendarIcon
+            className="w-4 h-4"
+            width="1em"
+            height="1em"
+          />
           <time aria-label="Date created" dateTime={created} className={`${updated ? "hidden" : ""}`}>
             {(new Date(created)).toLocaleDateString()}
           </time>

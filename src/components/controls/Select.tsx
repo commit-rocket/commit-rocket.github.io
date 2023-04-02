@@ -110,7 +110,11 @@ const Select = forwardRef(<TOption extends any>(
         {({ open }) => (
           <>
             {getDisplayName(value)}
-            <ChevronDownIcon className="inline w-4 h-4 ml-2 motion-safe:transition-transform ui-open:rotate-180" />
+            <ChevronDownIcon
+              className="inline w-4 h-4 ml-2 motion-safe:transition-transform ui-open:rotate-180"
+              width="1em"
+              height="1em"
+            />
             <AnimatePresence>
               {open && <motion.div
                 key="options"

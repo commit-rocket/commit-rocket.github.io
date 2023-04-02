@@ -28,11 +28,19 @@ const NotFound: Page = ({ pathname }) => {
           <p>There are no commits to be found here!</p>
           <div className="grid grid-cols-2 gap-2 mt-4">
             <LinkButton href="/" color="secondary">
-              <HomeModernIcon className="w-4" />
+              <HomeModernIcon
+                className="w-4"
+                width="1em"
+                height="1em"
+              />
               Home
             </LinkButton>
             <Button onClick={() => router.back()} color="secondary">
-              <ArrowUturnLeftIcon className="w-4" />
+              <ArrowUturnLeftIcon
+                className="w-4"
+                width="1em"
+                height="1em"
+              />
               Back
             </Button>
           </div>

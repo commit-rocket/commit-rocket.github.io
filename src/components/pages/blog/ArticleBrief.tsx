@@ -111,12 +111,20 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
           </AuthorTag>
           <Link href={url} color="fill-contrast" className="flex items-center gap-4 text-sm">
             {safeToRender && <div className="flex items-center gap-2">
-              <BookIcon className="w-4 h-4" />
+              <BookIcon
+                className="w-4 h-4"
+                width="1em"
+                height="1em"
+              />
               {readtimeFormatter.format(readtime)}
             </div>}
             <div className="hidden w-1 h-1 rounded-full bg-neutral-600 md:block" />
             {safeToRender && <div className="flex items-center gap-2">
-              <CalendarIcon className="w-4 h-4" />
+              <CalendarIcon
+                className="w-4 h-4"
+                width="1em"
+                height="1em"
+              />
               {(new Date(date)).toLocaleDateString()}
             </div>}
           </Link>

@@ -63,7 +63,11 @@ const SignupSection = () => {
       <ul aria-label="Perks" className="flex flex-wrap justify-center w-full gap-4" >
         {perks.map(({ title, icon: Icon }, i) => (
           <li key={i} className="flex flex-col items-center w-32 gap-2">
-            <Icon className="w-12 sm:w-16 text-primary" />
+            <Icon
+              className="w-12 sm:w-16 text-primary"
+              width="1em"
+              height="1em"
+            />
             <div className="font-bold">{title}</div>
           </li>
         ))}

@@ -43,7 +43,11 @@ const Header = () => {
         aria-controls="header-items"
         onClick={() => setOpen(!open)}
       >
-        <Bars3Icon className="w-6 h-6" />
+        <Bars3Icon
+          className="w-6 h-6"
+          width="1em"
+          height="1em"
+        />
       </Button>
       <div
         ref={itemsContainerRef}
