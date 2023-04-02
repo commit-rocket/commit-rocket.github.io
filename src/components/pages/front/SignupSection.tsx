@@ -13,6 +13,7 @@ import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 
 import { backend } from "@/utils/wretch";
+import useFormMutation from "@/hooks/useMutation";
 
 const signupSchema = z.object({
   email: z.string().email().min(5, "Your email must at least contain 5 characters")
@@ -27,20 +28,11 @@ const SignupSection = () => {
     mode: "onChange"
   });
 
-  const [response, setResponse] = useState<null | BackendResponse>(null);
-  const [loading, setLoading] = useState(false);
-
-  const loadingRef = useRef(loading);
-  loadingRef.current = loading;
-
-  const submit = useMemo(() => handleSubmit(({ email }) => {
-    if (loadingRef.current) return;
-    setLoading(true);
-
+  const [submit, response, loading] = useFormMutation<BackendResponse, SignupSchema>(handleSubmit, (setResponse, { email }) => {
     backend.url("/email/subscribe")
       .post({ email })
       .json((res: BackendResponse) => setResponse(res));
-  }), [handleSubmit]);
+  });
 
   return (
     <section

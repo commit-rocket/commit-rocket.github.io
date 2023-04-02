@@ -39,7 +39,7 @@ const Button = forwardRef(({ className, color, loading, children, disabled, ...p
   return (
     <button ref={ref} className={computedClassName} disabled={loading || disabled} {...props}>
       {!loading && children}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {loading && <motion.span
           key="placeholder"
           className="invisible"

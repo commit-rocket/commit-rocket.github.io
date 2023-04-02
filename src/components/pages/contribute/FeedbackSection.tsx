@@ -12,6 +12,7 @@ import TextArea from "@/components/controls/TextArea";
 import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 import Label from "@/components/controls/Label";
+import useFormMutation from "@/hooks/useMutation";
 
 const feedbackSchema = z.object({
   text: z.string().min(1, "Your feedback message must at least contain 1 character")
@@ -27,21 +28,12 @@ const FeedbackSection = () => {
     mode: "onChange"
   });
 
-  const [response, setResponse] = useState<null | BackendResponse>(null);
-  const [loading, setLoading] = useState(false);
-
-  const loadingRef = useRef(loading);
-  loadingRef.current = loading;
-
-  const submit = useMemo(() => handleSubmit(({ text }) => {
-    if (loadingRef.current) return;
-    setLoading(true);
-
+  const [submit, response, loading] = useFormMutation<BackendResponse, FeedbackSchema>(handleSubmit, (setResponse, { text }) => {
     backend.url("/feedback")
       .post({ text })
       .json((res: BackendResponse) => setResponse(res));
-  }), [handleSubmit]);
-
+  });
+  
   return (
     <section
       aria-labelledby="feedback"

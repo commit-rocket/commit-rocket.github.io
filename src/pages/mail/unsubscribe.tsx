@@ -4,7 +4,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
-import { AnimatePresence, motion } from "framer-motion";
 
 import Button from "@/components/controls/Button";
 import { Page } from "@/types/page";
@@ -15,7 +14,6 @@ import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/meta/opengraph";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
-import Label from "@/components/controls/Label";
 
 const unsubscribeSchema = z.object({
   email: z.string().email().min(3)
