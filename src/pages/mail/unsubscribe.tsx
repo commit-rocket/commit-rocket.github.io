@@ -17,6 +17,7 @@ import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 import Button from "@/components/controls/Button";
+import Label from "@/components/controls/Label";
 
 
 const unsubscribeSchema = z.object({
@@ -36,8 +37,8 @@ const UnsubscribePage: Page = ({ pathname }) => {
     backend.url("/email/unsubscribe")
       .post({ email })
       .json((res: BackendResponse) => {
-        if (res.success) sendUnsubscribeEvent()
-        setResponse(res)
+        if (res.success) sendUnsubscribeEvent();
+        setResponse(res);
       });
   });
 
@@ -61,14 +62,17 @@ const UnsubscribePage: Page = ({ pathname }) => {
           <p className="max-w-md">
             Once you unsubscribe you won't receive any more emails from us and your email will be immediately deleted from our records.
           </p>
-          <Input
-            id="email-input"
-            color="secondary"
-            placeholder="your@email.com"
-            label="Email:"
-            labelClassName="text-secondary"
-            {...register("email")}
-          />
+          <div>
+            <Label htmlFor="email-input" className="text-secondary">
+              Email:
+            </Label>
+            <Input
+              id="email-input"
+              color="secondary"
+              placeholder="your@email.com"
+              {...register("email")}
+            />
+          </div>
           <Button type="submit" color="secondary">
             {!loading
               ? "Unsubscribe"

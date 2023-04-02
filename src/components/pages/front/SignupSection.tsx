@@ -15,6 +15,7 @@ import Heading from "@/components/layout/Heading";
 import { backend } from "@/utils/wretch";
 import useFormMutation from "@/hooks/useMutation";
 import { sendSubscribeEvent } from "@/api/analytics";
+import Label from "@/components/controls/Label";
 
 const signupSchema = z.object({
   email: z.string().email().min(5, "Your email must at least contain 5 characters")
@@ -77,15 +78,14 @@ const SignupSection = () => {
         oneTime
       >
         <div className="w-full">
+          <Label htmlFor="signup-email-input" className="text-primary ml-7">
+            Email:
+          </Label>
           <Input
             id="signup-email-input"
             color="primary"
-            className="w-full text-lg md:text-xl"
-            inputClassName="p-4"
+            className="w-full text-lg md:text-xl p-4"
             placeholder="your@email.com"
-            label="Email:"
-            labelInset="2rem"
-            labelClassName="text-primary"
             {...register("email")}
           />
           <Error className="w-full px-2 text-start" state={formState} name="email" />

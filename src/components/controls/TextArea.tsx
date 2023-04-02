@@ -5,7 +5,7 @@ import { RequiredKeys } from "@/types/utility";
 
 import { style as inputStyle, VariantProps as InputVariantProps } from "./Input";
 
-export const style: typeof inputStyle = (props) => twMerge(inputStyle(props), "rounded-lg");
+export const style: typeof inputStyle = (props) => twMerge(inputStyle(props), "rounded-2xl");
 
 export type TagProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
 export type VariantProps = InputVariantProps;

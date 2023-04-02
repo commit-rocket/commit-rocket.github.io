@@ -65,7 +65,7 @@ const FeedbackSection = () => {
         oneTime
       >
         <div className="w-full">
-          <Label htmlFor="message-input" className="text-start text-secondary">
+          <Label htmlFor="message-input" className="text-start text-primary">
             Your Message:
           </Label>
           <TextArea
