@@ -9,14 +9,10 @@ const sendEvent: typeof gtEvent = (...args) => {
   }
 };
 
-export const sendContributeEvent = () => sendEvent("cta_contribute", {
-  label: "Contribute CTA",
-  category: "CTA"
-});
-
-export const sendLearnMoreEvent = () => sendEvent("cta_learn_more", {
-  label: "Learn More CTA",
-  category: "CTA"
+export const sendCTAEvent = (ctaName: string) => () => sendEvent("cta_click", {
+  label: "CTA",
+  category: "CTA",
+  cta_name: ctaName
 });
 
 export const sendFeedbackEvent = () => sendEvent("feedback_submission", {
