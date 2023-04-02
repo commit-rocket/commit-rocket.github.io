@@ -20,9 +20,10 @@ export const sendFeedbackEvent = () => sendEvent("feedback_submission", {
   category: "Contact"
 });
 
-export const sendSubscribeEvent = () => sendEvent("mail_subscribe", {
+export const sendSubscribeEvent = () => sendEvent("sign_up", {
   label: "Subscribe",
-  category: "Mailing List"
+  category: "Mailing List",
+  method: "Email"
 });
 
 export const sendUnsubscribeEvent = () => sendEvent("mail_unsubscribe", {
