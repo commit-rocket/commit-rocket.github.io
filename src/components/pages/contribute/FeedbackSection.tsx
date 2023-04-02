@@ -14,7 +14,7 @@ import Heading from "@/components/layout/Heading";
 import Label from "@/components/controls/Label";
 
 const feedbackSchema = z.object({
-  text: z.string().min(1)
+  text: z.string().min(1, "Your feedback message must at least contain 1 character")
 });
 
 const feedbackSchemaResolver = zodResolver(feedbackSchema);

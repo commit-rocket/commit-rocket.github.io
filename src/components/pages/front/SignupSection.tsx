@@ -15,7 +15,7 @@ import Heading from "@/components/layout/Heading";
 import { backend } from "@/utils/wretch";
 
 const signupSchema = z.object({
-  email: z.string().email().min(3)
+  email: z.string().email().min(5, "Your email must at least contain 5 characters")
 });
 const signupSchemaResolver = zodResolver(signupSchema);
 
