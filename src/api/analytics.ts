@@ -1,9 +1,9 @@
 import { event as gtEvent } from "nextjs-google-analytics";
 
-const sendEvent: typeof gtEvent = (...args) => {
+const sendEvent: typeof gtEvent = (actionName, options) => {
   try {
-    console.log(...args);
-    gtEvent(...args);
+    if (options) options.event_name = actionName;
+    gtEvent(actionName, options);
   } catch (error) {
     console.warn(error);
   }
