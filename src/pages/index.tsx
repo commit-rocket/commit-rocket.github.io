@@ -17,6 +17,7 @@ import Heading from "@/components/layout/Heading";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
 
 import { sendCTAEvent } from "@/api/analytics";
+import { makeOgMeta } from "@/utils/meta/opengraph";
 
 const logoAnim = {
   initial: {
@@ -31,12 +32,12 @@ const logoAnim = {
   }
 } as const;
 
-const FrontPage: Page = ({ }) => {
+const FrontPage: Page = ({ pathname }) => {
 
   return (
     <>
       <Head>
-        <title>Commit Rocket</title>
+        {makeOgMeta({ title: "Building a Better Git", reverseTitle: true, pathname })}
         {makeSitemapMeta({ priority: 1 })}
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">

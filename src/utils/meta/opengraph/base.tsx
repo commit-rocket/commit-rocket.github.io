@@ -44,10 +44,13 @@ const computeImage = (image?: string | StaticImageData, imageAlt?: string) => {
   } satisfies OgImage;
 };
 
-export const makeOgMeta = (allProps: Partial<OgBase>) => {
+export const makeOgMeta = ({ reverseTitle, ...allProps }: Partial<OgBase> & { reverseTitle?: boolean; }) => {
   const { localeAlternate, pathname, url, image, title, ...props } = Object.assign({}, DEFAULT_OG, allProps);
 
-  const computedTitle = title === DEFAULT_OG.title ? title : `${title} - ${DEFAULT_OG.title}`;
+  const firstTitlePart = reverseTitle ? DEFAULT_OG.title : title;
+  const secondTitlePart = reverseTitle ? title : DEFAULT_OG.title;
+
+  const computedTitle = title === DEFAULT_OG.title ? title : `${firstTitlePart} - ${secondTitlePart}`;
   const computedUrl = pathname ? `${process.env.NEXT_PUBLIC_FRONTEND_URL}${pathname}` : url;
   const computedImage = computeImage(image);
 
