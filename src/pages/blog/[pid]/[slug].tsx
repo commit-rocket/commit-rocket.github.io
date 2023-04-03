@@ -57,7 +57,12 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
         {makeSitemapMeta({
           lastMod: new Date(article.updated ? article.updated : article.created),
         })}
-        <KeywordsMeta tags={tags} />
+        <KeywordsMeta tags={[
+          "Blog",
+          "Post",
+          "Article",
+          ...tags
+        ]} />
       </Head>
       <main>
         <article aria-describedby="article-title" className="flex flex-col gap-4 max-w-4xl w-full items-center">

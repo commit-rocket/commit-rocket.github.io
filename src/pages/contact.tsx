@@ -5,12 +5,21 @@ import contactMethods from "@/assets/state/contactMethods";
 import Link, { style } from "@/components/navigation/Link";
 import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/meta/opengraph";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
+
 
 const ContactPage: Page = ({ pathname }) => {
   return (
     <>
       <Head>
         {makeOgMeta({ title: "Contact", pathname })}
+        <KeywordsMeta tags={[
+          "Contact Us",
+          "Email",
+          "Discord",
+          "NewsLetter",
+          "Feedback"
+        ]} />
       </Head>
       <main aria-labelledby="contact" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
         <Heading.H1 id="contact" className="text-center text-secondary">

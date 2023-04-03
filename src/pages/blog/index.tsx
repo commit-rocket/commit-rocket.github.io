@@ -21,6 +21,7 @@ import Heading from "@/components/layout/Heading";
 import { makeOgMeta } from "@/utils/meta/opengraph";
 import Label from "@/components/controls/Label";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 interface BlogPageProps {
   articles: IArticleBrief[];
@@ -92,6 +93,9 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
       <Head>
         {makeOgMeta({ title: "Blog", pathname })}
         {makeSitemapMeta({ changeFreq: "weekly", priority: 0.8 })}
+        <KeywordsMeta tags={[
+          "Blog"
+        ]} />
       </Head>
       <main aria-labelledby="blog" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
         <Heading.H1 id="blog" className="text-center text-secondary">

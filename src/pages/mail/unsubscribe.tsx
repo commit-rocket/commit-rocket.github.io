@@ -18,6 +18,7 @@ import Form from "@/components/controls/Form";
 import Heading from "@/components/layout/Heading";
 import Button from "@/components/controls/Button";
 import Label from "@/components/controls/Label";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 
 const unsubscribeSchema = z.object({
@@ -47,6 +48,9 @@ const UnsubscribePage: Page = ({ pathname }) => {
       <Head>
         {makeOgMeta({ title: "Unsubscribe", pathname })}
         {makeSitemapMeta({ priority: 0.2 })}
+        <KeywordsMeta tags={[
+          "Unsubscribe"
+        ]} />
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="unsubscribe">
         <Form

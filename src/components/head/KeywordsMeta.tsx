@@ -1,11 +1,20 @@
 export interface KeywordTagsProps {
-  tags: readonly string[];
+  tags?: readonly string[];
 }
 
-const KeywordsMeta = ({ tags }: KeywordTagsProps) => (
+const DEFAULT_TAGS = [
+  "Git",
+  "Commit Rocket",
+  "Git Client",
+  "Git Gui",
+  "New Git Client"
+] as const;
+
+const KeywordsMeta = ({ tags = [] }: KeywordTagsProps) => (
   <meta
+    key="meta:keywords"
     name="keywords"
-    content={tags.map((tag) => tag.replace(",", "")).join(", ")}
+    content={[...DEFAULT_TAGS, ...tags].map((tag) => tag.replace(",", "")).join(", ")}
   />
 );
 

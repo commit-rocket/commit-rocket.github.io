@@ -18,6 +18,7 @@ import { makeSitemapMeta } from "@/utils/meta/sitemap";
 
 import { sendCTAEvent } from "@/api/analytics";
 import { makeOgMeta } from "@/utils/meta/opengraph";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 const logoAnim = {
   initial: {
@@ -39,6 +40,12 @@ const FrontPage: Page = ({ pathname }) => {
       <Head>
         {makeOgMeta({ title: "Building a Better Git", reverseTitle: true, pathname })}
         {makeSitemapMeta({ priority: 1 })}
+        <KeywordsMeta tags={[
+          "Introduction",
+          "Roadmap",
+          "Missions",
+          "Newsletter Signup"
+        ]} />
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">
         <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 xl:flex-row xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh] mx-auto">

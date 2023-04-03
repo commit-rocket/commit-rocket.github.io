@@ -10,6 +10,7 @@ import Heading from "@/components/layout/Heading";
 
 import { makeOgMeta } from "@/utils/meta/opengraph";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 const NotFound: Page = ({ pathname }) => {
   const router = useRouter();
@@ -19,6 +20,10 @@ const NotFound: Page = ({ pathname }) => {
       <Head>
         {makeOgMeta({ title: "404", pathname })}
         {makeSitemapMeta({ priority: 0.1 })}
+        <KeywordsMeta tags={[
+          "Not Found",
+          "404"
+        ]} />
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="not-found">
         <div className="flex flex-col gap-2 p-8 text-center border-2 rounded-md border-primary">

@@ -13,6 +13,7 @@ import BannerImage from "@/assets/images/brand/commit-rocket-logo.webp";
 
 import { makeOgMeta } from "@/utils/meta/opengraph";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 
 const pageTransition = {
@@ -75,6 +76,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           changeFreq: "monthly",
           priority: 0.5
         })}
+        <KeywordsMeta />
       </Head>
       <GoogleAnalytics />
       <div className="flex flex-col font-sans">

@@ -7,6 +7,8 @@ import projects from "@/assets/state/projects";
 
 import Heading from "@/components/layout/Heading";
 import Project from "@/components/pages/about/Project";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
+
 import { makeOgMeta } from "@/utils/meta/opengraph";
 
 const AboutPage: Page = ({ pathname }) => {
@@ -14,6 +16,10 @@ const AboutPage: Page = ({ pathname }) => {
     <>
       <Head>
         {makeOgMeta({ title: "About", pathname })}
+        <KeywordsMeta tags={[
+          "About Us",
+          "Team"
+        ]} />
       </Head>
       <main aria-labelledby="about" className="flex flex-col flex-1 w-full gap-8 pb-8 max-w-7xl">
         <Heading.H1 id="about" className="text-center text-secondary">
