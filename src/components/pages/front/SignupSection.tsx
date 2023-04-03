@@ -90,7 +90,12 @@ const SignupSection = () => {
           />
           <Error className="w-full px-2 text-start" state={formState} name="email" />
         </div>
-        <Button type="submit" loading={loading} color="secondary" className="relative px-5 py-3 text-lg md:text-xl w-fit">
+        <Button
+          className="relative px-5 py-3 text-lg w-full sm:w-fit md:text-xl"
+          type="submit"
+          color="secondary"
+          loading={loading}
+        >
           Keep me up-to-date!
         </Button>
         <p role="note">

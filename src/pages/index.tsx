@@ -52,7 +52,7 @@ const FrontPage: Page = ({ }) => {
               Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
             </p>
             <LinkButton
-              className="px-5 py-3 text-xl"
+              className="px-5 py-3 text-xl w-full sm:w-fit"
               onClick={sendCTAEvent("Learn More")}
               href="#introduction"
               color="secondary"
@@ -73,14 +73,14 @@ const FrontPage: Page = ({ }) => {
             />
           </div>
         </section>
-        <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg text-center border-2 rounded-lg xl:flex-row text-primary-contrast image-dots from-primary-light border-primary-light bg-primary">
+        <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center border-2 rounded-lg xl:flex-row text-primary-contrast image-dots from-primary-light border-primary-light bg-primary">
           <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-lg text-fill-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
             <span className="text-2xl">
               Introducing...
             </span>
-            <span className="flex flex-col items-center gap-4 p-4 text-4xl font-bold break-normal text-primary-contrast md:text-6xl md:flex-row md:w-max">
+            <span className="flex flex-col items-center gap-4 p-4 text-3xl sm:text-4xl font-bold break-normal text-primary-contrast md:text-6xl md:flex-row md:w-max">
               <img
-                className="h-[1.5em] w-[1.5em]"
+                className="w-16 h-16 md:w-[1.5em] md:h-[1.5em]"
                 alt="A Small Rocket"
                 src={LogoSmall.src}
                 width={LogoSmall.width}
@@ -123,7 +123,7 @@ const FrontPage: Page = ({ }) => {
             Our main goal with Commit Rocket is to drive innovation and provide a modern and fast alternative to existing Git clients.
             We want to improve the user experience for developers by creating an open-source and cross-platform tool that is both feature-rich and beginner-friendly.
           </p>
-          <ul className="flex flex-col flex-wrap justify-between w-full gap-12 lg:flex-row">
+          <ul className="flex flex-col flex-wrap justify-between w-full gap-16 lg:gap-4 lg:flex-row">
             {missions.map((mission, i) => (
               <Mission key={i} {...mission} />
             ))}
