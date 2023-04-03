@@ -37,7 +37,7 @@ const FrontPage: Page = ({ }) => {
     <>
       <Head>
         <title>Commit Rocket</title>
-        {makeSitemapMeta({ priority: 0.9 })}
+        {makeSitemapMeta({ priority: 1 })}
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">
         <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 xl:flex-row xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh] mx-auto">
