@@ -2,19 +2,19 @@ import React from "react";
 
 const CommonCss = () => {
   const css = `
-    :where(.w-full) {
+    .w-full {
        width: 100%; 
     }
 
-    :where(.flex) { 
+    .flex { 
       display: flex; 
     }
 
-    :where(.items-center) { 
+    .items-center { 
       align-items: center; 
     }
 
-    :where(.justify-center) { 
+    .justify-center { 
       justifiy-content: center 
     }
 
