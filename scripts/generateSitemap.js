@@ -8,6 +8,19 @@ const { glob } = require("glob");
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 dotenv.config({ path: path.resolve(__dirname, "../.env.local"), override: true });
 
+const makeUrlContent = ({ url, lastMod, changeFreq = "monthly", priority = "0.5" }) => {
+  let content = "";
+
+  content += `\t<url>\n`;
+  content += `\t\t<loc>${url}</loc>\n`;
+  if (lastMod) content += `\t\t<lastmod>${lastMod}</lastmod>\n`;
+  content += `\t\t<changefreq>${changeFreq}</changefreq>\n`;
+  content += `\t\t<priority>${priority}</priority>\n`;
+  content += `\t</url>\n`;
+
+  return content;
+};
+
 const runScript = async () => {
   const outDir = path.resolve(__dirname, "../out");
   const pages = await glob("**/*.html", {
@@ -29,13 +42,21 @@ const runScript = async () => {
     const changeFreqElement = fileDocument.querySelector("meta[name='page_change_frequency']");
     const priorityElement = fileDocument.querySelector("meta[name='page_priority']");
 
+    urlContent += makeUrlContent({
+      url: canonicalUrl,
+      lastMod: lastModElement?.getAttribute("content"),
+      changeFreq: changeFreqElement?.getAttribute("content"),
+      priority: priorityElement?.getAttribute("content")
+    });
 
-    urlContent += `\t<url>\n`;
-    urlContent += `\t\t<loc>${canonicalUrl}</loc>\n`;
-    if (lastModElement?.getAttribute("content")) urlContent += `\t\t<lastmod>${lastModElement.getAttribute("content")}</lastmod>\n`;
-    urlContent += `\t\t<changefreq>${changeFreqElement?.getAttribute("content") ?? "monthly"}</changefreq>\n`;
-    urlContent += `\t\t<priority>${priorityElement?.getAttribute("content") ?? "0.5"}</priority>\n`;
-    urlContent += `\t</url>\n`;
+    if (process.env.NEXT_PUBLIC_FRONTEND_URL === canonicalUrl) {
+      urlContent += makeUrlContent({
+        url: canonicalUrl + "/",
+        lastMod: lastModElement?.getAttribute("content"),
+        changeFreq: changeFreqElement?.getAttribute("content"),
+        priority: priorityElement?.getAttribute("content")
+      });
+    }
 
     return urlContent;
   }));
