@@ -32,4 +32,22 @@ export const H4 = makeHeading(4, "text-2xl font-semibold md:text-3xl");
 export const H5 = makeHeading(5, "text-xl font-semibold md:text-2xl");
 export const H6 = makeHeading(6, "text-lg font-semibold md:text-xl");
 
-export default { H1, H2, H3, H4, H5, H6 };
+export default {
+  /** Styled `h1` */
+  H1,
+  
+  /** Styled `h2` */
+  H2,
+  
+  /** Styled `h3` */
+  H3,
+  
+  /** Styled `h4` */
+  H4,
+  
+  /** Styled `h5` */
+  H5,
+  
+  /** Styled `h6` */
+  H6
+};

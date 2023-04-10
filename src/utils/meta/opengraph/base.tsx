@@ -51,6 +51,8 @@ export const makeOgMeta = ({ reverseTitle, ...allProps }: Partial<OgBase> & { re
   const secondTitlePart = reverseTitle ? title : DEFAULT_OG.title;
 
   const computedTitle = title === DEFAULT_OG.title ? title : `${firstTitlePart} - ${secondTitlePart}`;
+  const computedOgTitlte = title;
+  
   const computedUrl = pathname ? `${process.env.NEXT_PUBLIC_FRONTEND_URL}${pathname}` : url;
   const computedImage = computeImage(image);
 
@@ -60,7 +62,7 @@ export const makeOgMeta = ({ reverseTitle, ...allProps }: Partial<OgBase> & { re
     computedUrl && <link key="canonical" rel="canonical" href={computedUrl} />,
 
     toOpenGraph({ props, prefix: "og" }),
-    toOpenGraph({ props: { url: computedUrl, image: computedImage.url, title: computedTitle }, prefix: "og" }),
+    toOpenGraph({ props: { url: computedUrl, image: computedImage.url, title: computedOgTitlte }, prefix: "og" }),
     toOpenGraph({ props: computedImage, prefix: "og:image" }),
     toOpenGraph({ props: { localeAlternate }, prefix: "og:locale" })
   ].flat();

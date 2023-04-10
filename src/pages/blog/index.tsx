@@ -83,7 +83,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
     articles
       .filter((article) => (
         article.title.includes(search) &&
-        tags.every((tag) => article.tags.includes(tag))
+        tags.every((tag) => article.tags.map((t) => t.name).includes(tag))
       ))
       .sort(sort.func)
   ), [tags, search, sort, articles]);
@@ -93,9 +93,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
       <Head>
         {makeOgMeta({ title: "Blog", pathname })}
         {makeSitemapMeta({ changeFreq: "weekly", priority: 0.8 })}
-        <KeywordsMeta tags={[
-          "Blog"
-        ]} />
+        <KeywordsMeta tags={["Blog"]} />
       </Head>
       <main aria-labelledby="blog" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
         <Heading.H1 id="blog" className="text-center text-secondary">

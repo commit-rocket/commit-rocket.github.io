@@ -20,6 +20,7 @@ export const style = cva("transition-colors gap-2", {
     }
   },
   defaultVariants: {
+    color: "primary",
     underline: false
   }
 });
@@ -28,13 +29,14 @@ export type VariantProps = GetVariantProps<typeof style>;
 
 type LinkProps = {
   underline?: boolean;
+  nofollow?: boolean;
   external?: boolean;
-} & RequiredKeys<VariantProps, "color">
+} & VariantProps
   & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof InternalLinkProps>
   & InternalLinkProps
   & React.RefAttributes<HTMLAnchorElement>;
 
-const Link = ({ className, color, underline, children, external, hrefLang = "en", rel, ...props }: LinkProps) => {
+const Link = ({ className, color, underline, children, external, nofollow, hrefLang = "en", rel, ...props }: LinkProps) => {
 
   const computedClassName = useMemo(
     () => twMerge(style({ color, underline }), className),
@@ -45,13 +47,13 @@ const Link = ({ className, color, underline, children, external, hrefLang = "en"
     <InternalLink
       className={computedClassName}
       hrefLang={hrefLang}
-      rel={`${external ? "external" : ""} ${rel ?? ""}`}
+      rel={`${external ? "external opener" : ""} ${nofollow ? "nofollow" : ""} ${rel ?? ""}`.trim()}
       target={external ? "_blank" : undefined}
       {...props}
     >
       {children}
       {external && <ArrowTopRightOnSquareIcon
-        className="inline w-4 h-4"
+        className="inline-block w-[1em] h-[1em]"
       />}
     </InternalLink>
   );

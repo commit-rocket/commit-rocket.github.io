@@ -1,5 +1,20 @@
+export interface ITag {
+  name: string,
+  hidden?: boolean;
+}
+
 export default {
-  "news": "News",
-  "commitRocket": "Commit Rocket",
-  "git": "Git"
-} satisfies Record<string, string>;
+  "news": {
+    name: "News",
+  },
+  "commitRocket": {
+    name: "Commit Rocket"
+  },
+  "git": {
+    name: "Git"
+  },
+  "intro": {
+    name: "Introduction"
+  },
+  
+} satisfies Record<string, ITag>;
