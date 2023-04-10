@@ -151,7 +151,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
           </div>
           <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" aria-label="blog articles">
             <AnimatePresence>
-              {computedArticles.map((brief) => <ArticleBrief key={brief.url} {...brief} />)}
+              {computedArticles.map((brief, i) => <ArticleBrief key={brief.url} {...brief} imgLoading={i > 3 ? "lazy" : "eager"} />)}
             </AnimatePresence>
           </ul>
         </>}

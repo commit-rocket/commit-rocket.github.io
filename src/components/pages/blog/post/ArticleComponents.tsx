@@ -30,6 +30,15 @@ const A = {
     return <div className={computedClassName}  {...props} />;
   },
 
+  Img: ({ className, loading = "lazy", ...props }: React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>) => {
+    const computedClassName = useMemo(
+      () => twMerge("rounded-lg", className),
+      [className]
+    );
+
+    return <img {...props} className={computedClassName} loading={loading} />;
+  },
+
   ...Heading,
 };
 

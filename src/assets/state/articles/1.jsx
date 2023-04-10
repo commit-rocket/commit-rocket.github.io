@@ -1,7 +1,9 @@
 import { people } from "../team";
 import tags from "./tags";
 
-import thumbnail from "@/assets/images/content/blog/1/thumbnail.webp";
+import thumbnail from "@blogImages/1/thumbnail.webp";
+import tauriVsElectron from "@blogImages/1/tauri-vs-electron.webp";
+import oldLookingClients from "@blogImages/1/clients.webp";
 
 import A from "@/components/pages/blog/post/ArticleComponents";
 
@@ -65,7 +67,7 @@ export default {
       </p>
 
       <p>
-        <strong>What if... it didn't have to be like that?</strong> If you are anything like us, we feel like this takes away from the gains you get from using a Git client. That's why we created Commit Rocket - a next-generation Git client that puts user experience first. With Commit Rocket, you'll never have to sacrifice functionality for ease of use. Join us as we aim to revolutionize the world of Git clients.
+        <strong>What if... it didn't have to be like that?</strong> If you are anything like us, you'd feel like these pain points take away from the gains you get from using a Git client. That's why we created Commit Rocket - a next-generation Git client that puts user experience first. With Commit Rocket, you'll never have to sacrifice functionality for ease of use. Join us as we aim to revolutionize the world of Git clients.
       </p>
 
       <p>
@@ -100,8 +102,16 @@ export default {
     </A.H4>
 
     <p>
-      A lot of the clients that you can find today on <A.Link color="primary" href="https://git-scm.com/downloads/guis" external>Git's official Git client list</A.Link> have outdated visuals (except <A.Link href="https://www.gitkraken.com/" nofollow external>GitKraken</A.Link>, <A.Link href="https://gitnuro.jetpackduba.com/" nofollow external>Gitnuro</A.Link> and <A.Link href="https://gitviewer.com/" nofollow external>GitViewer</A.Link>). Visual appeal and user experience may not persé go hand in hand, but it can be argued that outdated visuals can put people off from using the client and having an overall enjoyable experience. This is especially important when you have a client with a lot of functions like <A.Link href="https://www.sourcetreeapp.com/" nofollow external>SourceTree</A.Link>.
+      A lot of the clients that you can find today on <A.Link color="primary" href="https://git-scm.com/downloads/guis" external>Git's official Git client list</A.Link> have outdated visuals. Not all Git clients have outdated visuals, take <A.Link href="https://www.gitkraken.com/" nofollow external>GitKraken</A.Link>, <A.Link href="https://gitnuro.jetpackduba.com/" nofollow external>Gitnuro</A.Link> and <A.Link href="https://gitviewer.com/" nofollow external>GitViewer</A.Link>, these clients set a good example for modern visuals. Visual appeal and user experience may not persé go hand in hand, but it can be argued that outdated visuals can put people off from using the client and having an overall enjoyable experience. This is especially important when you have a client with a lot of functionality like <A.Link href="https://www.sourcetreeapp.com/" nofollow external>SourceTree</A.Link>.
     </p>
+
+    <A.Img
+      className="mx-auto"
+      alt={"SourceTree and Git Extensions"}
+      src={oldLookingClients.src}
+      width={oldLookingClients.width}
+      height={oldLookingClients.height}
+    />
 
     <p>
       We recognize the fact that form should not follow function, but that it should be paired with function. That is why we will be spending a significant amount of our resources to making a good looking user interface that is beginner friendly, and also provides the best user experience we can muster.
@@ -195,6 +205,22 @@ export default {
     <p>
       Our alternative to using <A.Link href="https://www.nodegit.org/" nofollow external>Nodegit</A.Link> or invoking the CLI and parsing the results is using <A.Link href="https://libgit2.org/" external>Libgit2</A.Link>. Nodegit is a JavaScript binding of Libgit2, however we will be using a <A.Link href="https://github.com/rust-lang/git2-rs" external>Rust binding of Libgit2</A.Link>, which will be a lot faster. This is because invoking C code from Rust is faster compared to invoking it from JavaScript, in addition to that, Rust is already faster then JavaScript; so this will result in a massive speed increase.
     </p>
+
+    <A.Container className="gap-2">
+      <p role="note" aria-label="Note" className="mx-auto font-semibold">
+        Tauri VS Electron (empty app)
+      </p>
+      <A.Img
+        className="mx-auto max-h-[27rem] w-fit"
+        src={tauriVsElectron.src}
+        width={tauriVsElectron.width}
+        height={tauriVsElectron.height}
+      />
+
+      <p role="note" aria-label="Source" className="mx-auto text-sm">
+        Source: <A.Link href="https://github.com/Elanis/web-to-desktop-framework-comparison" external>Web to Desktop framework comparison by Elanis</A.Link>
+      </p>
+    </A.Container>
 
     <A.H3>
       Our Inspiration

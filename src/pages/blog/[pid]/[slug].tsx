@@ -70,6 +70,7 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
             <img
               aria-label="Article Thumbnail"
               className="rounded-lg"
+              loading="eager"
               src={thumbnail.src}
               width={thumbnail.width}
               height={thumbnail.height}

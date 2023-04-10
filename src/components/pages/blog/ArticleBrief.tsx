@@ -40,10 +40,10 @@ export type IArticleBrief = {
 } & Omit<IArticle, "content" | "updated" | "created" | "slug">;
 
 export interface ArticleBriefProps extends IArticleBrief {
-
+  imgLoading?: "eager" | "lazy";
 }
 
-const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author, date, url, tags }: ArticleBriefProps) => {
+const ArticleBrief = ({ title, thumbnail, thumbnailAlt, imgLoading, readtime, teaser, author, date, url, tags }: ArticleBriefProps) => {
   const safeToRender = useSSGSafe();
 
   const AuthorTag = author.links.length > 0 ? Link : "div";
@@ -60,6 +60,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
       <NextLink href={url} className="group/link aspect-[16/7] rounded-lg overflow-hidden" >
         <img
           className="aspect-[16/7] object-contain rounded-lg transition-transform group-hover/link:scale-105"
+          loading={imgLoading}
           src={thumbnail.src}
           width={thumbnail.width}
           height={thumbnail.height}

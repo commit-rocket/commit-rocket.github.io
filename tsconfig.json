@@ -8,6 +8,7 @@
       "DOM.Iterable",
       "ESNext"
     ],
+    "baseUrl": "./",
     "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,7 +21,10 @@
     "incremental": true,
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
+      ],
+      "@blogImages/*": [
+        "src/assets/images/content/blog/*"
       ]
     }
   },
