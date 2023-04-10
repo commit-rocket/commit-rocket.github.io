@@ -39,6 +39,14 @@ const Footer = () => {
             </Link>
             <Link
               color="white"
+              href="/blog/1/introducing-commit-rocket"
+              title="Introductionn to Commit Rocket"
+              underline
+            >
+              Introduction
+            </Link>
+            <Link
+              color="white"
               href="/contribute"
               title="Contribute to Commit Rocket"
               underline
