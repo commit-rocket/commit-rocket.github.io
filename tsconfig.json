@@ -28,7 +28,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.d.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "src/assets/state/articles/*.jsx"
   ],
   "exclude": [
     "node_modules"
