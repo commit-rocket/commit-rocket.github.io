@@ -10,11 +10,22 @@ const DEFAULT_TAGS = [
   "New Git Client"
 ] as const;
 
+/**
+ * Creates a meta tag for the keywords
+ * 
+ * By default it adds:
+ * - Git
+ * - Commit Rocket
+ * - Git Client
+ * - Git Gui
+ * - New Git Client
+ * @param props KeywordTagsProps
+ */
 const KeywordsMeta = ({ tags = [] }: KeywordTagsProps) => (
   <meta
     key="meta:keywords"
     name="keywords"
-    content={[...DEFAULT_TAGS, ...tags].map((tag) => tag.replace(",", "")).join(", ")}
+    content={Array.from(new Set([...DEFAULT_TAGS, ...tags])).map((tag) => tag.replace(",", "")).join(", ")}
   />
 );
 
