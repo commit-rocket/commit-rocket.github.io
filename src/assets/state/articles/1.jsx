@@ -25,7 +25,7 @@ export default {
   title: "Introducing Commit Rocket! 🤩",
 
   thumbnail,
-  thumbnailAlt: "The Commit Rocket Logo",
+  thumbnailAlt: "What is Commit Rocket",
 
   vertical: "technology",
 
@@ -208,7 +208,7 @@ export default {
     </A.H4>
 
     <p>
-      We love the way that Arc looks. It is very different compared to other browsers, not just in looks but also in functionality. Despite it being based on Chromium, it has some really cool new ideas, like notes, easels and spaces. If you haven't yet, I recommend checking out <A.Link href="https://www.youtube.com/@TheBrowserCompany" nofollow external>The Browser Company's youtube channel</A.Link> to see what Arc is about. For us personally we would like to do the same Arc is doing, changing Git clients in meaningfull ways. What that way is however, is to be determined.
+      We love the way that Arc looks. It is very different compared to other browsers, not just in looks but also in functionality. Despite it being based on Chromium, it has some really cool new ideas, like notes, easels and spaces. If you haven't yet, We recommend checking out <A.Link href="https://www.youtube.com/@TheBrowserCompany" nofollow external>The Browser Company's youtube channel</A.Link> to see what Arc is about. For us personally we would like to do the same Arc is doing, changing Git clients in meaningfull ways. What that way is however, is to be determined.
     </p>
 
     <A.H4>
@@ -306,7 +306,7 @@ export default {
     </A.H2>
 
     <p>
-      We really want to make Commit Rocket as awesome as possible. I hope all of you will stick around to see how this will turn out!
+      We really want to make Commit Rocket as awesome as possible. We hope all of you will stick around to see how this will turn out!
     </p>
   </>
 };
