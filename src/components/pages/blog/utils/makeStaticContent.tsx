@@ -11,7 +11,7 @@ const makeHeadingId = (heading: Element, index: number, usedHeadingIds: string[]
     return id;
   }
 
-  const contentId = (heading.textContent ?? "").substring(0, 255).replace(/[\s\n\t_]/g, "-");
+  const contentId = (heading.textContent ?? "").substring(0, 255).replace(/[^a-zA-Z0-9\s]/g, "").replace(/[\s\n\t_]/g, "-").toLocaleLowerCase();
   const newId = usedHeadingIds.includes(contentId) ? `${contentId}-${index}` : contentId;
   usedHeadingIds.push(newId);
 

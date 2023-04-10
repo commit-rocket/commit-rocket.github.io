@@ -25,7 +25,7 @@ const ArticleMeta = ({ author, readtime, created, updated }: ArticleMetaProps) =
   return (
     <div className="flex flex-wrap items-center justify-center gap-4">
       <AuthorTag
-        className="flex items-center gap-2 group/author"
+        className="flex items-center gap-2 group/writer"
         //@ts-ignore
         href={author.links.length > 0 ? author.links[0].href : undefined}
         //@ts-ignore
@@ -34,7 +34,8 @@ const ArticleMeta = ({ author, readtime, created, updated }: ArticleMetaProps) =
       >
         <div className="overflow-hidden rounded-full">
           <img
-            className="object-contain w-8 h-8 rounded-full aspect-square group-hover/author:scale-110 motion-safe:transition-all"
+            aria-hidden
+            className="object-contain w-8 h-8 rounded-full aspect-square group-hover/writer:scale-110 motion-safe:transition-all"
             src={author.image.src}
             width={author.image.width}
             height={author.image.height}
@@ -42,8 +43,8 @@ const ArticleMeta = ({ author, readtime, created, updated }: ArticleMetaProps) =
           />
         </div>
         <div className="flex flex-col">
-          <div>{author.fullName}</div>
-          <div className="text-sm">{author.title}</div>
+          <p aria-label="article-author" itemProp="author">{author.fullName}</p>
+          <p className="text-sm" aria-hidden>{author.title}</p>
         </div>
       </AuthorTag>
       {DotSeparator}

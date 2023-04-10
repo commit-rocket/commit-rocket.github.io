@@ -67,19 +67,20 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, readtime, teaser, author
         />
       </NextLink>
       <div className="flex flex-col flex-1 gap-4 p-4 pt-0">
-        {tags.length > 0 && <div className="flex flex-wrap gap-1">
-          {tags.map((tag, i) => (
-            <LinkButton
-              key={i}
-              href={makeTagUrl(tag)}
-              color="secondary"
-              className="px-2 py-1 text-xs font-semibold border"
-              prefetch={false}
-            >
-              {tag}
-            </LinkButton>
+        {tags.length > 0 && <ul className="flex flex-wrap gap-1">
+          {tags.map(({ name, hidden }, i) => (
+            !hidden && <li key={i}>
+              <LinkButton
+                href={makeTagUrl(name)}
+                color="secondary"
+                className="px-2 py-1 text-xs font-semibold border"
+                prefetch={false}
+              >
+                {name}
+              </LinkButton>
+            </li>
           ))}
-        </div>}
+        </ul>}
         <Link href={url} color="fill-contrast" className="block text-2xl font-bold">
           {title}
         </Link>

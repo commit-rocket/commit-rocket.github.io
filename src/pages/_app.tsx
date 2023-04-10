@@ -3,17 +3,17 @@ import '@/styles/main.css';
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, MotionConfig, AnimatePresence } from "framer-motion";
 import type { AppProps } from 'next/app';
+import Head from "next/head";
 
 import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
-import Head from "next/head";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 import BannerImage from "@/assets/images/brand/commit-rocket-logo.webp";
 
 import { makeOgMeta } from "@/utils/meta/opengraph";
 import { makeSitemapMeta } from "@/utils/meta/sitemap";
-import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 
 const pageTransition = {

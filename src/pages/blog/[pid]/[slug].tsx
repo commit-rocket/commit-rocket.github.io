@@ -52,7 +52,7 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
           publishedTime: new Date(article.created),
           modifiedTime: article.updated ? new Date(article.updated) : undefined,
           section: vertical,
-          tag: tags,
+          tag: tags.map((t) => t.name),
         })}
         {makeSitemapMeta({
           lastMod: new Date(article.updated ? article.updated : article.created),
@@ -61,12 +61,12 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
           "Blog",
           "Post",
           "Article",
-          ...tags
+          ...tags.map((t) => t.name)
         ]} />
       </Head>
       <main>
-        <article aria-describedby="article-title" className="flex flex-col gap-4 max-w-4xl w-full items-center">
-          <section aria-label="Main article content" className="flex flex-col gap-4 w-full items-center">
+        <article aria-describedby="article-title" className="flex flex-col gap-8 max-w-4xl w-full items-center">
+          <section aria-label="Main article content" className="flex flex-col gap-8 w-full items-center">
             <img
               aria-label="Article Thumbnail"
               className="rounded-lg"
@@ -75,7 +75,7 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
               height={thumbnail.height}
               alt={thumbnailAlt}
             />
-            <Heading.H1 id="article-title" className="text-4xl font-semibold text-center">
+            <Heading.H1 id="article-title" className="text-center">
               {article.title}
             </Heading.H1>
             <ArticleMeta
@@ -86,17 +86,23 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
             />
             <div
               id="article-content"
-              className="flex flex-col text-lg text-start w-full gap-6"
+              className="flex flex-col text-lg text-start w-full gap-8"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
           </section>
-          <section aria-labelledby="article-tags" className="w-full pt-4 px-4 border-t border-primary">
-            <p id="article-tags" className="text-xs font-bold mb-2">Tags:</p>
+          <section aria-labelledby="article-tags" className="w-full pt-16 border-t border-primary mt-8">
+            <h2 id="article-tags" className="text-xs font-bold mb-2">Tags:</h2>
             <ul aria-labelledby="article-tags" className="flex flex-wrap gap-1">
-              {tags.map((tag, i) => (
-                <LinkButton key={i} color="secondary" href={makeTagUrl(tag)} className="w-fit text-sm  px-2 py-1">
-                  #{tag}
-                </LinkButton>
+              {tags.map(({ name, hidden }, i) => (
+                !hidden && <li key={i}>
+                  <LinkButton
+                    color="secondary"
+                    href={makeTagUrl(name)}
+                    className="w-fit text-sm px-2 py-1"
+                  >
+                    #{name}
+                  </LinkButton>
+                </li>
               ))}
             </ul>
           </section>

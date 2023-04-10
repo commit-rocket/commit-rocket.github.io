@@ -1,13 +1,15 @@
-import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
+import { StaticImageData } from "next/image";
+
 import { IMember } from "../team";
+import { ITag } from "./tags";
 
 type IArticle = {
   title: string;
   thumbnail: StaticImageData,
   thumbnailAlt: string;
 
-  tags: string[];
+  tags: ITag[];
 
   /** 
   * A high level overview of the article E.g. Technology 
@@ -15,8 +17,6 @@ type IArticle = {
   vertical: string;
   
   slug: string;
-
-
 
   author: IMember;
 

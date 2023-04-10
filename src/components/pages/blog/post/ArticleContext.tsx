@@ -3,13 +3,15 @@ import { createContext, useContext } from "react";
 
 export const ArticleContext = createContext<ArticleContext>({ ready: false });
 
+export interface Heading {
+  text: string;
+  level: number;
+  id: string;
+}
+
 export type ArticleContext = ({
   ready: true;
-  headings: {
-    text: string;
-    level: number;
-    id: string;
-  }[];
+  headings: Heading[];
   path: string;
 } & IArticle) | {
   ready: false;
