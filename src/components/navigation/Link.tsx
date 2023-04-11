@@ -4,8 +4,6 @@ import { cva, VariantProps as GetVariantProps } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 import ArrowTopRightOnSquareIcon from "@heroicons/react/24/solid/ArrowTopRightOnSquareIcon";
 
-import { RequiredKeys } from "@/types/utility";
-
 export const style = cva("transition-colors gap-2", {
   variants: {
     underline: {
