@@ -5,6 +5,8 @@ const exclude = ["article.d.ts", "index.ts", "tags.ts"];
 const articlesDir = path.resolve(__dirname, "../src/assets/state/articles");
 const indexPath = path.join(articlesDir, "/index.ts");
 
+const articleExtension = ".jsx";
+
 const runScript = async () => {
   const files = await fs.readdir(articlesDir);
   let fileImports = `import IArticle from "./article";\n\n`;
@@ -13,10 +15,10 @@ const runScript = async () => {
   files
     .filter((file) => {
       const isExclude = exclude.includes(file);
-      const isTsx = file.endsWith(".tsx");
-      return !isExclude && isTsx;
+      const isArticleExt = file.endsWith(articleExtension);
+      return !isExclude && isArticleExt;
     })
-    .map((articleFile) => articleFile.replace(".tsx", ""))
+    .map((articleFile) => articleFile.replace(articleExtension, ""))
     .forEach((articleFilename, i, arr) => {
       const importName = `article${i + 1}`;
       fileImports += `import ${importName} from "./${articleFilename}";\n`;
