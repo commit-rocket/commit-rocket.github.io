@@ -168,7 +168,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async () => {
 
   return {
     props: {
-      articles: await Promise.all(articles.map<Promise<IArticleBrief>>(async ({ article }, i) => {
+      articles: await Promise.all(articles.filter(({ article }) => !article.hidden).map<Promise<IArticleBrief>>(async ({ article }, i) => {
         const { content, created, updated, slug, ...brief } = { ...article };
 
         return {

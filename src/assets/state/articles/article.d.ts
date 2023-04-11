@@ -23,6 +23,8 @@ type IArticle = {
   teaser: string;
   content: ReactNode;
 
+  hidden?: boolean
+
   updated?: Date;
   created: Date;
 };
