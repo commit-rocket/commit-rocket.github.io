@@ -16,5 +16,7 @@ export default {
   "intro": {
     name: "Introduction"
   },
-  
+  "tutorial": {
+    name: "Tutorial"
+  },
 } satisfies Record<string, ITag>;
