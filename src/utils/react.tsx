@@ -1,4 +1,4 @@
-import { ReactFragment, Fragment, ReactNode, LegacyRef, MutableRefObject, RefCallback } from "react";
+import React, { ReactFragment, Fragment, ReactNode, LegacyRef, MutableRefObject, RefCallback } from "react";
 
 export const isFragment = (node: ReactNode): node is ReactFragment => {
   if (!node || typeof node !== "object" || !("type" in node)) return false;
@@ -10,7 +10,7 @@ export const reactNodeToString = async (node: ReactNode): Promise<string> => {
   return renderToString(<>{node}</>);
 };
 
-export const mergeRefs = <T = any>(...refs: Array<MutableRefObject<T> | LegacyRef<T> | undefined>): RefCallback<T> => (value) => {
+export const mergeRefs = <T extends any = any>(...refs: Array<MutableRefObject<T> | LegacyRef<T> | undefined>): RefCallback<T> => (value) => {
   refs.forEach((ref) => {
     if (!ref) return;
     if (typeof ref === "function") {
