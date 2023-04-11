@@ -1,20 +1,20 @@
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 
-
 import { Page } from "@/types/page";
 import IArticle from "@/assets/state/articles/article";
 
+import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import { makeArticleOgMeta, makeOgMeta } from "@/utils/meta/opengraph";
 import { calculateReadtime } from "@/utils/readtime";
 
 import Heading from "@/components/layout/Heading";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
-import { makeArticleOgMeta, makeOgMeta } from "@/utils/meta/opengraph";
 import LinkButton from "@/components/controls/LinkButton";
 import makeTagUrl from "@/components/pages/blog/utils/makeTagUrl";
 import ArticleMeta from "@/components/pages/blog/post/ArticleMeta";
+
 import { makeStaticContent } from "@/components/pages/blog/utils/makeStaticContent";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
 
 type ComputedArticle = {
   path: string;
