@@ -4,15 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    
     "analyze:build": "cross-env ANALYZE=true npm run build",
     "analyze:dev": "cross-env ANALYZE=true npm run dev",
-    
     "script:gen-articles-index": "node ./scripts/generateArticlesIndex.js",
     "script:gen-sitemap": "node ./scripts/generateSitemap.js",
     "script:gen-robots": "node ./scripts/generateRobots.js",
     "script:gen-cname": "node ./scripts/generateCName.js",
-    
     "build": "next build && next export",
     "postbuild": "npm run script:gen-sitemap && npm run script:gen-robots && npm run script:gen-cname"
   },
@@ -27,6 +24,7 @@
     "linkedom": "^0.14.25",
     "next": "13.2.4",
     "nextjs-google-analytics": "^2.3.3",
+    "prismjs": "^1.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.5",
@@ -40,6 +38,7 @@
   },
   "devDependencies": {
     "@types/node": "18.15.0",
+    "@types/prismjs": "^1.26.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "^10.4.14",

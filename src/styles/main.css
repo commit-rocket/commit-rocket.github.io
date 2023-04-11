@@ -13,6 +13,10 @@ html {
   @apply min-h-full bg-fill text-fill-contrast;
 }
 
+:not(pre)>code {
+  @apply bg-white/20 text-purple-700 border border-purple-700/25 rounded-md px-1
+}
+
 div.swal2-popup.swal2-toast {
   @apply p-3 shadow shadow-black/25 bg-white/50 backdrop-blur-sm;
 }
