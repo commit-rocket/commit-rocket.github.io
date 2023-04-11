@@ -1,10 +1,11 @@
 import List from "@/components/content/List";
-import Heading from "@/components/layout/Heading";
+import Heading, { makeHeading } from "@/components/layout/Heading";
 import Link from "@/components/navigation/Link";
 
 import ArticleTableOfContent from "./ArticleTableOfContent";
 import React, { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
+import Code from "@/components/content/Code";
 const A = {
   /** Wrapped `ol`/`ul` */
   Ls: List,
@@ -39,7 +40,13 @@ const A = {
     return <img {...props} className={computedClassName} loading={loading} />;
   },
 
-  ...Heading,
+  Code: ((props) => <Code {...props} allowSSR={true} />) as typeof Code,
+
+  H2: makeHeading(2, "text-4xl font-bold"),
+  H3: makeHeading(3, "text-3xl font-bold"),
+  H4: makeHeading(4, "text-2xl font-semibold"),
+  H5: makeHeading(5, "text-xl font-semibold"),
+  H6: makeHeading(6, "text-lg font-semibold"),
 };
 
 export default A;
