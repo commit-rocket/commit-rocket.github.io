@@ -4,7 +4,6 @@ import tags from "./tags";
 import thumbnail from "@blogImages/1/thumbnail.webp";
 
 import A from "@/components/pages/blog/post/ArticleComponents";
-import Code from "@/components/content/Code";
 
 /** @satisfies {import("./article").default} */
 export default {
@@ -39,20 +38,24 @@ export default {
 
   teaser: "Learn about how \"Commit Rocket\", our new in development Git client, came to be and what we have planned for it!",
   content: <>
-    <p>
-      As a developer I have frequently wanted to delete a Git branch from my repository to keep it a nice and clean overview of my Git repository. If you are not using a Git client it can sometimes be challenging to remember what command you have to run. Whether it's deleting a local branch, a remote branch, or both, there are a few different ways to do it using the Git CLI.
-    </p>
-    <p>
-      At Commit Rocket, we're developing a new Git client that will make it easier to manage your Git repositories. As part of our development process, we want to make sure that we're well-versed in all things Git, including branch deletion. So, in this article, I will go over the steps to delete a branch using the Git CLI, as well as provide examples of commands that you can just copy-paste.
-    </p>
-    <p>
-      If you have any questions, feedback or feature requests for our upcoming Git client, please feel free to reach out to us at <A.Link href="mailto:feedback@commitrocket.com">feedback@commitrocket.com</A.Link>. We're always looking for ways to improve our product, and your feedback would be greatly appreciated!
-    </p>
-    <A.TOC />
+
+
+    <A.Container className="text-xl">
+      <p>
+        As part of the development of Commit Rocket, we want to make sure that we're well-versed in all things Git, including branch deletion. If you are not using a Git client it can sometimes be challenging to remember what command you have to run. So, in this article, I will go over some commands to delete a branch using the Git CLI, with examples that you can just copy, adjust and paste.
+      </p>
+
+      <p>
+        Jump ahead:
+      </p>
+    </A.Container>
+
+    <A.TOC maxLevel={2} />
 
     <A.H2>
       Deleting a local branch in Git CLI:
     </A.H2>
+
     <p>
       To delete a local branch in Git CLI, you can use the git branch -d command followed by the name of the branch you want to delete. Here's an example command:
     </p>
@@ -128,4 +131,4 @@ export default {
       I hope you found this article helpful! If you have any questions or feedback, feel free to reach out to us via <A.Link href="mailto:feedback@commitrocket.com">feedback@commitrocket.com</A.Link>. Commit Rocket is currently in development and we are always looking for ways to improve the product, and your feedback would be greatly appreciated. Thank you for reading!
     </p>
   </>
-};;
+};;;

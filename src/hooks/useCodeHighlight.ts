@@ -48,13 +48,11 @@ const useCodeHightlight = ({ lang, code, markedLines, allowSSR }: Options) => {
       return () => {
         fetchState.langChanged = true;
       };
-    } else {
-      require(`prismjs/components/prism-${langToCategory[lang]}`);
     }
+
   }, [lang]);
 
   const codeLines = useMemo<CodeLine[]>(() => {
-
     let codeToRender = code;
 
     // Normalize whitespace
@@ -71,6 +69,10 @@ const useCodeHightlight = ({ lang, code, markedLines, allowSSR }: Options) => {
 
     if (!isLanguageLoaded || (!allowSSR && isSSR)) {
       return originalLines.map((line) => ({ html: line, original: line }));
+    }
+
+    if (isSSR) {
+      require(`prismjs/components/prism-${langToCategory[lang]}`);
     }
 
     const renderedLines = Prism.highlight(codeToRender, Prism.languages[lang], lang).split("\n");
