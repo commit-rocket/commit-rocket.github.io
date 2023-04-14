@@ -38,26 +38,24 @@ export default {
 
   teaser: "Learn about how \"Commit Rocket\", our new in development Git client, came to be and what we have planned for it!",
   content: <>
-
-
     <A.Container className="text-xl">
       <p>
-        As part of the development of Commit Rocket, we want to make sure that we're well-versed in all things Git, including branch deletion. If you are not using a Git client it can sometimes be challenging to remember what command you have to run. So, in this article, I will go over some commands to delete a branch using the Git CLI, with examples that you can just copy, adjust and paste.
+        As we develop our new Git client Commit Rocket, we are diving into all of Git its features, including branch deletion. In this article, we'll cover several Git commands that will help you delete branches, including local and remote branches. If you're not using a Git client, it can sometimes be challenging to remember what command to run, so we've provided some easy-to-use examples that you can copy and paste.
       </p>
 
       <p>
-        Jump ahead:
+        Let's get started!
       </p>
     </A.Container>
 
     <A.TOC maxLevel={2} />
 
     <A.H2>
-      Deleting a local branch in Git CLI:
+      Deleting a local branch
     </A.H2>
 
     <p>
-      To delete a local branch in Git CLI, you can use the git branch -d command followed by the name of the branch you want to delete. Here's an example command:
+      To delete a local branch in Git CLI, use the command <code>git branch -d</code>, followed by the name of the branch you want to delete. For example:
     </p>
 
     <A.Code lang="bash">{`
@@ -65,70 +63,56 @@ export default {
     `}</A.Code>
 
     <p>
-      For instance, to delete a local branch called "feature/cookie," you would run:
+      If you want to delete an unmerged branch, you can use the <code>-D</code> flag instead of <code>-d</code>. For example:
     </p>
 
     <A.Code lang="bash">{`
-      git branch -d feature/cookie
-    `}</A.Code>
-
-    <A.H3>
-      Unmerged local branch
-    </A.H3>
-
-    <p>
-      However there is a caviate with running this command! It does not allow you to delete any branch that has not been merged. To delete a branch that hasn't been merged use the <code>-D</code> flag instead of <code>-d</code>. This would result in the command changing to become:
-    </p>
-
-    <A.Code lang="bash">{`
-      git branch -D feature/cookie
+      git branch -D <branch-name>
     `}</A.Code>
 
     <A.H2>
-      Deleting a remote branch using the Git CLI:
+      Deleting a remote branch
     </A.H2>
 
     <p>
-      To delete a remote branch in Git CLI, you can use the git push command with the <code>-d</code> flag, followed by the name of the remote branch you want to delete. Here's an example command:
+      To delete a remote branch in Git CLI, use the command <code>git push</code> with the <code>-d</code> flag, followed by the name of the remote branch you want to delete. For example:
     </p>
 
     <A.Code lang="bash">{`
       git push <remote-name> -d <branch-name>
     `}</A.Code>
 
-    <p>
-      For instance, to delete a remote branch called "feature/cookie" on the "origin" remote, you would run:
-    </p>
-
-    <A.Code lang="bash">{`
-      git push origin -d feature/cookie
-    `}</A.Code>
-
-    <p>
-      This will delete the remote branch from your repository.
-    </p>
-
     <A.H2>
-      Deleting both the local branch and the remote branch with the Git CLI:
+      Deleting both the local and remote branches
     </A.H2>
 
     <p>
-      To delete both the local branch and the remote branch at the same time using the Git CLI, you can use the <code>git push</code> command with the <code>-d</code> flag and the <code>git branch -d</code> command together. Here's an example command:
+      To delete both the local and remote branch at the same time using Git CLI, use the command <code>git push</code> with the <code>-d</code> flag, followed by the name of the remote branch, and then use the command <code>git branch -d</code>, followed by the name of the local branch. For example:
     </p>
 
     <A.Code lang="bash">{`
       git push <remote-name> -d <branch-name> && git branch -d <branch-name>
     `}</A.Code>
 
-    <A.Code lang="bash">{`
-      git push origin -d feature/cookie && git branch -d feature/cookie
-    `}</A.Code>
     <A.H2>
-      Closing statements
+      Commit Rocket
     </A.H2>
 
     <p>
-      I hope you found this article helpful! If you have any questions or feedback, feel free to reach out to us via <A.Link href="mailto:feedback@commitrocket.com">feedback@commitrocket.com</A.Link>. Commit Rocket is currently in development and we are always looking for ways to improve the product, and your feedback would be greatly appreciated. Thank you for reading!
+      Deleting branches is one of the standard features a Git client should have. One of the things we have noticed in already existing clients like SourceTree, is that they don't give errors as to why branch deletion fails. For example, if a branch is not merged yet it will throw a generic Git error, instead of telling you that the branch was not merged yet. We'll be taking notes from that and make sure that our error handling is descriptive and actually tells you what to do if something goes wrong.
+    </p>
+
+    <A.H2>
+      Wrapping up
+    </A.H2>
+    <p>
+      Now that you know how to delete branches in Git CLI, it's time to start cleaning up your repositories! Remember to use caution when deleting branches, especially when deleting remote branches, as they can affect other collaborators working on the same project.
+    </p>
+    <p>
+      We hope you found this article helpful! If you have any questions or feedback, feel free to reach out to us via <A.Link href="mailto:feedback@commitrocket.com">feedback@commitrocket.com</A.Link>. At Commit Rocket, we are committed to making Git simpler and faster for developers everywhere. If you're interested in learning more about our in development Git client, be sure to check us out at <A.Link href="https://www.commitrocket.com/">commitrocket.com</A.Link>.
+    </p>
+    <p>
+      And last but not least, if you found this article useful, please share it with your fellow developers so they can benefit from it as well. Thank you for reading!
     </p>
   </>
-};;;
+};
