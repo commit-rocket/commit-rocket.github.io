@@ -2,6 +2,7 @@ import { people } from "../team";
 import tags from "./tags";
 
 import thumbnail from "@blogImages/2/thumbnail.webp";
+import deleteError from "@blogImages/2/sourcetree-delete-error.webp";
 
 import A from "@/components/pages/blog/post/ArticleComponents";
 
@@ -99,7 +100,29 @@ export default {
     </A.H2>
 
     <p>
-      Deleting branches is one of the standard features a Git client should have. One of the things we have noticed in already existing clients like SourceTree, is that they don't give errors as to why branch deletion fails. For example, if a branch is not merged yet it will throw a generic Git error, instead of telling you that the branch was not merged yet. We'll be taking notes from that and make sure that our error handling is descriptive and actually tells you what to do if something goes wrong.
+      Deleting branches is one of the standard features a Git client should have. One of the things we have noticed in already existing clients like SourceTree, is that they don't give errors as to why branch deletion fails. For example, if a branch is not merged yet it will throw a generic Git error, instead of telling you that the branch was not merged yet.
+    </p>
+
+    <A.Container className="gap-2">
+      <A.Img
+        className="max-w-3xl mx-auto"
+        src={deleteError.src}
+        width={deleteError.width}
+        height={deleteError.height}
+        alt="Very verbose SourceTree unmerged branch deletion error"
+        aria-aria-labelledby="delete-error-note"
+      />
+      <p
+        id="delete-error-note"
+        className="mx-auto text-center text-sm"
+        role="note"
+      >
+        A SourceTree error when deleting an unmerged branch without Force delete enabled
+      </p>
+    </A.Container>
+
+    <p>
+      We'll be taking notes from that and make sure that our error handling is descriptive and actually tells you what to do if something goes wrong.
     </p>
 
     <A.H2>
