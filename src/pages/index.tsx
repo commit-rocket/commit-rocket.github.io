@@ -14,11 +14,11 @@ import { Page } from "@/types/page";
 import roadmap from "@/assets/state/roadmap";
 import RoadmapItem from "@/components/pages/front/RoadmapItem";
 import Heading from "@/components/layout/Heading";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 import { sendCTAEvent } from "@/api/analytics";
+import { makeSitemapMeta } from "@/utils/meta/sitemap";
 import { makeOgMeta } from "@/utils/meta/opengraph";
-import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 const logoAnim = {
   initial: {

@@ -15,6 +15,7 @@ import makeTagUrl from "@/components/pages/blog/utils/makeTagUrl";
 import ArticleMeta from "@/components/pages/blog/post/ArticleMeta";
 
 import { makeStaticContent } from "@/components/pages/blog/utils/makeStaticContent";
+import CodeBlockHydrator from "@/components/content/CodeBlock/CodeBlockHydrator";
 
 type ComputedArticle = {
   path: string;
@@ -85,11 +86,13 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
               created={article.created}
               updated={article.updated}
             />
-            <div
-              id="article-content"
-              className="flex flex-col text-lg text-start w-full gap-8"
-              dangerouslySetInnerHTML={{ __html: article.content }}
-            />
+            <CodeBlockHydrator>
+              <div
+                id="article-content"
+                className="flex flex-col text-lg text-start w-full gap-8"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
+            </CodeBlockHydrator>
           </section>
           <section aria-labelledby="article-tags" className="w-full pt-16 border-t border-primary mt-8">
             <h2 id="article-tags" className="text-xs font-bold mb-2">Tags:</h2>
