@@ -10,7 +10,7 @@ export interface ProjectProps extends IProject {
 const Project = ({ title, description, thumbnail, thumbnailAlt, href, linkText, linkRel }: ProjectProps) => {
 
   const onImageClick = useCallback(async () => {
-    const { modal } = await import("@/utils/swal");
+    const { default: modal } = await import("@/utils/alerts/modal");
 
     modal.fire({
       title: thumbnailAlt,

@@ -6,14 +6,13 @@ import { z } from "zod";
 import { BackendResponse } from "@/api/models/Response";
 import Button from "@/components/controls/Button";
 import Error from "@/components/controls/Error";
-import Link from "@/components/navigation/Link";
-import { backend } from "@/utils/wretch";
+import Link from "@/components/controls/Link";
+import backend from "@/lib/fetch/backend";
 import TextArea from "@/components/controls/TextArea";
 import Form from "@/components/controls/Form";
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 import Label from "@/components/controls/Label";
 import useFormMutation from "@/hooks/useMutation";
-import { event } from "nextjs-google-analytics";
 import { sendFeedbackEvent } from "@/api/analytics";
 
 const feedbackSchema = z.object({

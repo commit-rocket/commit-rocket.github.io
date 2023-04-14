@@ -4,7 +4,7 @@ import { StaticImageData } from "next/image";
 import ModernPicture from "@/assets/images/content/missions/modern.webp";
 import FastAndFeaturePackedPicture from "@/assets/images/content/missions/fast-and-feature-packed.webp";
 import CrossPlatformPicture from "@/assets/images/content/missions/cross-platform.webp";
-import Link from "@/components/navigation/Link";
+import Link from "@/components/controls/Link";
 
 export interface IMission {
   title: string;
@@ -24,7 +24,7 @@ const missions: IMission[] = [
         Many Git clients have a similar look and feel, and the interface can be intimidating for new users.
       </p>
       <p>
-         With Commit Rocket we plan to {/*<Link href="/blog/3/designs" color="primary" underline>innovate and modernize the design of Git clients</Link>*/} innovate and modernize the design of Git clients to 
+        With Commit Rocket we plan to {/*<Link href="/blog/3/designs" color="primary" underline>innovate and modernize the design of Git clients</Link>*/} innovate and modernize the design of Git clients to
         create an attractive and user-friendly interface that will appeal to both beginners and experienced users alike.
       </p>
     </>

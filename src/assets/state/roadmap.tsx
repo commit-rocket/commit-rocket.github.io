@@ -1,5 +1,5 @@
-import Heading from "@/components/layout/Heading";
-import Link from "@/components/navigation/Link";
+import Heading from "@/components/content/Heading";
+import Link from "@/components/controls/Link";
 import { ReactNode } from "react";
 
 export interface IRoadmapItem {

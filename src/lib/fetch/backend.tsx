@@ -1,11 +1,11 @@
 import wretch from "wretch";
 
-export const backend = wretch(process.env.NEXT_PUBLIC_BACKEND_URL!)
+const backend = wretch(process.env.NEXT_PUBLIC_BACKEND_URL!)
   .options({
     mode: "cors"
   })
   .catcher(404, async () => {
-    const { toast } = await import("./swal");
+    const { default: toast } = await import("../../utils/alerts/toast");
     toast.fire({
       title: "Error",
       icon: "error",
@@ -13,7 +13,7 @@ export const backend = wretch(process.env.NEXT_PUBLIC_BACKEND_URL!)
     });
   })
   .catcher(500, async () => {
-    const { toast } = await import("./swal");
+    const { default: toast } = await import("../../utils/alerts/toast");
     toast.fire({
       title: "Error",
       icon: "error",
@@ -21,10 +21,12 @@ export const backend = wretch(process.env.NEXT_PUBLIC_BACKEND_URL!)
     });
   })
   .catcher(400, async () => {
-    const { toast } = await import("./swal");
+    const { default: toast } = await import("../../utils/alerts/toast");
     toast.fire({
       title: "Error",
       icon: "error",
       text: "Bad request."
     });
   });
+
+export default backend;

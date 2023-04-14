@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 import ChevronDownIcon from "@heroicons/react/24/solid/ChevronDownIcon";
 
 import { style as navlinkStyle } from "./NavLink";
-import { style as linkStyle } from "./Link";
+import { style as linkStyle } from "../controls/Link";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import useHover from "@/hooks/useHover";
 

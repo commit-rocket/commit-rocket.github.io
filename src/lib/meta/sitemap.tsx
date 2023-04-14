@@ -61,3 +61,5 @@ export const makeSitemapMeta = ({ changeFreq, lastMod, priority = 0.5 }: Options
     />
   ];
 };
+
+export default makeSitemapMeta;

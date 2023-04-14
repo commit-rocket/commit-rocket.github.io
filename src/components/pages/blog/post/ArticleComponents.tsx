@@ -1,11 +1,11 @@
 import List from "@/components/content/List";
-import Heading, { makeHeading } from "@/components/layout/Heading";
-import Link from "@/components/navigation/Link";
+import Heading, { makeHeading } from "@/components/content/Heading";
+import Link from "@/components/controls/Link";
 
 import ArticleTableOfContent from "./ArticleTableOfContent";
 import React, { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
-import Code from "@/components/content/Code";
+import Code from "@/components/content/CodeBlock";
 const A = {
   /** Wrapped `ol`/`ul` */
   Ls: List,

@@ -1,4 +1,4 @@
-import Link from "./Link";
+import Link from "../controls/Link";
 
 import Logo from "@/assets/images/brand/logo-200x200.webp";
 

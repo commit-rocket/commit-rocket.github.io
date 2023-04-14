@@ -17,10 +17,10 @@ import { ControlledSelect } from "@/components/controls/Select";
 
 import { calculateReadtime } from "@/utils/readtime";
 import fadeAnim from "@/animations/fade";
-import Heading from "@/components/layout/Heading";
-import { makeOgMeta } from "@/utils/meta/opengraph";
+import Heading from "@/components/content/Heading";
+import { makeOgMeta } from "@/lib/meta/opengraph";
 import Label from "@/components/controls/Label";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import makeSitemapMeta from "@/lib/meta/sitemap";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 interface BlogPageProps {
