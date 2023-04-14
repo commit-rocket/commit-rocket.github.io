@@ -56,7 +56,7 @@ const renderHierarchy = (hierarchy: HeadingHierarchy, config: RenderHierarchyCon
   url.hash = hierarchy.id;
 
   return <li key={`${hierarchy.level}-${index}`}>
-    <p className="flex items-center gap-2">
+    <span className="flex items-center gap-2">
       <PlayIcon
         width=".6em"
         height=".6em"
@@ -69,7 +69,7 @@ const renderHierarchy = (hierarchy: HeadingHierarchy, config: RenderHierarchyCon
       >
         {hierarchy.text}
       </Link>
-    </p>
+    </span>
     {hierarchy.children.length > 0 && <ul className="ml-8">
       {hierarchy.children.map((child, i) => renderHierarchy(child, config, i))}
     </ul>}

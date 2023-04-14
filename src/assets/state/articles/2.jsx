@@ -8,11 +8,10 @@ import A from "@/components/pages/blog/post/ArticleComponents";
 
 /** @satisfies {import("./article").default} */
 export default {
-  title: "How to Delete Branches in Git",
-  hidden: true,
+  title: "How to Delete Branches using Git CLI",
 
   thumbnail,
-  thumbnailAlt: "Deleting Branches in Git",
+  thumbnailAlt: "Deleting Branches using the Git CLI",
 
   vertical: "technology",
 
@@ -35,13 +34,14 @@ export default {
 
   author: people.rik,
 
-  created: new Date("2023/04/11"),
+  created: new Date("2023/04/14"),
 
   teaser: "Learn about how \"Commit Rocket\", our new in development Git client, came to be and what we have planned for it!",
+
   content: <>
     <A.Container className="text-xl">
       <p>
-        As we develop our new Git client Commit Rocket, we are diving into all of Git its features, including branch deletion. In this article, we'll cover several Git commands that will help you delete branches, including local and remote branches. If you're not using a Git client, it can sometimes be challenging to remember what command to run, so we've provided some easy-to-use examples that you can copy and paste.
+        As we develop our new Git client Commit Rocket, we are diving into all of Git's features, including branch deletion. In this article, we'll cover the commands you should use when deleting branches in Git, and some edge cases you should keep in mind. If you're not using a Git client, it can sometimes be challenging to remember what command to run, so we've provided some easy-to-use examples that you can copy, adjust and paste.
       </p>
 
       <p>
@@ -117,7 +117,7 @@ export default {
         className="mx-auto text-center text-sm"
         role="note"
       >
-        A SourceTree error when deleting an unmerged branch without Force delete enabled
+        Figure 1: A SourceTree error when deleting an unmerged branch without <code>Force delete</code> enabled
       </p>
     </A.Container>
 
@@ -132,7 +132,7 @@ export default {
       Now that you know how to delete branches in Git CLI, it's time to start cleaning up your repositories! Remember to use caution when deleting branches, especially when deleting remote branches, as they can affect other collaborators working on the same project.
     </p>
     <p>
-      We hope you found this article helpful! If you have any questions or feedback, feel free to reach out to us via <A.Link href="mailto:feedback@commitrocket.com">feedback@commitrocket.com</A.Link>. At Commit Rocket, we are committed to making Git simpler and faster for developers everywhere. If you're interested in learning more about our in development Git client, be sure to check us out at <A.Link href="https://www.commitrocket.com/">commitrocket.com</A.Link>.
+      We hope you found this article helpful! If you have any questions or feedback, feel free to reach out to us via <A.Link href="mailto:feedback@commitrocket.com">feedback@commitrocket.com</A.Link>. At Commit Rocket, we are <i>committed</i> to making Git simpler and faster for developers everywhere. If you're interested in learning more about our in development Git client, be sure to have a look around our website!
     </p>
     <p>
       And last but not least, if you found this article useful, please share it with your fellow developers so they can benefit from it as well. Thank you for reading!
