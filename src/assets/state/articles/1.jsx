@@ -107,7 +107,7 @@ export default {
 
     <A.Img
       className="mx-auto"
-      alt={"SourceTree and Git Extensions"}
+      alt="SourceTree and Git Extensions"
       src={oldLookingClients.src}
       width={oldLookingClients.width}
       height={oldLookingClients.height}
@@ -212,11 +212,11 @@ export default {
       </p>
       <A.Img
         className="mx-auto max-h-[27rem] w-fit"
+        alt="Electron vs Tauri memory and build size"
         src={tauriVsElectron.src}
         width={tauriVsElectron.width}
         height={tauriVsElectron.height}
       />
-
       <p role="note" aria-label="Source" className="mx-auto text-sm">
         Source: <A.Link href="https://github.com/Elanis/web-to-desktop-framework-comparison" external>Web to Desktop framework comparison by Elanis</A.Link>
       </p>
