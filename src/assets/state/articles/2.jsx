@@ -1,7 +1,7 @@
 import { people } from "../team";
 import tags from "./tags";
 
-import thumbnail from "@blogImages/1/thumbnail.webp";
+import thumbnail from "@blogImages/2/thumbnail.webp";
 
 import A from "@/components/pages/blog/post/ArticleComponents";
 
