@@ -154,7 +154,7 @@ const CopyCode = ({ codeLines }: CopyCodeProps) => {
       <CheckIcon
         ref={checkIconRef}
         id="check-icon"
-        className="absolute transition-opacity opacity-0 data-[clicked='true']:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute transition-opacity duration-300 opacity-0 data-[clicked='true']:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         width="1.25em"
         height="1.25em"
       />
