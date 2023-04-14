@@ -5,15 +5,15 @@ import { motion, useReducedMotion, MotionConfig, AnimatePresence } from "framer-
 import type { AppProps } from 'next/app';
 import Head from "next/head";
 
-import Header from "@/components/navigation/Header";
-import Footer from "@/components/navigation/Footer";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 import BannerImage from "@/assets/images/brand/commit-rocket-logo.webp";
 
-import { makeOgMeta } from "@/utils/meta/opengraph";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import { makeOgMeta } from "@/lib/meta/opengraph";
+import makeSitemapMeta from "@/lib/meta/sitemap";
 
 
 const pageTransition = {

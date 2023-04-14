@@ -4,7 +4,7 @@ import Bars3Icon from "@heroicons/react/24/solid/Bars3Icon";
 
 import Logo from "@/assets/images/brand/logo-200x200.webp";
 
-import Link from "./Link";
+import Link from "../controls/Link";
 import Button from "../controls/Button";
 import NavLink from "./NavLink";
 import useOutsideClick from "@/hooks/useOutsideClick";

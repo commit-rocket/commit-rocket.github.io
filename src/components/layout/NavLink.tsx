@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 import { ReactNode } from "react";
-import Link from "./Link";
+import Link from "../controls/Link";
 
 export interface NavLinkProps {
   href: string,

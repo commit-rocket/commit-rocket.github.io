@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
 
 import { Page } from "@/types/page";
-import { backend } from "@/utils/wretch";
-import { makeOgMeta } from "@/utils/meta/opengraph";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import backend from "@/lib/fetch/backend";
+import { makeOgMeta } from "@/lib/meta/opengraph";
+import makeSitemapMeta from "@/lib/meta/sitemap";
 import useFormMutation from "@/hooks/useMutation";
 
 import { BackendResponse } from "@/api/models/Response";
@@ -15,7 +15,7 @@ import { sendUnsubscribeEvent } from "@/api/analytics";
 
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 import Button from "@/components/controls/Button";
 import Label from "@/components/controls/Label";
 import KeywordsMeta from "@/components/head/KeywordsMeta";

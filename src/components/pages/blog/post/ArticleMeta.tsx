@@ -6,7 +6,7 @@ import { IMember } from "@/assets/state/team";
 
 import useSSGSafe from "@/hooks/useSSGSafe";
 
-import Link from "@/components/navigation/Link";
+import Link from "@/components/controls/Link";
 import { readtimeFormatter } from "@/utils/readtime";
 
 export interface ArticleMetaProps {

@@ -13,12 +13,12 @@ import Mission from "@/components/pages/front/Mission";
 import { Page } from "@/types/page";
 import roadmap from "@/assets/state/roadmap";
 import RoadmapItem from "@/components/pages/front/RoadmapItem";
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 import { sendCTAEvent } from "@/api/analytics";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
-import { makeOgMeta } from "@/utils/meta/opengraph";
+import makeSitemapMeta from "@/lib/meta/sitemap";
+import { makeOgMeta } from "@/lib/meta/opengraph";
 
 const logoAnim = {
   initial: {

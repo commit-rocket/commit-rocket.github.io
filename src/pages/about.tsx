@@ -5,11 +5,11 @@ import Member from "@/components/pages/about/Member";
 import { Page } from "@/types/page";
 import projects from "@/assets/state/projects";
 
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 import Project from "@/components/pages/about/Project";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
 
-import { makeOgMeta } from "@/utils/meta/opengraph";
+import { makeOgMeta } from "@/lib/meta/opengraph";
 
 const AboutPage: Page = ({ pathname }) => {
   return (

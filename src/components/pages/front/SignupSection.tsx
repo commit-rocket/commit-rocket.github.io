@@ -7,12 +7,12 @@ import { BackendResponse } from "@/api/models/Response";
 import perks from "@/assets/state/perks";
 import Button from "@/components/controls/Button";
 import Error from "@/components/controls/Error";
-import Link from "@/components/navigation/Link";
+import Link from "@/components/controls/Link";
 import Input from "@/components/controls/Input";
 import Form from "@/components/controls/Form";
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 
-import { backend } from "@/utils/wretch";
+import backend from "@/lib/fetch/backend";
 import useFormMutation from "@/hooks/useMutation";
 import { sendSubscribeEvent } from "@/api/analytics";
 import Label from "@/components/controls/Label";

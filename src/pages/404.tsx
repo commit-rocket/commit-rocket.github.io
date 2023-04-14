@@ -6,10 +6,10 @@ import HomeModernIcon from "@heroicons/react/24/solid/HomeModernIcon";
 import { Page } from "@/types/page";
 import LinkButton from "@/components/controls/LinkButton";
 import Button from "@/components/controls/Button";
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 
-import { makeOgMeta } from "@/utils/meta/opengraph";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import { makeOgMeta } from "@/lib/meta/opengraph";
+import makeSitemapMeta from "@/lib/meta/sitemap";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 const NotFound: Page = ({ pathname }) => {

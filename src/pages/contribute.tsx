@@ -1,11 +1,11 @@
 import Head from "next/head";
 
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 import FeedbackSection from "@/components/pages/contribute/FeedbackSection";
 
 import { Page } from "@/types/page";
-import { makeOgMeta } from "@/utils/meta/opengraph";
-import { makeSitemapMeta } from "@/utils/meta/sitemap";
+import { makeOgMeta } from "@/lib/meta/opengraph";
+import makeSitemapMeta from "@/lib/meta/sitemap";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
 
 

@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import PlayIcon from "@heroicons/react/24/solid/PlayIcon";
 
-import Link from "@/components/navigation/Link";
+import Link from "@/components/controls/Link";
 import { Heading, useArticle } from "./ArticleContext";
 
 

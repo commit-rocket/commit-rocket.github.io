@@ -4,7 +4,7 @@ import BookIcon from "@heroicons/react/24/outline/BookOpenIcon";
 import { motion, Variants } from "framer-motion";
 
 import LinkButton from "@/components/controls/LinkButton";
-import Link from "@/components/navigation/Link";
+import Link from "@/components/controls/Link";
 
 import useSSGSafe from "@/hooks/useSSGSafe";
 

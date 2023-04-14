@@ -1,5 +1,5 @@
 import { IRoadmapItem } from "@/assets/state/roadmap";
-import Heading from "@/components/layout/Heading";
+import Heading from "@/components/content/Heading";
 
 export interface RoadmapItemProps extends IRoadmapItem {
 
