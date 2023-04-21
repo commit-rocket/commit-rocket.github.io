@@ -36,7 +36,7 @@ export default {
 
   created: new Date("2023/04/14"),
 
-  teaser: "Learn about how \"Commit Rocket\", our new in development Git client, came to be and what we have planned for it!",
+  teaser: "Git branch deletion can be slightly confusing, lets explore which commands you can use in different scenarios!",
 
   content: <>
     <A.Container className="text-xl">
