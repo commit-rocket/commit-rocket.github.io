@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import TagIcon from "@heroicons/react/24/solid/TagIcon";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -29,16 +29,16 @@ interface BlogPageProps {
 
 const SORT_OPTIONS = [
   {
-    "direction": "new",
-    "name": "Newest",
-    "func": (a: IArticleBrief, b: IArticleBrief) => {
+    direction: 1,
+    name: "Newest",
+    func: (a: IArticleBrief, b: IArticleBrief) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     }
   },
   {
-    "direction": "old",
-    "name": "Oldest",
-    "func": (a: IArticleBrief, b: IArticleBrief) => {
+    direction: 2,
+    name: "Oldest",
+    func: (a: IArticleBrief, b: IArticleBrief) => {
       return new Date(a.date).getTime() - new Date(b.date).getTime();
     }
   }
@@ -47,11 +47,29 @@ const SORT_OPTIONS = [
 const filterSchema = z.object({
   search: z.string(),
   sort: z.object({
-    direction: z.union([z.literal("new"), z.literal("old")]),
+    direction: z.union([z.literal(1), z.literal(2)]),
     name: z.string(),
     func: z.function(z.tuple([z.object({}), z.object({})]), z.number())
   })
 });
+
+const NO_RESULTS_ANIM = {
+  in: {
+    opacity: 0
+  },
+  anim: {
+    opacity: 1,
+    transition: {
+      duration: 0.25
+    }
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.25
+    }
+  }
+} as Variants;
 
 const filterSchemaResolver = zodResolver(filterSchema);
 
@@ -99,7 +117,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
         <Heading.H1 id="blog" className="text-center text-secondary">
           Blog
         </Heading.H1>
-        {computedArticles.length > 0 && <>
+        {articles.length > 0 && <>
           <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2 items-end">
             <div>
               <Label htmlFor="search-input" className="text-secondary">
@@ -149,13 +167,25 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
               </motion.div>}
             </AnimatePresence>
           </div>
-          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" aria-label="blog articles">
+          <AnimatePresence>
+            {computedArticles.length <= 0 && <motion.p
+              role="note"
+              className="w-full text-2xl font-semibold text-center"
+              variants={NO_RESULTS_ANIM}
+              initial="in"
+              animate="anim"
+              exit="exit"
+            >
+              There are no blog posts that fit this criteria
+            </motion.p>}
+          </AnimatePresence>
+          <ul className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" aria-label="blog articles">
             <AnimatePresence>
               {computedArticles.map((brief, i) => <ArticleBrief key={brief.url} {...brief} imgLoading={i > 3 ? "lazy" : "eager"} />)}
             </AnimatePresence>
           </ul>
         </>}
-        {computedArticles.length < 1 && <p role="note" className="text-3xl font-semibold text-center">
+        {articles.length <= 0 && <p role="note" className="text-2xl font-semibold text-center">
           There are no blog posts yet! Stay tuned!
         </p>}
       </main>
