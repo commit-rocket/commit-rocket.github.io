@@ -3,7 +3,7 @@ import LinkButton from "@/components/controls/LinkButton";
 
 const Member = ({ image, fullName, title, links }: IMember) => (
   <li
-    className="flex flex-col items-center w-full max-w-full gap-2 p-4 border-2 rounded-2xl border-cr-primary-light motion-safe:transition-all sm:p-6 md:w-fit"
+    className="flex flex-col items-center w-full max-w-full gap-2 p-4 border-2 rounded-2xl border-cr-primary image-dots from-cr-fill-light motion-safe:transition-all sm:p-6 md:w-fit"
     aria-label="Member"
   >
     <div className="flex flex-col items-center max-w-full gap-2 sm:flex-row md:flex-col">
