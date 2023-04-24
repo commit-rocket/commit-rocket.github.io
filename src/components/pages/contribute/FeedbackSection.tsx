@@ -44,10 +44,7 @@ const FeedbackSection = () => {
       aria-labelledby="feedback"
       className="flex flex-col w-full gap-4 mx-auto text-center max-w-7xl"
     >
-      <Heading.H2
-        id="feedback"
-        className="text-4xl font-bold md:text-5xl text-secondary"
-      >
+      <Heading.H2 id="feedback">
         Feedback
       </Heading.H2>
       <p>
@@ -77,7 +74,7 @@ const FeedbackSection = () => {
           />
         </div>
         <Error className="w-full px-2 text-start" state={formState} name="text" />
-        <Button type="submit" color="secondary" loading={loading} className="px-5 py-3 text-lg w-full md:text-xl sm:w-fit">
+        <Button type="submit" color="secondary" loading={loading} className="w-full px-5 py-3 text-lg md:text-xl sm:w-fit">
           Submit Feedback
         </Button>
       </Form>

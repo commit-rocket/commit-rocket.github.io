@@ -14,7 +14,7 @@ html {
 }
 
 :not(pre)>code {
-  @apply bg-white/20 text-purple-700 border border-purple-700/25 rounded-md px-1
+  @apply bg-white/20 border border-white/20 rounded-md px-1
 }
 
 div.swal2-popup.swal2-toast {

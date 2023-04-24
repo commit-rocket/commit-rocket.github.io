@@ -114,7 +114,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
         <KeywordsMeta tags={["Blog"]} />
       </Head>
       <main aria-labelledby="blog" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
-        <Heading.H1 id="blog" className="text-center text-secondary">
+        <Heading.H1 id="blog" className="text-center">
           Blog
         </Heading.H1>
         {articles.length > 0 && <>

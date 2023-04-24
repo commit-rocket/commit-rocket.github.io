@@ -50,16 +50,16 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, imgLoading, readtime, te
 
   return (
     <motion.li
-      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-lg motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 bg-primary image-dots from-primary-light border-2 border-primary-light"
+      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-lg motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 image-dots from-fill-light border-2 border-primary overflow-hidden"
       variants={LIST_ANIM}
       initial="in"
       animate="anim"
       exit="exit"
       layout
     >
-      <NextLink href={url} className="group/link aspect-[16/7] rounded-lg overflow-hidden" >
+      <NextLink href={url} className="group/link aspect-[16/7] overflow-hidden" >
         <img
-          className="aspect-[16/7] object-contain rounded-lg transition-transform group-hover/link:scale-105"
+          className="aspect-[16/7] object-contain transition-transform group-hover/link:scale-105"
           loading={imgLoading}
           src={thumbnail.src}
           width={thumbnail.width}

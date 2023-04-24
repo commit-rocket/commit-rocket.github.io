@@ -17,7 +17,7 @@ const RoadmapItem = ({ title, text }: RoadmapItemProps) => {
     <li aria-labelledby={id} className="relative flex flex-1 group/item">
       <Divider />
       <div className="relative flex flex-col flex-1 gap-4 py-4 pl-4 md:flex-row md:pl-0 md:py-0 md:gap-0">
-        <Heading.H3 id={id} className="flex items-center md:px-8 md:w-1/4 md:py-4 md:justify-end md:text-end">
+        <Heading.H3 id={id} className="flex items-center md:px-8 md:w-1/4 md:py-4 md:justify-end md:text-end text-primary-light">
           {title}
         </Heading.H3>
         <Divider hideOnSmall />

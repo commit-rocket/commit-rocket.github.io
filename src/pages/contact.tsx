@@ -22,7 +22,7 @@ const ContactPage: Page = ({ pathname }) => {
         ]} />
       </Head>
       <main aria-labelledby="contact" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
-        <Heading.H1 id="contact" className="text-center text-secondary">
+        <Heading.H1 id="contact" className="text-center">
           Contact
         </Heading.H1>
         <ul className="grid flex-1 gap-4 lg:grid-flow-col sm:grid-cols-2 lg:grid-cols-none place-items-center" aria-label="contact methods">

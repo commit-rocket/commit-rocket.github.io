@@ -22,13 +22,13 @@ const AboutPage: Page = ({ pathname }) => {
         ]} />
       </Head>
       <main aria-labelledby="about" className="flex flex-col flex-1 w-full gap-8 pb-8 max-w-7xl">
-        <Heading.H1 id="about" className="text-center text-secondary">
+        <Heading.H1 id="about" className="text-center">
           About
         </Heading.H1>
         <section aria-labelledby="our-team" className="flex flex-col gap-8">
           <Heading.H2
             id="our-team"
-            className="text-center text-secondary"
+            className="text-center"
           >
             Team
           </Heading.H2>
@@ -44,7 +44,7 @@ const AboutPage: Page = ({ pathname }) => {
         <section aria-labelledby="projects" className="flex flex-col gap-8">
           <Heading.H2
             id="projects"
-            className="text-center text-secondary"
+            className="text-center"
           >
             Projects
           </Heading.H2>

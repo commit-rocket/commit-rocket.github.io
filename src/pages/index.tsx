@@ -50,17 +50,14 @@ const FrontPage: Page = ({ pathname }) => {
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">
         <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 xl:flex-row xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh] mx-auto">
           <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center xl:w-3/5">
-            <Heading.H1
-              id="hero-title"
-              className="text-primary"
-            >
-              <span className="text-secondary">Launch</span> your <span className="text-secondary">Commits</span> in a <span className="text-secondary">Modern</span> way
+            <Heading.H1 id="hero-title">
+              Launch your Commits in a Modern way
             </Heading.H1>
             <p className="text-lg lg:text-xl lg:max-w-xl">
               Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
             </p>
             <LinkButton
-              className="px-5 py-3 text-xl w-full sm:w-fit"
+              className="w-full px-5 py-3 text-xl sm:w-fit"
               onClick={sendCTAEvent("Learn More")}
               href="#introduction"
               color="secondary"
@@ -82,11 +79,11 @@ const FrontPage: Page = ({ pathname }) => {
           </div>
         </section>
         <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center border-2 rounded-lg xl:flex-row text-primary-contrast image-dots from-primary-light border-primary-light bg-primary">
-          <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-lg text-fill-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
+          <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-lg text-primary-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
             <span className="text-2xl">
               Introducing...
             </span>
-            <span className="flex flex-col items-center gap-4 p-4 text-3xl sm:text-4xl font-bold break-normal text-primary-contrast md:text-6xl md:flex-row md:w-max">
+            <span className="flex flex-col items-center gap-4 p-4 text-3xl font-bold break-normal sm:text-4xl text-primary-contrast md:text-6xl md:flex-row md:w-max">
               <img
                 className="w-16 h-16 md:w-[1.5em] md:h-[1.5em]"
                 alt="A Small Rocket"
@@ -121,10 +118,7 @@ const FrontPage: Page = ({ pathname }) => {
           aria-labelledby="missions"
           className="flex flex-col gap-12 mx-auto text-center"
         >
-          <Heading.H2
-            id="missions"
-            className="text-secondary"
-          >
+          <Heading.H2 id="missions">
             Mission
           </Heading.H2>
           <p className="text-lg font-semibold">
@@ -141,10 +135,7 @@ const FrontPage: Page = ({ pathname }) => {
           aria-labelledby="roadmap"
           className="flex flex-col gap-4"
         >
-          <Heading.H2
-            id="roadmap"
-            className="text-center text-secondary"
-          >
+          <Heading.H2 id="roadmap" className="text-center">
             Roadmap
           </Heading.H2>
           <ul>

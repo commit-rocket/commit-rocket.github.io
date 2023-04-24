@@ -21,7 +21,7 @@ const ContributePage: Page = ({ pathname }) => {
         ]} />
       </Head>
       <main aria-labelledby="contribute" className="flex flex-col flex-1 w-full gap-8 max-w-7xl">
-        <Heading.H1 id="contribute" className="text-center text-secondary">
+        <Heading.H1 id="contribute" className="text-center">
           Contribute
         </Heading.H1>
         <FeedbackSection />

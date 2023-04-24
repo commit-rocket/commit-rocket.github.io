@@ -44,12 +44,8 @@ const SignupSection = () => {
       aria-labelledby="sign-up"
       className="flex flex-col gap-12 mx-auto text-center max-w-7xl"
     >
-      <Heading.H2
-        id="sign-up"
-        className="text-secondary"
-      >
-        Keep Up to Date <br />
-        Join Our Mailing List
+      <Heading.H2 id="sign-up">
+        Keep Up to Date
       </Heading.H2>
       <p className="text-xl">
         Do you want to join in on this adventure and help develop Commit Rocket?
@@ -84,14 +80,14 @@ const SignupSection = () => {
           <Input
             id="signup-email-input"
             color="primary"
-            className="w-full text-lg md:text-xl p-4"
+            className="w-full p-4 text-lg md:text-xl"
             placeholder="your@email.com"
             {...register("email")}
           />
           <Error className="w-full px-2 text-start" state={formState} name="email" />
         </div>
         <Button
-          className="relative px-5 py-3 text-lg w-full sm:w-fit md:text-xl"
+          className="relative w-full px-5 py-3 text-lg sm:w-fit md:text-xl"
           type="submit"
           color="secondary"
           loading={loading}

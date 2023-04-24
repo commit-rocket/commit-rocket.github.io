@@ -60,7 +60,7 @@ const UnsubscribePage: Page = ({ pathname }) => {
           successChildren={`${response?.message} 👍`}
           oneTime
         >
-          <Heading.H1 id="unsubscribe" className="text-secondary">
+          <Heading.H1 id="unsubscribe" >
             Unsubscribe
           </Heading.H1>
           <p className="max-w-md">
