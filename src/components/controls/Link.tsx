@@ -12,9 +12,8 @@ export const style = cva("transition-colors gap-2", {
     },
     color: {
       white: "text-white hover:text-neutral-300",
-      primary: "text-primary hover:text-primary-light",
-      secondary: "text-secondary hover:text-secondary-light",
-      "fill-contrast": "text-fill-contrast hover:text-fill-contrast-light"
+      primary: "text-cr-primary hover:text-cr-primary-light",
+      "fill-contrast": "text-cr-fill-contrast hover:text-cr-fill-contrast-light"
     }
   },
   defaultVariants: {

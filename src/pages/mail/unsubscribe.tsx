@@ -54,7 +54,7 @@ const UnsubscribePage: Page = ({ pathname }) => {
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="unsubscribe">
         <Form
-          className="flex flex-col gap-4 p-8 text-center border-2 rounded-2xl from-fill-light image-dots border-primary"
+          className="flex flex-col gap-4 p-8 text-center border-2 rounded-2xl from-cr-fill-light image-dots border-cr-primary"
           onSubmit={submit}
           success={response?.success}
           successChildren={`${response?.message} 👍`}
@@ -67,17 +67,17 @@ const UnsubscribePage: Page = ({ pathname }) => {
             Once you unsubscribe you won't receive any more emails from us and your email will be immediately deleted from our records.
           </p>
           <div>
-            <Label htmlFor="email-input" className="text-secondary">
+            <Label htmlFor="email-input" className="text-cr-primary">
               Email:
             </Label>
             <Input
               id="email-input"
-              color="secondary"
+              color="primary"
               placeholder="your@email.com"
               {...register("email")}
             />
           </div>
-          <Button type="submit" color="secondary">
+          <Button type="submit" color="primary">
             {!loading
               ? "Unsubscribe"
               : <ArrowPathIcon

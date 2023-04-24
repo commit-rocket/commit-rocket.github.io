@@ -57,7 +57,7 @@ const SignupSection = () => {
         {perks.map(({ title, icon: Icon }, i) => (
           <li key={i} className="flex flex-col items-center w-32 gap-2">
             <Icon
-              className="w-12 h-12 sm:w-16 sm:h-16 text-primary"
+              className="w-12 h-12 sm:w-16 sm:h-16 text-cr-primary"
               width="1em"
               height="1em"
             />
@@ -74,7 +74,7 @@ const SignupSection = () => {
         oneTime
       >
         <div className="w-full">
-          <Label htmlFor="signup-email-input" className="text-primary ml-7">
+          <Label htmlFor="signup-email-input" className="text-cr-primary ml-7">
             Email:
           </Label>
           <Input
@@ -89,7 +89,7 @@ const SignupSection = () => {
         <Button
           className="relative w-full px-5 py-3 text-lg sm:w-fit md:text-xl"
           type="submit"
-          color="secondary"
+          color="primary"
           loading={loading}
         >
           Keep me up-to-date!

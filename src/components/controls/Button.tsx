@@ -11,10 +11,9 @@ export const style = cva("relative flex items-center justify-center transition-c
   variants: {
     color: {
       white: "bg-neutral-200 hover:bg-neutral-50 border-neutral-400 text-neutral-900",
-      primary: "bg-primary hover:bg-primary-light border-primary-dark text-primary-contrast",
-      secondary: "bg-secondary hover:bg-secondary-light border-secondary-dark text-secondary-contrast"
+      primary: "bg-cr-primary hover:bg-cr-primary-light border-cr-primary-light hover:border-cr-primary text-cr-primary-contrast"
     }
-  }
+}
 });
 
 export type BaseProps = {

@@ -10,7 +10,7 @@ body,
 }
 
 html {
-  @apply min-h-full bg-fill text-fill-contrast;
+  @apply min-h-full bg-cr-fill text-cr-fill-contrast;
 }
 
 :not(pre)>code {
@@ -42,11 +42,11 @@ div.swal2-popup.image-only .swal2-html-container {
 }
 
 div.swal2-popup .swal2-close {
-  @apply bg-secondary border-2 border-secondary-dark text-secondary-contrast rounded-full w-8 h-8 border-solid
+  @apply bg-cr-primary border-2 border-cr-primary-dark text-cr-primary-contrast rounded-full w-8 h-8 border-solid
 }
 
 div.swal2-popup .swal2-close:hover {
-  @apply bg-secondary-light
+  @apply bg-cr-primary-light
 }
 
 div.swal2-popup.image-only .swal2-title {

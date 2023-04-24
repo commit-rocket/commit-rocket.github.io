@@ -32,12 +32,12 @@ const Project = ({ title, description, thumbnail, thumbnailAlt, href, linkText, 
 
   return (
     <li className="flex flex-col gap-4 w-96">
-      <p className="text-xl font-semibold text-center text-primary">
+      <p className="text-xl font-semibold text-center text-cr-primary">
         {title}
       </p>
       <button onClick={onImageClick}>
         <img
-          className="border-2 rounded-2xl aspect-video border-primary"
+          className="border-2 rounded-2xl aspect-video border-cr-primary"
           alt={thumbnailAlt}
           src={thumbnail.src}
           width={thumbnail.width}
@@ -47,7 +47,7 @@ const Project = ({ title, description, thumbnail, thumbnailAlt, href, linkText, 
       <div className="flex flex-col gap-4">
         {description}
       </div>
-      <LinkButton color="secondary" href={href} className="mt-auto" rel={linkRel}>
+      <LinkButton color="primary" href={href} className="mt-auto" rel={linkRel}>
         {linkText ?? "Visit"}
       </LinkButton>
     </li>

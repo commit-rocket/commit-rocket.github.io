@@ -28,7 +28,6 @@ const ArticleMeta = ({ author, readtime, created, updated }: ArticleMetaProps) =
         className="flex items-center gap-2 group/writer"
         //@ts-ignore
         href={author.links.length > 0 ? author.links[0].href : undefined}
-        //@ts-ignore
         color={author.links.length > 0 ? "fill-contrast" : undefined}
         data-is-link={author.links.length > 0}
       >

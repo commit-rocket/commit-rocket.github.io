@@ -15,16 +15,14 @@ export type VariantProps = InputVariantProps;
 export const containerStyle = cva("absolute border-2 left-1/2 -translate-x-1/2 top-full rounded-2xl min-w-fit w-full overflow-hidden translate-y-1 z-50", {
   variants: {
     color: {
-      primary: "border-primary bg-fill text-fill-contrast",
-      secondary: "border-secondary bg-fill text-fill-contrast"
+      primary: "border-cr-primary bg-cr-fill text-cr-fill-contrast"
     }
   }
 });
 export const itemStyle = cva("px-4 py-2", {
   variants: {
     color: {
-      primary: "ui-active:bg-primary/20",
-      secondary: "ui-active:bg-secondary/20"
+      primary: "ui-active:bg-cr-primary/20"
     }
   }
 });

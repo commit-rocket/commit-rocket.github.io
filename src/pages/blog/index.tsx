@@ -120,25 +120,25 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
         {articles.length > 0 && <>
           <div className="mx-0 sm:mx-16 md:mx-0 motion-safe:transition-[margin-inline] motion-safe:duration-500 flex gap-2 items-end">
             <div>
-              <Label htmlFor="search-input" className="text-secondary">
+              <Label htmlFor="search-input" className="text-cr-primary">
                 Search:
               </Label>
               <Input
                 id="search-input"
                 type="text"
-                color="secondary"
+                color="primary"
                 placeholder="Search..."
                 {...register("search")}
               />
             </div>
             <div>
-              <Label htmlFor="sort-input" className="text-secondary">
+              <Label htmlFor="sort-input" className="text-cr-primary">
                 Sort:
               </Label>
               <ControlledSelect
                 id="sort-input"
                 name="sort"
-                color="secondary"
+                color="primary"
                 control={control}
                 options={SORT_OPTIONS}
                 getDisplayName={(opt) => opt.name}
@@ -154,7 +154,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
               >
                 <LinkButton
                   href="/blog"
-                  color="secondary"
+                  color="primary"
                   className="w-fit"
                 >
                   Clear Tags

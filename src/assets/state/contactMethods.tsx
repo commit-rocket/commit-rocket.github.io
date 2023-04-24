@@ -37,7 +37,7 @@ const contactMethods: IContactMethod[] = [
   {
     title: <>
       Discord <br />
-      <span className="text-sm font-semibold text-fill-contrast">
+      <span className="text-sm font-semibold text-cr-fill-contrast">
         (Coming Soon™)
       </span>
     </>,

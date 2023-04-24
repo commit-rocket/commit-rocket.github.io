@@ -94,13 +94,13 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
               />
             </CodeBlockHydrator>
           </section>
-          <section aria-labelledby="article-tags" className="w-full pt-16 border-t border-primary mt-8">
+          <section aria-labelledby="article-tags" className="w-full pt-16 border-t border-cr-primary mt-8">
             <h2 id="article-tags" className="text-xs font-bold mb-2">Tags:</h2>
             <ul aria-labelledby="article-tags" className="flex flex-wrap gap-1">
               {tags.map(({ name, hidden }, i) => (
                 !hidden && <li key={i}>
                   <LinkButton
-                    color="secondary"
+                    color="primary"
                     href={makeTagUrl(name)}
                     className="w-fit text-sm px-2 py-1"
                   >

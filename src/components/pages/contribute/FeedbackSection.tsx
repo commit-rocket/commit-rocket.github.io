@@ -61,7 +61,7 @@ const FeedbackSection = () => {
         oneTime
       >
         <div className="w-full">
-          <Label htmlFor="message-input" className="text-start text-primary">
+          <Label htmlFor="message-input" className="text-start text-cr-primary">
             Your Message:
           </Label>
           <TextArea
@@ -74,7 +74,7 @@ const FeedbackSection = () => {
           />
         </div>
         <Error className="w-full px-2 text-start" state={formState} name="text" />
-        <Button type="submit" color="secondary" loading={loading} className="w-full px-5 py-3 text-lg md:text-xl sm:w-fit">
+        <Button type="submit" color="primary" loading={loading} className="w-full px-5 py-3 text-lg md:text-xl sm:w-fit">
           Submit Feedback
         </Button>
       </Form>

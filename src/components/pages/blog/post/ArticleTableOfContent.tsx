@@ -60,7 +60,7 @@ const renderHierarchy = (hierarchy: HeadingHierarchy, config: RenderHierarchyCon
       <PlayIcon
         width=".6em"
         height=".6em"
-        className="text-primary"
+        className="text-"
       />
       <Link
         color="primary"

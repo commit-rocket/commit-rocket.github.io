@@ -15,26 +15,23 @@ module.exports = {
         "gradient-radial": 'radial-gradient(circle closest-side, var(--tw-gradient-stops))'
       },
       colors: {
-        primary: {
-          DEFAULT: "#ea580c",
-          light: "#fb923c",
-          dark: "#92400e",
-          contrast: "#FFF"
-        },
-        secondary: {
-          DEFAULT: "#ea580c",
-          light: "#fb923c",
-          dark: "#92400e",
-          contrast: "#FFF"
-        },
-        fill: {
-          DEFAULT: "#18181b",
-          light: "#52525b",
-          dark: "#18181b",
-          contrast: {
-            light: "#fff",
-            DEFAULT: "#f2f2f2",
-            dark: "#e5e5e5"
+        /** Commit Rocket colors */
+        cr: {
+          primary: {
+            DEFAULT: "#ea580c",
+            light: "#fb923c",
+            dark: "#92400e",
+            contrast: "#FFF"
+          },
+          fill: {
+            DEFAULT: "#18181b",
+            light: "#52525b",
+            dark: "#18181b",
+            contrast: {
+              light: "#fff",
+              DEFAULT: "#f2f2f2",
+              dark: "#e5e5e5"
+            }
           }
         }
       }

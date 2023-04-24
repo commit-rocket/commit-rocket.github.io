@@ -50,7 +50,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, imgLoading, readtime, te
 
   return (
     <motion.li
-      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-2xl motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 image-dots from-fill-light border-2 border-primary overflow-hidden"
+      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-2xl motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 image-dots from-cr-fill-light border-2 border-cr-primary overflow-hidden"
       variants={LIST_ANIM}
       initial="in"
       animate="anim"
@@ -73,7 +73,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, imgLoading, readtime, te
             !hidden && <li key={i}>
               <LinkButton
                 href={makeTagUrl(name)}
-                color="secondary"
+                color="primary"
                 className="px-2 py-1 text-xs font-semibold border"
                 prefetch={false}
               >

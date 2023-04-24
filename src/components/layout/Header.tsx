@@ -23,7 +23,7 @@ const Header = () => {
   });
 
   return (
-    <header className="relative flex items-center w-full gap-4 p-4 transition-all border-b-2 md:px-8 md:gap-12 border-primary-light/10">
+    <header className="relative flex items-center w-full gap-4 p-4 transition-all border-b-2 md:px-8 md:gap-12 border-cr-primary-light/10">
       <Link color="primary" className="flex items-center justify-center text-2xl font-bold transition-all lg:text-4xl" href="/">
         <img
           className="object-contain transition-all text-[0px] w-10 h-10 lg:w-12 lg:h-12"
@@ -37,7 +37,7 @@ const Header = () => {
       <Button
         ref={buttonRef}
         className="p-2 ml-auto rounded-full md:hidden"
-        color="secondary"
+        color="primary"
         aria-label="Expands the header"
         aria-expanded={open}
         aria-controls="header-items"
@@ -51,7 +51,7 @@ const Header = () => {
       </Button>
       <div
         ref={itemsContainerRef}
-        className="absolute flex flex-col bg-fill gap-0 p-4 top-full inset-x-4 rounded-2xl border-2 border-primary z-10 data-[expanded='false']:hidden md:data-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:border-none md:static md:bg-transparent md:gap-12"
+        className="absolute flex flex-col bg-cr-fill gap-0 p-4 top-full inset-x-4 rounded-2xl border-2 border-cr-primary z-10 data-[expanded='false']:hidden md:data-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:border-none md:static md:bg-transparent md:gap-12"
         id="header-items"
         data-expanded={open}
       >

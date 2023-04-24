@@ -26,13 +26,13 @@ const NotFound: Page = ({ pathname }) => {
         ]} />
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="not-found">
-        <div className="flex flex-col gap-2 p-8 text-center border-2 rounded-2xl from-fill-light image-dots border-primary">
+        <div className="flex flex-col gap-2 p-8 text-center border-2 rounded-2xl from-cr-fill-light image-dots border-cr-primary">
           <Heading.H1 id="not-found">
             Not Found.
           </Heading.H1>
           <p>There are no commits to be found here!</p>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            <LinkButton href="/" color="secondary">
+            <LinkButton href="/" color="primary">
               <HomeModernIcon
                 className="w-4 h-4"
                 width="1em"
@@ -40,7 +40,7 @@ const NotFound: Page = ({ pathname }) => {
               />
               Home
             </LinkButton>
-            <Button onClick={() => router.back()} color="secondary">
+            <Button onClick={() => router.back()} color="primary">
               <ArrowUturnLeftIcon
                 className="w-4 h-4"
                 width="1em"

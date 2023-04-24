@@ -10,7 +10,7 @@ export interface NavLinkProps {
 
 export const style = cva(`
   text-lg font-bold py-2
-  aria-[current='page']:text-primary-light 
+  aria-[current='page']:text-cr-primary-light 
   group-data-[in-group='true']/dropdown:text-base group-data-[in-group='true']/dropdown:py-0
 `);
 

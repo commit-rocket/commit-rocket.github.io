@@ -60,7 +60,7 @@ const FrontPage: Page = ({ pathname }) => {
               className="w-full px-5 py-3 text-xl sm:w-fit"
               onClick={sendCTAEvent("Learn More")}
               href="#introduction"
-              color="secondary"
+              color="primary"
               scroll={false}
             >
               Learn More!
@@ -78,12 +78,12 @@ const FrontPage: Page = ({ pathname }) => {
             />
           </div>
         </section>
-        <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center border-2 rounded-2xl xl:flex-row text-primary-contrast image-dots from-primary-light border-primary-light bg-primary">
-          <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-2xl text-primary-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
+        <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center border-2 rounded-2xl xl:flex-row text-cr-primary-contrast image-dots from-cr-primary-light border-cr-primary-light bg-cr-primary">
+          <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-2xl text-cr-primary-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
             <span className="text-2xl">
               Introducing...
             </span>
-            <span className="flex flex-col items-center gap-4 p-4 text-3xl font-bold break-normal sm:text-4xl text-primary-contrast md:text-6xl md:flex-row md:w-max">
+            <span className="flex flex-col items-center gap-4 p-4 text-3xl font-bold break-normal sm:text-4xl text-cr-primary-contrast md:text-6xl md:flex-row md:w-max">
               <img
                 className="w-16 h-16 md:w-[1.5em] md:h-[1.5em]"
                 alt="A Small Rocket"
