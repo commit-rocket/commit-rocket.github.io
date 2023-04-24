@@ -23,7 +23,7 @@ const Header = () => {
   });
 
   return (
-    <header className="relative flex items-center w-full gap-4 p-4 transition-all md:px-8 md:gap-12">
+    <header className="relative flex items-center w-full gap-4 p-4 transition-all md:px-8 md:gap-12 border-b border-white/5">
       <Link color="primary" className="flex items-center justify-center text-2xl font-bold transition-all lg:text-4xl" href="/">
         <img
           className="object-contain transition-all text-[0px] w-10 h-10 lg:w-12 lg:h-12"
