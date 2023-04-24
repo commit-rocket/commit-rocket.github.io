@@ -7,7 +7,7 @@ export interface MissionProps extends IMission {
 
 const Mission = ({ title, image, imageAlt, text }: MissionProps) => {
   return (
-    <li className="flex flex-col items-center flex-1 gap-4 p-0 -mx-4 rounded-lg border-primary motion-safe:transition-[margin_padding_border] sm:mx-0 lg:p-4 border-2 xl:p-8">
+    <li className="flex flex-col items-center flex-1 gap-4 p-0 -mx-4 rounded-2xl border-primary motion-safe:transition-[margin_padding_border] sm:mx-0 lg:p-4 border-2 xl:p-8">
       <Heading.H3 className="lg:h-[5ex] motion-safe:transition-all">
         {title}
       </Heading.H3>

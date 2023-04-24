@@ -84,7 +84,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ lang, children, className, marked
   }, [codeLines, showLines, linesToMark]);
 
   const computedClassName = useMemo(() => {
-    return twMerge("bg-neutral-800 rounded-lg p-4 text-base relative group/cb", className);
+    return twMerge("bg-neutral-800 rounded-2xl p-4 text-base relative group/cb", className);
   }, [className]);
 
   return (
@@ -133,7 +133,7 @@ const CopyCode = ({ codeLines }: CopyCodeProps) => {
   }, [codeLines]);
 
   const copyButtonClassName = useMemo(() => {
-    return twMerge("relative text-white opacity-30 bg-neutral-600 p-2 rounded-lg absolute top-2 right-2 group-hover/cb:opacity-100 hover:bg-neutral-500", codeLines.length === 1 ? "top-1/2 -translate-y-1/2" : "");
+    return twMerge("relative text-white opacity-30 bg-neutral-600 p-2 rounded-2xl absolute top-2 right-2 group-hover/cb:opacity-100 hover:bg-neutral-500", codeLines.length === 1 ? "top-1/2 -translate-y-1/2" : "");
   }, []);
 
   return (

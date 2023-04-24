@@ -50,7 +50,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, imgLoading, readtime, te
 
   return (
     <motion.li
-      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-lg motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 image-dots from-fill-light border-2 border-primary overflow-hidden"
+      className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-2xl motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 image-dots from-fill-light border-2 border-primary overflow-hidden"
       variants={LIST_ANIM}
       initial="in"
       animate="anim"

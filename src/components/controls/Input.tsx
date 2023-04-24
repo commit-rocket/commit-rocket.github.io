@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 import { RequiredKeys } from "@/types/utility";
 
-export const style = cva("w-full rounded-full py-2 px-3 border-2", {
+export const style = cva("w-full rounded-2xl py-2 px-3 border-2", {
   variants: {
     color: {
       primary: "border-primary bg-transparent placeholder:text-fill-contrast/75",

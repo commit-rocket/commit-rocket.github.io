@@ -54,7 +54,7 @@ const UnsubscribePage: Page = ({ pathname }) => {
       </Head>
       <main className="flex items-center justify-center flex-1 w-full pb-8" aria-labelledby="unsubscribe">
         <Form
-          className="flex flex-col gap-4 p-8 text-center border-2 rounded-md border-primary"
+          className="flex flex-col gap-4 p-8 text-center border-2 rounded-2xl from-fill-light image-dots border-primary"
           onSubmit={submit}
           success={response?.success}
           successChildren={`${response?.message} 👍`}

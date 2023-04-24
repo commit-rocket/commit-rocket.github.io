@@ -70,7 +70,7 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
           <section aria-label="Main article content" className="flex flex-col gap-8 w-full items-center">
             <img
               aria-label="Article Thumbnail"
-              className="rounded-lg"
+              className="rounded-2xl"
               loading="eager"
               src={thumbnail.src}
               width={thumbnail.width}

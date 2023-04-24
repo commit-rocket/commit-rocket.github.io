@@ -7,7 +7,7 @@ import { RequiredKeys } from "@/types/utility";
 import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
 import fadeAnim from "@/animations/fade";
 
-export const style = cva("relative flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-full border-2", {
+export const style = cva("relative flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-2xl border-2", {
   variants: {
     color: {
       white: "bg-neutral-200 hover:bg-neutral-50 border-neutral-400 text-neutral-900",

@@ -16,7 +16,7 @@ const Project = ({ title, description, thumbnail, thumbnailAlt, href, linkText, 
       title: thumbnailAlt,
       html: <>
         <img
-          className="object-contain w-full h-full rounded-lg aspect-video"
+          className="object-contain w-full h-full rounded-2xl aspect-video"
           alt={thumbnailAlt}
           src={thumbnail.src}
           width={thumbnail.width}
@@ -37,7 +37,7 @@ const Project = ({ title, description, thumbnail, thumbnailAlt, href, linkText, 
       </p>
       <button onClick={onImageClick}>
         <img
-          className="border-2 rounded-lg aspect-video border-primary"
+          className="border-2 rounded-2xl aspect-video border-primary"
           alt={thumbnailAlt}
           src={thumbnail.src}
           width={thumbnail.width}

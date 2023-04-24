@@ -33,7 +33,7 @@ const A = {
 
   Img: ({ className, loading = "lazy", ...props }: React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>) => {
     const computedClassName = useMemo(
-      () => twMerge("rounded-lg", className),
+      () => twMerge("rounded-2xl", className),
       [className]
     );
 

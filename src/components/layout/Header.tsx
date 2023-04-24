@@ -51,7 +51,7 @@ const Header = () => {
       </Button>
       <div
         ref={itemsContainerRef}
-        className="absolute flex flex-col bg-fill gap-0 p-4 top-full inset-x-4 rounded-md border-2 border-primary z-10 data-[expanded='false']:hidden md:data-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:border-none md:static md:bg-transparent md:gap-12"
+        className="absolute flex flex-col bg-fill gap-0 p-4 top-full inset-x-4 rounded-2xl border-2 border-primary z-10 data-[expanded='false']:hidden md:data-[expanded='false']:flex md:flex-row md:items-center md:p-0 md:border-none md:static md:bg-transparent md:gap-12"
         id="header-items"
         data-expanded={open}
       >
