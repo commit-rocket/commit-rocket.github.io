@@ -74,7 +74,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, imgLoading, readtime, te
               <LinkButton
                 href={makeTagUrl(name)}
                 color="primary"
-                className="px-2 py-1 text-xs font-semibold border"
+                className="px-2 py-1 text-xs font-semibold"
                 prefetch={false}
               >
                 {name}

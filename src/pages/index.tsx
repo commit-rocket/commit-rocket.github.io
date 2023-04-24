@@ -78,7 +78,7 @@ const FrontPage: Page = ({ pathname }) => {
             />
           </div>
         </section>
-        <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center border-2 rounded-2xl xl:flex-row text-cr-primary-contrast image-dots from-cr-primary-light border-cr-primary-light bg-cr-primary">
+        <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center rounded-2xl xl:flex-row text-cr-primary-contrast image-dots from-cr-primary-light bg-cr-primary">
           <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-2xl text-cr-primary-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
             <span className="text-2xl">
               Introducing...

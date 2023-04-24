@@ -7,11 +7,11 @@ import { RequiredKeys } from "@/types/utility";
 import ArrowPathIcon from "@heroicons/react/24/solid/ArrowPathIcon";
 import fadeAnim from "@/animations/fade";
 
-export const style = cva("relative flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-2xl border-2", {
+export const style = cva("relative flex items-center justify-center transition-colors shadow-sm px-3 py-2 gap-2 rounded-2xl", {
   variants: {
     color: {
-      white: "bg-neutral-200 hover:bg-neutral-50 border-neutral-400 text-neutral-900",
-      primary: "bg-cr-primary hover:bg-cr-primary-light border-cr-primary-light hover:border-cr-primary text-cr-primary-contrast"
+      white: "bg-neutral-200 hover:bg-neutral-50 text-neutral-900",
+      primary: "bg-cr-primary hover:bg-cr-primary-light bord text-cr-primary-contrast"
     }
 }
 });
