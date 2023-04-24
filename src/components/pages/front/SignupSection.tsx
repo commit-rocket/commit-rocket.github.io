@@ -74,7 +74,7 @@ const SignupSection = () => {
         oneTime
       >
         <div className="w-full">
-          <Label htmlFor="signup-email-input" className="text-cr-primary ml-7">
+          <Label htmlFor="signup-email-input" className="text-cr-primary">
             Email:
           </Label>
           <Input
