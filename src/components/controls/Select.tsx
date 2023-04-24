@@ -12,11 +12,11 @@ import ChevronDownIcon from "@heroicons/react/24/solid/ChevronDownIcon";
 export const style = inputStyle;
 export type VariantProps = InputVariantProps;
 
-export const containerStyle = cva("absolute border-2  bg-white left-1/2 -translate-x-1/2 top-full rounded-lg min-w-fit w-full overflow-hidden translate-y-1 z-50", {
+export const containerStyle = cva("absolute border-2 left-1/2 -translate-x-1/2 top-full rounded-lg min-w-fit w-full overflow-hidden translate-y-1 z-50", {
   variants: {
     color: {
-      primary: "border-primary",
-      secondary: "border-secondary"
+      primary: "border-primary bg-fill text-fill-contrast",
+      secondary: "border-secondary bg-fill text-fill-contrast"
     }
   }
 });
