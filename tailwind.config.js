@@ -16,24 +16,24 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: "#f2600c",
-          300: "#FCCAA6",
-          light: "#FF8D4C",
-          dark: "#bf4701",
+          DEFAULT: "#127bcc",
+          300: "#127bcc",
+          light: "#127bcc",
+          dark: "#127bcc",
           contrast: "#FFF"
         },
         secondary: {
-          DEFAULT: "#E83227",
-          light: "#F44338",
-          dark: "#B01D14",
+          DEFAULT: "#127bcc",
+          light: "#127bcc",
+          dark: "#127bcc",
           contrast: "#FFF"
         },
         fill: {
-          DEFAULT: "#FFE4CC",
+          DEFAULT: "#111519",
           contrast: {
-            light: "#474747",
-            DEFAULT: "#282828",
-            dark: "#191919"
+            light: "#fff",
+            DEFAULT: "#f2f2f2",
+            dark: "#e5e5e5"
           }
         }
       }
