@@ -7,8 +7,8 @@ import { RequiredKeys } from "@/types/utility";
 export const style = cva("w-full rounded-full py-2 px-3 border-2", {
   variants: {
     color: {
-      primary: "border-primary bg-white",
-      secondary: "border-secondary bg-white"
+      primary: "border-primary bg-transparent placeholder:text-primary/75",
+      secondary: "border-secondary bg-transparent placeholder:text-secondary/75"
     },
   },
   defaultVariants: {

@@ -12,7 +12,7 @@ import IArticle from "@/assets/state/articles/article";
 import makeTagUrl from "./utils/makeTagUrl";
 import { readtimeFormatter } from "@/utils/readtime";
 
-const listAnim = {
+const LIST_ANIM = {
   in: {
     opacity: 0,
     scale: 0.5,
@@ -21,14 +21,14 @@ const listAnim = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.35
+      duration: 0.25
     }
   },
   exit: {
     opacity: 0,
     scale: 0.5,
     transition: {
-      duration: 0.35
+      duration: 0.25
     }
   }
 } as Variants;
@@ -51,7 +51,7 @@ const ArticleBrief = ({ title, thumbnail, thumbnailAlt, imgLoading, readtime, te
   return (
     <motion.li
       className="origin-center flex flex-col flex-1 gap-4 mx-0 rounded-lg motion-safe:transition-[margin-inline] motion-safe:duration-500 sm:mx-16 md:mx-0 bg-primary-300"
-      variants={listAnim}
+      variants={LIST_ANIM}
       initial="in"
       animate="anim"
       exit="exit"

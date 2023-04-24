@@ -84,7 +84,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <AnimatePresence mode="wait" onExitComplete={onAnimFinished}>
           <motion.div
             key={router.pathname}
-            className="flex flex-col items-center flex-1 w-full px-8"
+            className="flex flex-col items-center flex-1 w-full p-8 pb-0"
             initial="initial"
             animate="animate"
             exit="exit"
