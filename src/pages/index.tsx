@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 import missions from "@/assets/state/missions";
 import LogoPicture from "@/assets/images/brand/rocket-with-graph.svg";
@@ -25,9 +25,12 @@ const LOGO_ANIM = {
     translateY: "50%",
   },
   animate: {
-    translateY: "0"
+    translateY: "0",
+    transition: {
+      duration: .3
+    }
   }
-} as const;
+} satisfies Variants;
 
 const FrontPage: Page = ({ pathname }) => {
 
@@ -45,7 +48,7 @@ const FrontPage: Page = ({ pathname }) => {
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">
         <div className="flex flex-col gap-32 xl:gap-0">
-          <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 gap-8 xl:flex-row xl:gap-0 xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh]">
+          <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 gap-8 overflow-clip xl:flex-row xl:gap-0 xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh]">
             <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center xl:w-3/5">
               <Heading.H1 id="hero-title">
                 Launch your Commits in a Modern way
