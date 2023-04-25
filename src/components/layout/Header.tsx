@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Bars3Icon from "@heroicons/react/24/solid/Bars3Icon";
 
-import Logo from "@/assets/images/brand/logo-200x200.webp";
+import Logo from "@/assets/images/brand/logo.svg";
 
 import Link from "../controls/Link";
 import Button from "../controls/Button";
@@ -26,7 +26,7 @@ const Header = () => {
     <header className="relative flex items-center w-full gap-4 p-4 transition-all md:px-8 md:gap-12 border-cr-primary-light/10">
       <Link color="primary" className="flex items-center justify-center text-2xl font-bold transition-all lg:text-4xl" href="/">
         <img
-          className="object-contain transition-all text-[0px] w-10 h-10 lg:w-12 lg:h-12"
+          className="object-contain transition-all text-[0px] w-10 h-10 lg:w-12 lg:h-12 rotate-30"
           src={Logo.src}
           width={Logo.width}
           height={Logo.height}

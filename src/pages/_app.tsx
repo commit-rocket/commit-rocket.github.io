@@ -10,7 +10,7 @@ import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import KeywordsMeta from "@/components/head/KeywordsMeta";
 
-import BannerImage from "@/assets/images/brand/commit-rocket-logo.webp";
+import BannerImage from "@/assets/images/brand/rocket-with-graph.svg";
 
 import { makeOgMeta } from "@/lib/meta/opengraph";
 import makeSitemapMeta from "@/lib/meta/sitemap";

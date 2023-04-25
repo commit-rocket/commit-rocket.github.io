@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     require('@headlessui/tailwindcss'),
-    plugin(({ addVariant, addComponents }) => {
+    plugin(({ addVariant, addComponents, addUtilities }) => {
       addVariant("is", ":is(&)");
       addVariant("where", ":where(&)");
       addComponents({
@@ -49,7 +49,12 @@ module.exports = {
           "background-position": "50% 50%"
         }
       });
-
+      addUtilities({
+        ".rotate-30": {
+          "--tw-rotate": "30deg",
+          "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))"
+        }
+      });
     })
   ],
 };

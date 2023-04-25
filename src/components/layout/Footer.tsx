@@ -1,6 +1,6 @@
 import Link from "../controls/Link";
 
-import Logo from "@/assets/images/brand/logo-200x200.webp";
+import Logo from "@/assets/images/brand/logo.svg";
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-2 p-2 rounded-2xl bg-white/20 sm:flex-row backdrop-blur-[1.25px]">
           <div className="flex items-center gap-2">
             <img
-              className="w-12 h-12"
+              className="w-12 h-12 rotate-30"
               alt="Commit Rocket Logo"
               src={Logo.src}
               width={Logo.width}

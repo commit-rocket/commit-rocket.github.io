@@ -2,8 +2,8 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 import missions from "@/assets/state/missions";
-import LogoPicture from "@/assets/images/brand/commit-rocket-logo.webp";
-import LogoSmall from "@/assets/images/brand/logo-200x200.webp";
+import LogoPicture from "@/assets/images/brand/rocket-with-graph.svg";
+import LogoSmall from "@/assets/images/brand/logo.svg";
 
 import LinkButton from "@/components/controls/LinkButton";
 
@@ -20,16 +20,12 @@ import { sendCTAEvent } from "@/api/analytics";
 import makeSitemapMeta from "@/lib/meta/sitemap";
 import { makeOgMeta } from "@/lib/meta/opengraph";
 
-const logoAnim = {
+const LOGO_ANIM = {
   initial: {
-    translateX: "-2.5%",
-    translateY: "15%",
-    rotate: "-2deg"
+    translateY: "50%",
   },
   animate: {
-    translateX: "0",
-    translateY: "0",
-    rotate: "10deg"
+    translateY: "0"
   }
 } as const;
 
@@ -48,72 +44,74 @@ const FrontPage: Page = ({ pathname }) => {
         ]} />
       </Head>
       <main aria-labelledby="hero-title" className="flex flex-col flex-1 w-full gap-32 pb-8 max-w-7xl">
-        <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 xl:flex-row xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh] mx-auto">
-          <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center xl:w-3/5">
-            <Heading.H1 id="hero-title">
-              Launch your Commits in a Modern way
-            </Heading.H1>
-            <p className="text-lg lg:text-xl lg:max-w-xl">
-              Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
-            </p>
-            <LinkButton
-              className="w-full px-5 py-3 text-xl sm:w-fit"
-              onClick={sendCTAEvent("Learn More")}
-              href="#introduction"
-              color="primary"
-              scroll={false}
-            >
-              Learn More!
-            </LinkButton>
-          </div>
-          <div className="relative overflow-hidden flex items-center justify-center w-full min-h-[20rem] max-h-[40dvh] max-h-[40vh] xl:min-h-0 xl:h-full xl:max-h-full xl:w-2/5" style={{ aspectRatio: `${LogoPicture.width} / ${LogoPicture.height}` }}>
-            <motion.img
-              className="absolute max-w-full max-h-full object-contain aspect-auto w-full rotate-[10deg] text-[0px] select-none"
-              loading="eager"
-              variants={logoAnim}
-              alt="Commit Rocket"
-              src={LogoPicture.src}
-              width={LogoPicture.width}
-              height={LogoPicture.height}
-            />
-          </div>
-        </section>
-        <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center rounded-2xl xl:flex-row text-cr-primary-contrast image-dots from-cr-primary-light bg-cr-primary">
-          <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-2xl text-cr-primary-contrast bg-white/20 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
-            <span className="text-2xl">
-              Introducing...
-            </span>
-            <span className="flex flex-col items-center gap-4 p-4 text-3xl font-bold break-normal sm:text-4xl text-cr-primary-contrast md:text-6xl md:flex-row md:w-max">
-              <img
-                className="w-16 h-16 md:w-[1.5em] md:h-[1.5em]"
-                alt="A Small Rocket"
-                src={LogoSmall.src}
-                width={LogoSmall.width}
-                height={LogoSmall.height}
+        <div className="flex flex-col gap-32 xl:gap-0">
+          <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 gap-8 xl:flex-row xl:gap-0 xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh]">
+            <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center xl:w-3/5">
+              <Heading.H1 id="hero-title">
+                Launch your Commits in a Modern way
+              </Heading.H1>
+              <p className="text-lg lg:text-xl lg:max-w-xl">
+                Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
+              </p>
+              <LinkButton
+                className="w-full px-5 py-3 text-xl sm:w-fit"
+                onClick={sendCTAEvent("Learn More")}
+                href="#introduction"
+                color="primary"
+                scroll={false}
+              >
+                Learn More!
+              </LinkButton>
+            </div>
+            <div className="relative overflow-visible flex items-center justify-center w-full rotate-12 min-h-[20rem] max-h-[40dvh] max-h-[40vh] xl:min-h-0 xl:h-full xl:max-h-full xl:w-2/5 xl:rotate-0" style={{ aspectRatio: `${LogoPicture.width} / ${LogoPicture.height}` }}>
+              <motion.img
+                className="absolute max-w-full max-h-full object-contain aspect-auto w-full text-[0px] select-none"
+                loading="eager"
+                variants={LOGO_ANIM}
+                alt="Commit Rocket"
+                src={LogoPicture.src}
+                width={LogoPicture.width}
+                height={LogoPicture.height}
               />
-              Commit Rocket
-            </span>
-          </Heading.H2>
-          <div className="flex flex-col w-full gap-4 text-lg font-semibold break-words xl:w-1/2">
-            <p>
-              A new and modern Git client that is currently in development.
-              Our main focus is on creating a modern design and speed without sacrificing any of the features you love.
-            </p>
-            <p>
-              "Why another Git client?" - Our goal with Commit Rocket is to provide a fresh and innovative approach to Git clients,
-              addressing the outdated and inefficient nature of many current options.
-              As an open-source and cross-platform client,
-              we aim to provide a real alternative to popular choices like GitKraken, Github Desktop, and SourceTree.
-            </p>
-            <p>
-              This means that everyone will have access to our code and anyone can contribute to make it the best it can be.
-              Join us in bringing new life to Git!
-            </p>
-            <LinkButton href="/contribute" color="white" onClick={sendCTAEvent("Contribute")}>
-              Contribute
-            </LinkButton>
-          </div>
-        </section>
+            </div>
+          </section>
+          <section aria-label="introduction" className="flex flex-col gap-12 p-8 text-lg -mx-8 md:mx-0 motion-safe:transition-[margin] text-center rounded-2xl xl:flex-row text-cr-primary-contrast image-dots from-cr-primary-light bg-cr-primary">
+            <Heading.H2 id="introduction" className="flex p-4 flex-col items-center justify-center w-full rounded-2xl text-cr-primary-contrast bg-cr-primary-contrast/30 backdrop-blur-[1.25px] xl:p-0 xl:w-1/2">
+              <span className="text-2xl">
+                Introducing...
+              </span>
+              <span className="flex flex-col items-center gap-4 p-4 text-3xl font-bold break-normal sm:text-4xl text-cr-primary-contrast md:text-6xl md:flex-row md:w-max">
+                <img
+                  className="w-16 h-16 md:w-[2em] md:h-[2em] rotate-30"
+                  alt="A Small Rocket"
+                  src={LogoSmall.src}
+                  width={LogoSmall.width}
+                  height={LogoSmall.height}
+                />
+                Commit Rocket
+              </span>
+            </Heading.H2>
+            <div className="flex flex-col w-full gap-4 text-lg font-semibold break-words xl:w-1/2">
+              <p>
+                A new and modern Git client that is currently in development.
+                Our main focus is on creating a modern design and speed without sacrificing any of the features you love.
+              </p>
+              <p>
+                "Why another Git client?" - Our goal with Commit Rocket is to provide a fresh and innovative approach to Git clients,
+                addressing the outdated and inefficient nature of many current options.
+                As an open-source and cross-platform client,
+                we aim to provide a real alternative to popular choices like GitKraken, Github Desktop, and SourceTree.
+              </p>
+              <p>
+                This means that everyone will have access to our code and anyone can contribute to make it the best it can be.
+                Join us in bringing new life to Git!
+              </p>
+              <LinkButton href="/contribute" color="white" onClick={sendCTAEvent("Contribute")}>
+                Contribute
+              </LinkButton>
+            </div>
+          </section>
+        </div>
         <section
           aria-labelledby="missions"
           className="flex flex-col gap-12 mx-auto text-center"
