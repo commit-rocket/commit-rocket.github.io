@@ -186,7 +186,7 @@ export default {
     </A.H4>
 
     <p>
-      Another feature we feel is severly lacking in most clients is the customizability. Not only in theme but also in layout. Not everyone likes the same layout, which is only reasonable. Most Git GUI Clients only offer a limited amount of customizability, which usually is a few preset themes. <A.Link href="https://www.gitkraken.com/" nofollow external>GitKraken</A.Link> and <A.Link href="https://gitnuro.jetpackduba.com/" nofollow external>Gitnuro</A.Link>, do actually offer full theme customizability, but no customizability in layout.
+      Another feature we feel is severely lacking in most clients is the customizability. Not only in theme but also in layout. Not everyone likes the same layout, which is only reasonable. Most Git GUI Clients only offer a limited amount of customizability, which usually is a few preset themes. <A.Link href="https://www.gitkraken.com/" nofollow external>GitKraken</A.Link> and <A.Link href="https://gitnuro.jetpackduba.com/" nofollow external>Gitnuro</A.Link>, do actually offer full theme customizability, but no customizability in layout.
     </p>
     <p>
       We believe that customizable layouts can increase productivity. In a basic sense creating your own layout should help, because you know where everything is and you can remove features you don't need to have at that certain moment in time, decreasing your mental overhead.
@@ -200,7 +200,7 @@ export default {
       A <strong className="font-semibold">lot</strong> of Git Clients make use of <A.Link href="https://www.electronjs.org/" nofollow external>Electron</A.Link>, which is a big reason why these clients are slow. Electron itself is used in a lot of other products, like Gitkraken, Github Desktop, VSCode, Dicord and more. Electron allows developers to use web technologies on desktop, however this comes at the cost of having high memory usage and slow performance. On top of that, clients like GitKraken use Nodegit which exposes a wrapped Git API to JavaScript, which takes away additional performance. Github Desktop takes a different approach, they use the CLI and parse the output text.
     </p>
     <p>
-      Both of these approaches are not great for performance, which is why we suggest an alternative. This alternative comes in the form of <A.Link href="https://tauri.app/" external>Tauri</A.Link>. Just like Electron, Tauri allows developers to user JavaScript, HTML and CSS for their presentation layer. Unlike Electron however it allows for business logic to be written in Rust. Rust its speed is incredably fast, which is why it is ideal for writing the (performance critical) logic. The presentation layer can invoke a function in Rust to get the nessesairy data. Essentially what we can do is write an easy to develop presentation layer, while having an incredably fast logic layer without sacrificing any performance.
+      Both of these approaches are not great for performance, which is why we suggest an alternative. This alternative comes in the form of <A.Link href="https://tauri.app/" external>Tauri</A.Link>. Just like Electron, Tauri allows developers to user JavaScript, HTML and CSS for their presentation layer. Unlike Electron however it allows for business logic to be written in Rust. Rust its speed is incredibly fast, which is why it is ideal for writing the (performance critical) logic. The presentation layer can invoke a function in Rust to get the nessesairy data. Essentially what we can do is write an easy to develop presentation layer, while having an incredibly fast logic layer without sacrificing any performance.
     </p>
     <p>
       Our alternative to using <A.Link href="https://www.nodegit.org/" nofollow external>Nodegit</A.Link> or invoking the CLI and parsing the results is using <A.Link href="https://libgit2.org/" external>Libgit2</A.Link>. Nodegit is a JavaScript binding of Libgit2, however we will be using a <A.Link href="https://github.com/rust-lang/git2-rs" external>Rust binding of Libgit2</A.Link>, which will be a lot faster. This is because invoking C code from Rust is faster compared to invoking it from JavaScript, in addition to that, Rust is already faster then JavaScript; so this will result in a massive speed increase.
@@ -234,7 +234,7 @@ export default {
     </A.H4>
 
     <p>
-      We love the way that Arc looks. It is very different compared to other browsers, not just in looks but also in functionality. Despite it being based on Chromium, it has some really cool new ideas, like notes, easels and spaces. If you haven't yet, We recommend checking out <A.Link href="https://www.youtube.com/@TheBrowserCompany" nofollow external>The Browser Company's youtube channel</A.Link> to see what Arc is about. For us personally we would like to do the same Arc is doing, changing Git clients in meaningfull ways. What that way is however, is to be determined.
+      We love the way that Arc looks. It is very different compared to other browsers, not just in looks but also in functionality. Despite it being based on Chromium, it has some really cool new ideas, like notes, easels and spaces. If you haven't yet, We recommend checking out <A.Link href="https://www.youtube.com/@TheBrowserCompany" nofollow external>The Browser Company's youtube channel</A.Link> to see what Arc is about. For us personally we would like to do the same Arc is doing, changing Git clients in meaningful ways. What that way is however, is to be determined.
     </p>
 
     <A.H4>
@@ -277,7 +277,7 @@ export default {
         <A.Container className="gap-4">
           <A.H4 className="text-xl md:text-xl">Repository Management</A.H4>
           <p>
-            A feature we haven't seen any Git GUI client do so far is repository management. This means being able to change the settings of your repostiory from the comfort of your client. Having that would save a lot of time going back and forth to your repository in the browser.
+            A feature we haven't seen any Git GUI client do so far is repository management. This means being able to change the settings of your repository from the comfort of your client. Having that would save a lot of time going back and forth to your repository in the browser.
           </p>
         </A.Container>
       </A.Li>
