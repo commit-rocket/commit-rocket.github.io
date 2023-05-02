@@ -39,7 +39,7 @@ const missions: IMission[] = [
       </p>
       <p>
         To achieve this, we employ modern technologies such as Tauri, Rust, and React to ensure that our client delivers optimal speed and performance.
-        For more information on our features, take a look at our <Link href="/roadmap" color="primary" underline>roadmap</Link>!
+        For more information on our features, take a look at our <Link href="/#roadmap" color="primary" underline>roadmap</Link>!
       </p>
     </>
   },
