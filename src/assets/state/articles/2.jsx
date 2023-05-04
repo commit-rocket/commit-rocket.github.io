@@ -110,7 +110,7 @@ export default {
         width={deleteError.width}
         height={deleteError.height}
         alt="Very verbose SourceTree unmerged branch deletion error"
-        aria-aria-labelledby="delete-error-note"
+        aria-labelledby="delete-error-note"
       />
       <p
         id="delete-error-note"
