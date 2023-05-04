@@ -6,12 +6,12 @@
     "dev": "next dev",
     "analyze:build": "cross-env ANALYZE=true npm run build",
     "analyze:dev": "cross-env ANALYZE=true npm run dev",
-    "script:gen-articles-index": "node ./scripts/generateArticlesIndex.js",
-    "script:gen-sitemap": "node ./scripts/generateSitemap.js",
-    "script:gen-robots": "node ./scripts/generateRobots.js",
-    "script:gen-cname": "node ./scripts/generateCName.js",
+    "make:article-list": "node ./scripts/generateArticlesIndex.js",
+    "make:sitemap": "node ./scripts/generateSitemap.js",
+    "make:robots": "node ./scripts/generateRobots.js",
+    "make:cname": "node ./scripts/generateCName.js",
     "build": "next build && next export",
-    "postbuild": "npm run script:gen-sitemap && npm run script:gen-robots && npm run script:gen-cname"
+    "postbuild": "npm run make:sitemap && npm run make:robots && npm run make:cname"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
