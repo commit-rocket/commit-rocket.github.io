@@ -48,7 +48,7 @@ export default {
         I've personally spent quite a bit of time coming up with features and working out kinks. I would be proud to present them all to you in this post. Make sure to answer some of the questions in the <A.Link href="#survey">survey</A.Link> at the end of the article to help me improve Commit Rocket. All of the questions are optional, so make sure to only fill in the ones that you are comfortable with.
       </p>
       <p>
-        Lets get started!
+        Let's get started!
       </p>
     </A.Container>
 
@@ -56,7 +56,7 @@ export default {
 
     <A.H2>Atomic stashing</A.H2>
     <p>
-      Stashing is a very usefull tool in Git, they allow you to store your progress without having to commit them. This keeps you from accidentally breaking things and can help you stay organized. In applications such as Sourcetree or Github Desktop you can only commit all of your current changes.
+      Stashing is a very useful tool in Git, they allow you to store your progress without having to commit them. This keeps you from accidentally breaking things and can help you stay organized. In applications such as Sourcetree or Github Desktop you can only commit all of your current changes.
     </p>
     <p>
       There are actually ways to only stash selected files and even lines. I would like to break this limitation and allow users to organize their stashed by atomically stashing changes whenever it suits them.
@@ -79,7 +79,7 @@ export default {
       />
     </A.Container>
     <p>
-      My vision for multiple accounts within Commit Rocket is to be able to add it simply throught the settings, and select which account you want in your repository, and it will remember which account you want to commit from forever! This feels like the most convenient way to make use of such a feature, but let me know what you think about it. On a side-note I plan to support at least Github, Gitlab and Bitbucket, others may be added upon request.
+      My vision for multiple accounts within Commit Rocket is to be able to add it to the settings, and select which account you want in your repository, and it will remember which account you want to commit from forever! This feels like the most convenient way to make use of such a feature but let me know what you think about it. On a sidenote I plan to support at least Github, Gitlab and Bitbucket, others may be added upon request.
     </p>
 
     <A.H2>Theming</A.H2>
@@ -101,7 +101,7 @@ export default {
     </A.Container>
 
     <p>
-      Theming is not necessarily an essential feature, but it does allow people to personalize their experience, which I'm all for! This is why I would like to include a built-in visual editor for your themes, so that you can easily customize it to your liking. In addition I will be adding an export and import feature so that you can share and use other people's themes.
+      Theming is not necessarily an essential feature, but it does allow people to personalize their experience, which I'm all for! This is why I would like to include a built-in visual editor for your themes, so that you can easily customize it to your liking. In addition, I will be adding an export and import feature so that you can share and use other people's themes.
     </p>
 
     <A.H2>Commit Peeking</A.H2>
@@ -109,7 +109,7 @@ export default {
       This feature I have seen no other Git client do, and I'm dubbing it "Commit peeking". Wouldn't it be awesome to know which files have been changed in a commit, without having to actively click on the commit itself? Commit peeking has got you covered.
     </p>
     <p>
-      By hovering over a commit a small window will pop up showing the changed files. This will help you look for the commits you may want to find quicker and easier. Combining this with being able to see a specific, file's history, and you'd be able to find changes you need in no time.
+      By hovering over a commit, a small window will pop up showing the changed files. This will help you look for the commits you may want to find quicker and easier. Combining this with being able to see a specific, file's history, and you'd be able to find changes you need in no time.
     </p>
 
     <A.H2>Working Contexts</A.H2>
@@ -132,10 +132,10 @@ export default {
       </p>
     </A.Container>
     <p>
-      Here is my pitch. You have multiple working contexts, like work, school, side-project, etc. You can store your repositories, active theme, accounts, etc. in this context. Then when you switch contexts the repositories, theme, etc. would be retrieved and applied. If you are working on multiple projects then this should keep you more organized. Preferably these contexts would be a 1-click switch, or a hotkey. Unlike VSCode's profiles, you will be able to sync over your settings without having to resort to switching back and forth.
+      Here is my pitch. You have multiple working contexts, like work, school, side-project, etc. You can store your repositories, active theme, accounts, etc. in this context. Then when you switch contexts the repositories, theme, etc. would be retrieved and applied. If you are working on multiple projects, then this should keep you more organized. Preferably these contexts would be a 1-click switch, or a hotkey. Unlike VSCode's profiles, you will be able to sync over your settings without having to resort to switching back and forth.
     </p>
     <p>
-      Personally I really like this feature. I have a lot of open repositories at one time, so having a better way to organize them is very welcome. Combining this with themes, could give an extra distinction between your working contexts. I think I would be making use of this a lot. Let me know if you would enjoy this feature!
+      Personally, I really like this feature. I have a lot of open repositories at one time, so having a better way to organize them is very welcome. Combining this with themes, could give an extra distinction between your working contexts. I think I would be making use of this a lot. Let me know if you would enjoy this feature!
     </p>
 
     <A.H2>Plugins</A.H2>
@@ -143,13 +143,13 @@ export default {
       The last feature I want to talk about in this post is plugins. Having plugins paired with a Git client, just makes sense. If Commit Rocket doesn't have what you need, you can simply install a plugin that does what you want!
     </p>
     <p>
-      Which plugins would you be able to install? All sorts of plugins! I personally thought of Scrumboard integrations with Jira, Trello or Devops; Maybe a Vim keybindings plugin; or automatic commit naming using AI. There are a lot of posibilities with this system.
+      Which plugins would you be able to install? All sorts of plugins! I personally thought of Scrumboard integrations with Jira, Trello or Devops; A Vim key bindings plugin; or automatic commit naming using AI. There are a lot of possibilities with this system.
     </p>
     <p>
-      In addition I would like to add a plugin marketplace. Maybe something like how the note taking app Obsidian does it, having core plugins and community plugins.
+      In addition, I would like to add a plugin marketplace. Maybe something like how the note taking app Obsidian does it, having core plugins and community plugins.
     </p>
     <p>
-      Plugins would work together with the working contexts, by switching which plugin is active between the different contexts. Maybe you don't need a scrumboard active in your side-project context, so you turn it off to save resource and headspace.
+      Plugins would work together with the working contexts, by switching which plugin is active between the different contexts. What if you don't need a scrumboard active in your side-project context, so you turn it off to save resource and headspace.
     </p>
     <p>
       I see a lot of potential with plugins, and I hope you do too!
@@ -170,7 +170,7 @@ export default {
 
     <A.H2>Wrapping up</A.H2>
     <p>
-      All of these features are really exciting to me, and are making me hyped for the future of Commit Rocket. These features working together to create an organized, personalized and comfortable experience for all uses sounds like music in my ears. Make sure to participate in the survey, your opinions and ideas will help me a lot as I continue to create Commit Rocket.
+      All of these features are really exciting to me and are making me hyped for the future of Commit Rocket. These features working together to create an organized, personalized and comfortable experience for all uses sounds like music in my ears. Make sure to participate in the survey, your opinions and ideas will help me a lot as I continue to create Commit Rocket.
     </p>
     <p>
       That will be all for now, however stay tuned for some upcoming articles about the plugin system, and one about the Commit Rocket techstack.
