@@ -100,7 +100,7 @@ const BlogPage: Page<BlogPageProps> = ({ articles, pathname }) => {
   const computedArticles = useMemo(() => (
     articles
       .filter((article) => (
-        article.title.includes(search) &&
+        article.title.toLowerCase().includes(search.toLowerCase()) &&
         tags.every((tag) => article.tags.map((t) => t.name).includes(tag))
       ))
       .sort(sort.func)
