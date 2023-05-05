@@ -10,12 +10,13 @@ type IArticle = {
   thumbnailAlt: string;
 
   tags: ITag[];
+ // relatedArticles: IArticle[];
 
   /** 
   * A high level overview of the article E.g. Technology 
   */
   vertical: string;
-  
+
   slug: string;
 
   author: IMember;
@@ -23,9 +24,11 @@ type IArticle = {
   teaser: string;
   content: ReactNode;
 
-  hidden?: boolean
+  hidden?: boolean;
+
 
   updated?: Date;
   created: Date;
 };
+
 export default IArticle;

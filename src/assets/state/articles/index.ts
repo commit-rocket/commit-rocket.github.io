@@ -2,7 +2,7 @@ import IArticle from "./article";
 
 import article1 from "./1";
 import article2 from "./2";
-import article3 from "./4";
+import article3 from "./3";
 
 export default [
 	{ 
@@ -14,7 +14,7 @@ export default [
 		article: article2 
 	},
 	{ 
-		filename: "4", 
+		filename: "3", 
 		article: article3 
 	}
 ] as { filename: string; article: IArticle }[];
