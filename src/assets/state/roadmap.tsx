@@ -10,7 +10,7 @@ export interface IRoadmapItem {
 // NOTE: This list is assumed to be in order
 export default [
   {
-    title: "Q2 2023",
+    title: "Q3 & Q4 2023",
     text: <>
       <Heading.H4 id="roadmap-designs">
         Designs
@@ -28,12 +28,6 @@ export default [
         We will begin developing early prototype versions of the Git client in addition to creating designs.
         This will involve testing various libraries and designs to ensure that we create the best possible product.
         We will also decide on licensing and monetization strategies during this month.
-      </p>
-      <Heading.H4 id="roadmap-discord-server">
-        Opening Discord Server
-      </Heading.H4>
-      <p aria-labelledby="roadmap-discord-server">
-        To encourage an active community, we plan to launch a public Discord server where users can freely exchange ideas and communicate directly with the development team.
       </p>
       <Heading.H4 id="roadmap-active-development">
         Active Development
@@ -53,9 +47,8 @@ export default [
     </>
   },
   {
-    title: "Q3 & Q4 2023",
+    title: "2024",
     text: <>
-
       <Heading.H4 id="roadmap-early-access-release">
         Ealy Access Releases
       </Heading.H4>
@@ -71,15 +64,6 @@ export default [
         If everything goes according to plan, our goal is to release a public alpha version of Commit Rocket by the end of 2023.
         While it will be a challenging task, we are not afraid to take it on!
         Upon release of the first alpha version, we will also be open-sourcing the Git client!
-      </p>
-    </>
-  },
-  {
-    title: "2024",
-    text: <>
-      <p>
-        After the alpha release, we will continue to enhance Commit Rocket by taking feedback from our users and working on the client.
-        Though we have not set specific goals, we aim to develop a stable and production-ready application by the end of the year.
       </p>
     </>
   }
