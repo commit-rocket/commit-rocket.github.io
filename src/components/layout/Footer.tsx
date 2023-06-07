@@ -5,7 +5,7 @@ import Logo from "@/assets/images/brand/logo.svg";
 const Footer = () => {
   return (
     <div className="flex items-center justify-center w-[calc(100%_+_4rem)] pt-16 mt-auto text-cr-primary-contrast">
-      <footer className="flex flex-col w-full gap-4 p-8 max-w-7xl rounded-t-2xl bg-cr-primary image-dots from-cr-primary-light">
+      <footer className="flex flex-col w-full gap-4 p-8 max-w-7xl rounded-t-2xl bg-cr-primary image-star">
         <div className="flex flex-col items-center gap-2 p-2 rounded-2xl bg-white/20 sm:flex-row backdrop-blur-[1.25px]">
           <div className="flex items-center gap-2">
             <img

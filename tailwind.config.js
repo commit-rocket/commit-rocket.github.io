@@ -11,15 +11,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": 'radial-gradient(circle closest-side, var(--tw-gradient-stops))'
-      },
       colors: {
         /** Commit Rocket colors */
         cr: {
           primary: {
-            DEFAULT: "#ea580c",
-            light: "#fb923c",
+            DEFAULT: "#f45a07",
+            light: "#f9794a",
             dark: "#92400e",
             contrast: "#FFF"
           },
@@ -39,13 +36,16 @@ module.exports = {
   },
   plugins: [
     require('@headlessui/tailwindcss'),
-    plugin(({ addVariant, addComponents, addUtilities }) => {
-      addVariant("is", ":is(&)");
-      addVariant("where", ":where(&)");
+    plugin(({ addComponents, addUtilities }) => {
       addComponents({
         ".image-dots": {
           "background-image": "radial-gradient(var(--tw-gradient-from), transparent 1.5px, transparent 1.5px)",
           "background-size": "1.1rem 1.1rem",
+          "background-position": "50% 50%"
+        },
+        ".image-star": {
+          "background-image": "url('/images/textures/star.svg')",
+          "background-size": "2.6rem 2.6rem",
           "background-position": "50% 50%"
         }
       });
