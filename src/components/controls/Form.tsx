@@ -15,7 +15,7 @@ const Form = ({
   children,
   successChildren,
   success,
-  successClassName = "p-8 my-8 text-xl font-semibold rounded-2xl border-2 border-green-600 w-fit mx-auto image-star bg-green-400",
+  successClassName = "p-8 my-8 text-xl font-semibold rounded-2xl w-fit mx-auto image-star bg-green-500",
   successProps,
   oneTime,
   ...props
