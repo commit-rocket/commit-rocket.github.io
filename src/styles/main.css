@@ -13,6 +13,10 @@ html {
   @apply min-h-full bg-cr-fill text-cr-fill-contrast;
 }
 
+svg[data-reset] {
+  height: auto;
+}
+
 :not(pre)>code {
   @apply bg-white/20 border border-white/20 rounded-md px-1
 }
