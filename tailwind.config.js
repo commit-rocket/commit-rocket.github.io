@@ -45,7 +45,7 @@ module.exports = {
         },
         ".image-star": {
           "background-image": "url('/images/textures/star.svg')",
-          "background-size": "2.6rem 2.6rem",
+          "background-size": "2rem 2rem",
           "background-position": "50% 50%"
         }
       });
