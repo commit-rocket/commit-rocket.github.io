@@ -23,12 +23,6 @@ const contactMethods: IContactMethod[] = [
     iconAlt: "Newspaper icon",
   },
   {
-    title: "feedback@commitrocket.com",
-    href: "mailto:feedback@commitrocket.com",
-    icon: EnvelopeIcon,
-    iconAlt: "Envelope icon"
-  },
-  {
     title: "Feedback Form",
     href: "/contribute#feedback",
     icon: PencilSquareIcon,
@@ -38,7 +32,7 @@ const contactMethods: IContactMethod[] = [
     title: <>
       Discord <br />
       <span className="text-sm font-semibold text-cr-fill-contrast">
-        (Coming Soon™)
+        (In the future™)
       </span>
     </>,
     icon: DiscordIcon,

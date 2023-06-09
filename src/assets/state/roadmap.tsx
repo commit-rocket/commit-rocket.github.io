@@ -54,7 +54,7 @@ export default [
       </Heading.H4>
       <p aria-labelledby="roadmap-early-access-release">
         Early access versions of Commit Rocket will be made available exclusively to our mailing list subscribers and Discord members.
-        To ensure a smooth user experience, we encourage users to share their feedback and feature requests with us via our Discord server and <Link color="primary" href="mailto:feedback@commitrocket.com" underline>our email</Link>.
+        To ensure a smooth user experience, we encourage users to share their feedback and feature requests with us via our <Link color="primary" href="/contribute#feedback" underline>our feedback form</Link>.
         As the product is still subject to changes, we appreciate our users' contributions in helping us shape the final product.
       </p>
       <Heading.H4 id="roadmap-alpha-version">

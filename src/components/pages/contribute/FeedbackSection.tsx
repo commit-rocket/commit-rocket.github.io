@@ -49,8 +49,7 @@ const FeedbackSection = () => {
       </Heading.H2>
       <p>
         We welcome your input and ideas!
-        Feel free to share your feedback and suggestions with us through our anonymous feedback form. <br />
-        You can also reach out to us via email at <Link color="primary" href="mailto:feedback@commitrocket.com" underline>feedback@commitrocket.com</Link>.
+        Feel free to share your feedback and suggestions with us through our anonymous feedback form.
       </p>
       <Form
         aria-label="feedback-inbox"

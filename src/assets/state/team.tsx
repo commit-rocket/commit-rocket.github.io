@@ -28,16 +28,16 @@ export const people = {
         name: "GitHub"
       },
       {
-        href: "mailto:rikdenbreejen@commitrocket.com",
-        name: "Email"
-      },
-      {
         href: "https://www.rikdenbreejen.nl",
         name: "Website"
       },
       {
         href: "https://www.linkedin.com/in/rik-den-breejen-a84aa71a7/",
         name: "LinkedIn"
+      },
+      {
+        href: "https://www.youtube.com/@RikThePixel",
+        name: "Youtube"
       }
     ]
   }

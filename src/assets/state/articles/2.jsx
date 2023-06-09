@@ -132,7 +132,7 @@ export default {
       Now that you know how to delete branches in Git CLI, it's time to start cleaning up your repositories! Remember to use caution when deleting branches, especially when deleting remote branches, as they can affect other collaborators working on the same project.
     </p>
     <p>
-      We hope you found this article helpful! If you have any questions or feedback, feel free to reach out to us via <A.Link href="mailto:feedback@commitrocket.com">feedback@commitrocket.com</A.Link>. At Commit Rocket, we are <i>committed</i> to making Git simpler and faster for developers everywhere. If you're interested in learning more about our in development Git client, be sure to have a look around our website!
+      We hope you found this article helpful! If you have any questions or feedback, feel free to reach out to us via <A.Link href="/contribute#feedback">our feedback form</A.Link>. At Commit Rocket, we are <i>committed</i> to making Git simpler and faster for developers everywhere. If you're interested in learning more about our in development Git client, be sure to have a look around our website!
     </p>
     <p>
       And last but not least, if you found this article useful, please share it with your fellow developers so they can benefit from it as well. Thank you for reading!
