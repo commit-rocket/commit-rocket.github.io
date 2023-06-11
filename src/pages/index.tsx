@@ -51,10 +51,10 @@ const FrontPage: Page = ({ pathname }) => {
           <section aria-label="hero" className="flex flex-col-reverse items-center h-fit min-h-0 gap-8 overflow-clip xl:flex-row xl:gap-0 xl:min-h-[30rem] xl:h-[75dvh] xl:h-[75vh]">
             <div className="relative flex flex-col items-center justify-center h-full col-span-3 gap-8 text-center xl:w-3/5">
               <Heading.H1 id="hero-title">
-                Launch your Commits in a Modern way
+                Extend Your Git Workflow, Your Way
               </Heading.H1>
               <p className="text-lg lg:text-xl lg:max-w-xl">
-                Experience Git in a modern and fast way with Commit Rocket, the open-source, lightweight and cross-platform Git client.
+                Commit Rocket is a modern, open-source and lightweight Git client with plugins themes, working contexts and more!
               </p>
               <LinkButton
                 className="w-full px-5 py-3 text-xl sm:w-fit"
@@ -97,17 +97,13 @@ const FrontPage: Page = ({ pathname }) => {
             <div className="flex flex-col w-full gap-4 text-lg font-semibold break-words xl:w-1/2">
               <p>
                 A new and modern Git client that is currently in development.
-                Our main focus is on creating a modern design and speed without sacrificing any of the features you love.
+                Our main focus is to create a modern client with feature-packed with awesome features like multi-account support, plugins and working contexts.
               </p>
               <p>
-                "Why another Git client?" - Our goal with Commit Rocket is to provide a fresh and innovative approach to Git clients,
-                addressing the outdated and inefficient nature of many current options.
-                As an open-source and cross-platform client,
-                we aim to provide a real alternative to popular choices like GitKraken, Github Desktop, and SourceTree.
+                "Why another Git client?" - We feel like there is no real variety in the Git client ecosystem. We aim to provide a real alternative to popular choices like GitKraken, Github Desktop and SourceTree.
               </p>
               <p>
-                This means that everyone will have access to our code and anyone can contribute to make it the best it can be.
-                Join us in bringing new life to Git!
+                Commit Rocket will be open-source, this means that everyone will have access to our code and anyone can contribute to make it the best it can be.
               </p>
               <LinkButton href="/contribute" color="white" onClick={sendCTAEvent("Contribute")}>
                 Contribute
@@ -120,12 +116,8 @@ const FrontPage: Page = ({ pathname }) => {
           className="flex flex-col gap-12 mx-auto text-center"
         >
           <Heading.H2 id="missions">
-            Mission
+            Missions
           </Heading.H2>
-          <p className="text-lg font-semibold">
-            Our main goal with Commit Rocket is to drive innovation and provide a modern and fast alternative to existing Git clients.
-            We want to improve the user experience for developers by creating an open-source and cross-platform tool that is both feature-rich and beginner-friendly.
-          </p>
           <ul className="flex flex-col flex-wrap justify-between w-full gap-16 lg:gap-4 lg:flex-row">
             {missions.map((mission, i) => (
               <Mission key={i} {...mission} />
