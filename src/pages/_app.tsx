@@ -14,6 +14,7 @@ import BannerImage from "@/assets/images/brand/rocket-with-graph.svg";
 
 import { makeOgMeta } from "@/lib/meta/opengraph";
 import makeSitemapMeta from "@/lib/meta/sitemap";
+import GraphDecor from "@/components/layout/GraphDecor";
 
 
 const pageTransition = {
@@ -79,6 +80,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <KeywordsMeta />
       </Head>
       <GoogleAnalytics />
+      <GraphDecor />
       <div className="flex flex-col font-sans">
         <Header />
         <AnimatePresence mode="wait" onExitComplete={onAnimFinished}>
