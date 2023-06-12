@@ -6,7 +6,7 @@ export type SupportedLanguages = "bash" | "js" | "html" | "css";
 
 interface Options {
   lang: SupportedLanguages;
-  code: string;
+  code: string | string[];
   markedLines?: (number | [number, number])[];
   allowSSR?: boolean;
 }
@@ -53,10 +53,11 @@ const useCodeHightlight = ({ lang, code, markedLines, allowSSR }: Options) => {
   }, [lang]);
 
   const codeLines = useMemo<CodeLine[]>(() => {
-    let codeToRender = code;
+    let codeToRender = Array.isArray(code) ? code.join("\n") : code;
 
     // Normalize whitespace
     const startingWhitespace = codeToRender.match(/^\s+/)?.[0]?.replace("\n", "");
+
     if (startingWhitespace) {
       const normalizeWhitespaceRegex = new RegExp(`(?<=\n)[^\S\n]{${startingWhitespace.length}}(?!\n)`, "g");
       codeToRender = codeToRender.replace(normalizeWhitespaceRegex, "");
