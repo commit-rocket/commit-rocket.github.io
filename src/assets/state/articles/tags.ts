@@ -21,5 +21,8 @@ export default {
   },
   "plans": {
     name: "Plans"
+  },
+  "discover": {
+    name: "Discover"
   }
 } satisfies Record<string, ITag>;

@@ -65,8 +65,8 @@ const BlogPostPage: Page<BlogPostPageProps> = ({ article: { author, tags, thumbn
           ...tags.map((t) => t.name)
         ]} />
       </Head>
-      <main>
-        <article aria-describedby="article-title" className="flex flex-col gap-8 max-w-4xl w-full items-center">
+      <main className="w-full max-w-4xl">
+        <article aria-describedby="article-title" className="flex flex-col gap-8 w-full items-center">
           <section aria-label="Main article content" className="flex flex-col gap-8 w-full items-center">
             <img
               aria-label="Article Thumbnail"
