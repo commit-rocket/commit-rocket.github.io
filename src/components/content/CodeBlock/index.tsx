@@ -15,7 +15,7 @@ export interface CodeBlockProps {
   /**
    * The code
    */
-  children: string;
+  children: string | string[];
 
   /**
    * To style the `pre` tag
@@ -67,11 +67,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ lang, children, className, marked
         ${!isNextMarked && isMarked ? "round-bot" : ""}
       `.trim();
 
-
+        
       _renderedLines[i] = (
         <tr key={i} suppressHydrationWarning className={`line ${markingStyle}`}>
           {showLines && <td suppressHydrationWarning className="nr"><span suppressHydrationWarning>{lineNumber}</span></td>}
-          <td suppressHydrationWarning className="cd" dangerouslySetInnerHTML={{ __html: line.html }} />
+          <td suppressHydrationWarning className="cd whitespace-break-spaces" dangerouslySetInnerHTML={{ __html: line.html }} />
         </tr>
       );
 
@@ -91,7 +91,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ lang, children, className, marked
     <>
       <link key="codeblock:stylesheed" rel="stylesheet" href="/styles/codeblock.min.css" />
       <pre className={computedClassName} data-ssr-rendered={allowSSR} data-is-codeblock="true">
-        <code className="language-bash">
+        <code className="">
           <table className="w-full">
             <tbody>{renderedLines}</tbody>
           </table>
